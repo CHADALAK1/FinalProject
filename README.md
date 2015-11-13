@@ -13,3 +13,13 @@ I will also need the username of your github account to add you to the repositor
 the source code of the project)
 
 once this is all established you are ready to edit the Java code and make the final project complete :D
+
+# NOTES FOR WHEN CLONING(IMPORTING) FINAL PROJECT FROM ANOTHER COMPUTER
+
+Sometimes, there are times you are away from your PC/Mac, but wish to work on it with a computer with IntelliJ IDEA on it. Not a problem :)! Definitly possible
+
+when in IntelliJ if it doesnt prompt you to check in from Repository, just do this
+
+VCS->Checkout from version control->GitHub
+
+Then login to your password and select the Repo you wish to clone(import) onto the computer. :)
