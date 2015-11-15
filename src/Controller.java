@@ -2,7 +2,7 @@
  * Created by Chad Reddick on 11/15/15.
  * <p>
  *     Controller class is an object that has the ability to control and
- *     possess of pawns.
+ *     possess pawns.
  *     @see  Pawn for more concept details
  * </p>
  */

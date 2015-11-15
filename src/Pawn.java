@@ -45,8 +45,13 @@ public class Pawn extends Entity
     /**
     Move method
     * Method that Allows the pawn to move in directions according to the Level grid
+     * @param x Vector2D X coordinate
+     * @param y Vector2D Y coordinate
      */
-    public void Move(){}
+    public void Move(int x, int y)
+    {
+        SetLocation(x,y);
+    }
 
     /**
     Interact Method
