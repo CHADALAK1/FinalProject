@@ -7,5 +7,10 @@
  */
 public class MeleeDamageType extends DamageType
 {
-
+    MeleeDamageType(int Damage, int MagicPen, int ArmorPen)
+    {
+        SetDamageAmount(Damage);
+        SetMagicPenetration(MagicPen);
+        SetArmorPenetration(ArmorPen);
+    }
 }

@@ -15,4 +15,15 @@ public class Item extends Entity
      */
     private String Name;
 
+    /**
+     * Pickup
+     * Method that picks up the Item
+     */
+    public void Pickup(){}
+
+    /**
+     * Drop
+     * Method that Drops the Item
+     */
+    public void Drop(){}
 }
