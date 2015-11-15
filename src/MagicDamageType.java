@@ -3,4 +3,5 @@
  */
 public class MagicDamageType extends DamageType
 {
+    private int MagicPenetration;
 }

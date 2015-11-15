@@ -3,4 +3,5 @@
  */
 public class MeleeDamageType extends DamageType
 {
+    private int ArmorPenetration;
 }

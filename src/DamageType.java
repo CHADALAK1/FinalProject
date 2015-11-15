@@ -16,5 +16,5 @@
  */
 public class DamageType
 {
-
+    private int DamageAmount;
 }
