@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Created by Chad Reddick on 11/15/15.
  * <p>
@@ -9,6 +11,12 @@
  */
 public class PlayerPawn extends Pawn
 {
+    /**
+     * Inventory
+     * An ArrayList that holds Items the PlayerPawn is currently holding
+     */
+    ArrayList<Item> Inventory = new ArrayList<Item>();
+
     PlayerPawn()
     {
         SetHealth(100);

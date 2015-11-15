@@ -44,7 +44,7 @@ public class Vector2D
 
     /**
      * GetY
-     * gets the Y value of the vecor
+     * gets the Y value of the vector
      * @return Y
      */
     public int GetY()
