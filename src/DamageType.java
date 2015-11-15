@@ -16,5 +16,81 @@
  */
 public class DamageType
 {
+    /**
+     * DamageAmount
+     * integer value of the amount of damage to be applied
+     */
     private int DamageAmount;
+
+    /**
+     * ArmorPenetration
+     * amount of penetration to ignore Armor if applicable
+     */
+    private int ArmorPenetration;
+
+    /**
+     * MagicPenetration
+     * amount of penetration to ignore MagicResistance if applicable
+     */
+    private int MagicPenetration;
+
+    /**
+     * SetDamageAmount
+     * Method that sets the DamageAmount value
+     * @param Amount integer value parameter to set DamageAmount
+     */
+    public void SetDamageAmount(int Amount)
+    {
+        DamageAmount = Amount;
+    }
+
+    /**
+     * SetArmorPenetration
+     * Method that sets the ArmorPenetration value
+     * @param Amount integer value parameter to set ArmorPenetration
+     */
+    public void SetArmorPenetration(int Amount)
+    {
+        ArmorPenetration = Amount;
+    }
+
+    /**
+     * SetMagicPenetration
+     * Method taht sets the MagicPenetration value
+     * @param Amount  integer value parameter to set MagicPenetration
+     */
+    public void SetMagicPenetration(int Amount)
+    {
+        MagicPenetration = Amount;
+    }
+
+    /**
+     * GetDamageAmount
+     * gets the DamageAmount value
+     * @return DamageAmount
+     */
+    public int GetDamageAmount()
+    {
+        return DamageAmount;
+    }
+
+    /**
+     * GetArmorPen
+     * gets the ArmorPenetration value
+     * @return ArmorPenetration
+     */
+    public int GetArmorPen()
+    {
+        return ArmorPenetration;
+    }
+
+    /**
+     * GetMagicPen
+     * gets the MagicPenetration value
+     * @return MagicPenetration
+     */
+    public int GetMagicPen()
+    {
+        return MagicPenetration;
+    }
 }

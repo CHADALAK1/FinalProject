@@ -1,5 +1,5 @@
 /**
- * Created by chadreddick on 11/15/15.
+ * Created by Chad Reddick on 11/15/15.
  * <p>
  *     Vector2D is a object that holds the location on the X and Y
  *     coordinates of a particular location.
