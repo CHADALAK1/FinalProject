@@ -22,4 +22,10 @@ public class PlayerPawn extends Pawn
         SetHealth(100);
         SetArmor(50);
     }
+
+    public void Interact()
+    {
+        //override the method
+        super.Interact();
+    }
 }
