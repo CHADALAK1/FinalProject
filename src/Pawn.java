@@ -1,9 +1,15 @@
 /**
- * Created by chadreddick on 11/15/15.
+ * Created by Chad Reddick on 11/15/15.
+ * <p>
+ *     Pawn Class is an object that the Controller Possesses. Think of this Object
+ *     like a soul and a vessel. A soul(Controller) can only control something unless
+ *     there is a vessel(Pawn) to possess. Each one cannot work without one another.
+ * </p>
  */
+
 public class Pawn
 {
-    /*
+    /**
     int Health
     * private
     * Holds the Health value for the Pawn
@@ -11,7 +17,7 @@ public class Pawn
      */
     private int Health;
 
-    /*
+    /**
     int Armor
     * private
     * Holds the Armor value for the Pawn
@@ -19,7 +25,7 @@ public class Pawn
      */
     private int Armor;
 
-    /*
+    /**
     boolean bIsDead
     * private
     * holds the boolean value to check if Pawn is dead
@@ -27,41 +33,79 @@ public class Pawn
      */
     private boolean bIsDead;
 
-    /*
+    /**
     Move method
-    * allows the pawn to move in directions according to the Level grid
+    * Method that Allows the pawn to move in directions according to the Level grid
      */
     public void Move(){}
 
-    /*
+    /**
     Interact Method
-    * Allows the Pawn to interact with the world.
+    * Method that Allows the Pawn to interact with the world.
     */
     public void Interact(){}
 
 
-    /*
+    /**
     GetHealth
-    * returns the integer value of Health
+    * @return the integer value of Health
     */
     public int GetHealth()
     {
         return Health;
     }
 
-    /*
+    /**
+    SetHealth
+    * Method that Sets the health of the Pawn
+    * @param NewHealth  integer value parameter for the new health amount
+    */
+    public void SetHealth(int NewHealth)
+    {
+        Health = NewHealth;
+    }
+
+    /**
+    AddHealth
+    * Method that Adds Health to the Pawn
+    * @param AddedHealth  integer value parameter of how much health to add
+    */
+    public void AddHealth(int AddedHealth)
+    {
+        if((Health + AddedHealth) < 100)
+        {
+            Health += AddedHealth;
+        }
+        else
+        {
+            Health = 100;
+        }
+    }
+
+    /**
+    TakeDamage
+    * Method that is in charge of the damage application from another Pawn
+    * @param Damage  integer value parameter for how much damage has been done
+    * @param Instigator  Controller object parameter for "Who" applied the damage
+    */
+    public void TakeDamage(int Damage, Controller Instigator)
+    {
+
+    }
+
+    /**
     GetArmor
-    * returns the integer value of Armor
+    * @return the integer value of Armor
     */
     public int GetArmor()
     {
         return Armor;
     }
 
-    /*
+    /**
     IsDead
-    * returns the boolean value of bIsDead
     * essentially checks if the pawn is dead based on the Pawn's Health
+    * @return the boolean value of bIsDead
     */
     public boolean IsDead()
     {
