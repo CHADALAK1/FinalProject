@@ -43,6 +43,4 @@ public class Controller
         }
         return ControlledPawn;
     }
-
-
 }

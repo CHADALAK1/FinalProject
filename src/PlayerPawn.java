@@ -12,5 +12,6 @@ public class PlayerPawn extends Pawn
     PlayerPawn()
     {
         SetHealth(100);
+        SetArmor(50);
     }
 }

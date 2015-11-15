@@ -1,5 +1,5 @@
 /**
- * Created by chadreddick on 11/15/15.
+ * Created by Chad Reddick on 11/15/15.
  */
 public class MonsterPawn extends NPCPawn
 {

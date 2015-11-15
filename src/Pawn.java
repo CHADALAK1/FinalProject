@@ -33,6 +33,7 @@ public class Pawn
      */
     private boolean bIsDead;
 
+
     /**
     Move method
     * Method that Allows the pawn to move in directions according to the Level grid
@@ -62,7 +63,14 @@ public class Pawn
     */
     public void SetHealth(int NewHealth)
     {
-        Health = NewHealth;
+        if(NewHealth <= 100 && NewHealth > 0)
+        {
+            Health = NewHealth;
+        }
+        else
+        {
+            Health = 100;
+        }
     }
 
     /**
@@ -83,14 +91,52 @@ public class Pawn
     }
 
     /**
+     SetArmor
+     * Method that Sets the new value for Armor
+     * @param NewArmor  integer value for a new Armor amount
+     */
+    public void SetArmor(int NewArmor)
+    {
+        if(Armor <= 100 && Armor >= 0)
+        {
+            Armor = NewArmor;
+        }
+    }
+
+    /**
+     AddArmor
+     * Method that Adds to the integer value of Armor
+     * @param AddedArmor  integer value to add more to Armor
+    */
+    public void AddArmor(int AddedArmor)
+    {
+        if((Armor + AddedArmor) < 100)
+        {
+            Armor += AddedArmor;
+        }
+        else
+        {
+            Armor = 100;
+        }
+    }
+
+    /**
     TakeDamage
     * Method that is in charge of the damage application from another Pawn
     * @param Damage  integer value parameter for how much damage has been done
     * @param Instigator  Controller object parameter for "Who" applied the damage
+     *@param TypeOfDamage  DamageType object parameter for how will the damage fall into place
     */
-    public void TakeDamage(int Damage, Controller Instigator)
+    public void TakeDamage(int Damage, Controller Instigator, DamageType TypeOfDamage)
     {
+        if(Health > 0)
+        {
+            if(Instigator != null)
+            {
 
+            }
+            Health -= Damage;
+        }
     }
 
     /**
