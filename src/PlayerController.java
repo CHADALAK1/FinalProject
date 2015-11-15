@@ -3,5 +3,12 @@
  */
 public class PlayerController extends Controller
 {
-
+    /*
+    CONSTRCUTOR
+     */
+    PlayerController()
+    {
+        //Possess a PlayerPawn upon Game Startup
+        Possess(new PlayerPawn());
+    }
 }
