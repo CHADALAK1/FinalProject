@@ -39,7 +39,8 @@ public class Controller
     {
         if(ControlledPawn == null)
         {
-            return null;
+            System.out.println("Controller does not own any Pawn");
+            ControlledPawn = null;
         }
         return ControlledPawn;
     }
