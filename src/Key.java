@@ -8,5 +8,9 @@
  */
 public class Key extends Item
 {
+    public void Use()
+    {
+        super.Use();
+    }
 
 }
