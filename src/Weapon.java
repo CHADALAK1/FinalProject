@@ -63,14 +63,14 @@ public class Weapon extends Item
      * Fire
      * Method that triggers the fire of the weapon
      */
-    public void Fire(){}
+    protected void Fire(){}
 
     /**
      * CriticalHitChance
      * Method that calculates the random chance of making a
      * Critical hit on the Pawn
      */
-    public void CriticalHitChance()
+    protected void CriticalHitChance()
     {
         if(GetCanCriticalHit())
         {
