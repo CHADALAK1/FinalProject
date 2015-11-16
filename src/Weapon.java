@@ -8,11 +8,6 @@
  */
 public class Weapon extends Item
 {
-    /**
-     * <b>MyPawn</b>
-     * Pawn object to hold the owner of this weapon
-     */
-    Pawn MyPawn;
 
     /**
      * <b>MeleeDamage</b>
@@ -97,19 +92,6 @@ public class Weapon extends Item
     public boolean GetCanCriticalHit()
     {
         return bCanCriticalHit;
-    }
-
-    /**
-     * <b>SetOwner</b>
-     * Method that sets the Owner of the weapon
-     * @param Owner new Pawn that owns this weapon
-     */
-    public void SetOwner(Pawn Owner)
-    {
-        if(Owner != null)
-        {
-            MyPawn = Owner;
-        }
     }
 
 }

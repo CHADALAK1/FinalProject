@@ -9,6 +9,12 @@
 public class Item extends Entity
 {
     /**
+     * <b>MyPawn</b>
+     * Pawn object to hold the owner of this weapon
+     */
+    Pawn MyPawn;
+
+    /**
      * <b>Name</b>
      * private
      * String to give the Item a name
@@ -33,4 +39,27 @@ public class Item extends Entity
      * Method that Drops the Item
      */
     public void Drop(){}
+
+    /**
+     * <b>SetOwner</b>
+     * Method that sets the Owner of the weapon
+     * @param Owner new Pawn that owns this weapon
+     */
+    public void SetOwner(Pawn Owner)
+    {
+        if(Owner != null)
+        {
+            MyPawn = Owner;
+        }
+    }
+
+    /**
+     * <b><GetOwner/b>
+     * Get method that returns MyPawn
+     * @return MyPawn
+     */
+    public Pawn GetOwner()
+    {
+        return MyPawn;
+    }
 }

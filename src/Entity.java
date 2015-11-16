@@ -1,3 +1,6 @@
+import java.awt.Image;
+import java.awt.image.*;
+
 /**
  * Created by Chad Reddick on 11/15/15.
  * <p>
@@ -15,6 +18,12 @@ public class Entity
      * Holds a Vector2D Object of the Entity's location in the level
      */
     Vector2D Location;
+
+    /**
+     * <b>SplashArt</b>
+     * Image object that holds the entity's splash art
+     */
+    Image SplashArt;
 
     /**
      * <b>SetLocation</b>
