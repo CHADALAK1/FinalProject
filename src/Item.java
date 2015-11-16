@@ -22,6 +22,13 @@ public class Item extends Entity
     public void Pickup(){}
 
     /**
+     * Use
+     * Method that uses the Item. Can override
+     * this method to have weapon fire as well
+     */
+    public void Use(){}
+
+    /**
      * Drop
      * Method that Drops the Item
      */

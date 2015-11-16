@@ -43,6 +43,17 @@ public class Weapon extends Item
     private boolean bCanCriticalHit;
 
     /**
+     * virtual from Item to fire weapon
+     * reason is so Pawn can hold Items in the
+     * Inventory ArrayList and trigger Use
+     */
+    public void Use()
+    {
+        super.Use();
+        Fire();
+    }
+
+    /**
      * Fire
      * Method that triggers the fire of the weapon
      */
