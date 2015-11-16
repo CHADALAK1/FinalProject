@@ -8,7 +8,12 @@
  */
 public class Weapon extends Item
 {
+    /**
+     * MyPawn
+     * Pawn object to hold the owner of this weapon
+     */
     Pawn MyPawn;
+    
     /**
      * MeleeDamage
      * MeleeDamageType object to give the weapon Melee Damage
