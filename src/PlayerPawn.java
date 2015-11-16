@@ -17,6 +17,9 @@ public class PlayerPawn extends Pawn
      */
     ArrayList<Item> Inventory = new ArrayList<Item>();
 
+    /**
+     * CONSTRUCTOR
+     */
     PlayerPawn()
     {
         SetHealth(100);
