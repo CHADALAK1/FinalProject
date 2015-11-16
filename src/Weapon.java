@@ -33,11 +33,54 @@ public class Weapon extends Item
      */
     private int HitChance;
 
+
+    /**
+     * bCanCriticalHit
+     * private
+     * Boolean that decides whether this weapon can make a
+     * critical hit on Pawns
+     */
+    private boolean bCanCriticalHit;
+
     /**
      * Fire
      * Method that triggers the fire of the weapon
      */
     public void Fire(){}
+
+    /**
+     * CriticalHitChance
+     * Method that calculates the random chance of making a
+     * Critical hit on the Pawn
+     */
+    public void CriticalHitChance()
+    {
+        if(GetCanCriticalHit())
+        {
+            //LOGIC GOES HERE FOR CRITICAL HIT CALULATIONS
+        }
+    }
+
+    /**
+     * CanCriticalHit
+     * Method that sets if the weapon will have any
+     * chance to crit hit
+     * @param Crit true or false assignment of bCanCriticalHit
+     */
+    public void CanCriticalHit(boolean Crit)
+    {
+        bCanCriticalHit = Crit;
+    }
+
+    /**
+     * GetCanCriticalHit
+     * Method that gets the bCanCriticalHit boolean value
+     * @return bCanCriticalHit
+     */
+    public boolean GetCanCriticalHit()
+    {
+        return bCanCriticalHit;
+    }
 
     /**
      * SetOwner
