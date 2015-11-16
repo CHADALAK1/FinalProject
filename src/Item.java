@@ -9,27 +9,27 @@
 public class Item extends Entity
 {
     /**
-     * Name
+     * <b>Name</b>
      * private
      * String to give the Item a name
      */
     private String Name;
 
     /**
-     * Pickup
+     * <b>Pickup</b>
      * Method that picks up the Item
      */
     public void Pickup(){}
 
     /**
-     * Use
+     * <b>Use</b>
      * Method that uses the Item. Can override
      * this method to have weapon fire as well
      */
     public void Use(){}
 
     /**
-     * Drop
+     * <b>Drop</b>
      * Method that Drops the Item
      */
     public void Drop(){}

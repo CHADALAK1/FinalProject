@@ -10,7 +10,7 @@
 public class NPCPawn extends Pawn
 {
     /**
-     * int XPValue
+     * <b>int XPValue</b>
      * private
      * an integer value that gives the PlayerController if the Player kills
      * the NPCPawn
@@ -18,7 +18,7 @@ public class NPCPawn extends Pawn
     private int XPValue;
 
     /**
-     * XPValue
+     * <b>XPValue</b>
      * Method that gets the XPValue of the Pawn
      * @return XPValue
      */

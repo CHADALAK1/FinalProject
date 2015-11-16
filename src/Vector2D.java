@@ -8,21 +8,21 @@
 public class Vector2D
 {
     /**
-     * int X
+     * <b>int X</b>
      * private
      * integer value that holds the horizontal value of the object
      */
     private int X;
 
     /**
-     * int Y
+     * <b>int Y</b>
      * private
      * integer value that holds the vertical value of the object
      */
     private int Y;
 
     /**
-     * CONSTRUCTOR
+     * <b>CONSTRUCTOR</b>
      * @param x
      * @param y
      */
@@ -33,7 +33,7 @@ public class Vector2D
     }
 
     /**
-     * GetX
+     * <b>GetX</b>
      * gets the X value of the vector
      * @return X
      */
@@ -43,7 +43,7 @@ public class Vector2D
     }
 
     /**
-     * GetY
+     * <b>GetY</b>
      * gets the Y value of the vector
      * @return Y
      */

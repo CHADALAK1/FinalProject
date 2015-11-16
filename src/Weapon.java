@@ -9,38 +9,38 @@
 public class Weapon extends Item
 {
     /**
-     * MyPawn
+     * <b>MyPawn</b>
      * Pawn object to hold the owner of this weapon
      */
     Pawn MyPawn;
 
     /**
-     * MeleeDamage
+     * <b>MeleeDamage</b>
      * MeleeDamageType object to give the weapon Melee Damage
      */
     MeleeDamageType MeleeDamage;
 
     /**
-     * RangeDamage
+     * <b>RangeDamage</b>
      * RangeDamageType object to give the weapon Range Damage
      */
     RangeDamageType RangeDamage;
 
     /**
-     * MaxDamage
+     * <b>MaxDamage</b>
      * integer value to cap the maximum damage of the weapon
      */
     private int MaxDamage;
 
     /**
-     * HitChance
+     * <b>HitChance</b>
      * integer value to give the chance of the attack hitting or missing
      */
     private int HitChance;
 
 
     /**
-     * bCanCriticalHit
+     * <b>bCanCriticalHit</b>
      * private
      * Boolean that decides whether this weapon can make a
      * critical hit on Pawns
@@ -60,13 +60,13 @@ public class Weapon extends Item
     }
 
     /**
-     * Fire
+     * <b>Fire</b>
      * Method that triggers the fire of the weapon
      */
     protected void Fire(){}
 
     /**
-     * CriticalHitChance
+     * <b>CriticalHitChance</b>
      * Method that calculates the random chance of making a
      * Critical hit on the Pawn
      */
@@ -79,7 +79,7 @@ public class Weapon extends Item
     }
 
     /**
-     * CanCriticalHit
+     * <b>CanCriticalHit</b>
      * Method that sets if the weapon will have any
      * chance to crit hit
      * @param Crit true or false assignment of bCanCriticalHit
@@ -90,7 +90,7 @@ public class Weapon extends Item
     }
 
     /**
-     * GetCanCriticalHit
+     * <b>GetCanCriticalHit</b>
      * Method that gets the bCanCriticalHit boolean value
      * @return bCanCriticalHit
      */
@@ -100,7 +100,7 @@ public class Weapon extends Item
     }
 
     /**
-     * SetOwner
+     * <b>SetOwner</b>
      * Method that sets the Owner of the weapon
      * @param Owner new Pawn that owns this weapon
      */

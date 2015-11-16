@@ -9,8 +9,8 @@
  */
 public class PlayerController extends Controller
 {
-    /*
-    CONSTRCUTOR
+    /**
+    <b>CONSTRCUTOR</b>
      */
     PlayerController()
     {
@@ -19,7 +19,7 @@ public class PlayerController extends Controller
     }
 
     /**
-     int XP
+     <b>int XP</b>
      * private
      * <p>
      *     XP(or Experience Points) makes the player have the ability to increase
@@ -31,7 +31,7 @@ public class PlayerController extends Controller
     private int XP;
 
     /**
-     * GetXP
+     * <b>GetXP</b>
      * Method that Gets the XP value
      * @return XP
      */
@@ -41,7 +41,7 @@ public class PlayerController extends Controller
     }
 
     /**
-     * SetXP
+     * <b>SetXP</b>
      * method that sets the XP value
      * @param NewXP integer value parameter that sets the XP
      */
@@ -51,7 +51,7 @@ public class PlayerController extends Controller
     }
 
     /**
-     * AddedXP
+     * <b>AddedXP</b>
      * Method that adds more to the XP value
      * @param AddedXP integer value parameter that adds more to XP
      */

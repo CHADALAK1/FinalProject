@@ -11,13 +11,13 @@
 public class Entity
 {
     /**
-     * Location
+     * <b>Location</b>
      * Holds a Vector2D Object of the Entity's location in the level
      */
     Vector2D Location;
 
     /**
-     * SetLocation
+     * <b>SetLocation</b>
      * Method that sets the Location of the Entity in the level
      * @param x
      * @param y
@@ -28,7 +28,7 @@ public class Entity
     }
 
     /**
-     * GetLocation
+     * <b>GetLocation</b>
      * Method that gets the current location of the Entity in the level
      * @return Location
      */

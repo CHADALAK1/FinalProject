@@ -10,7 +10,7 @@
 public class Controller
 {
     /**
-    ControlledPawn
+    <b>ControlledPawn</b>
     * private
     * Pawn Object that holds the Pawn the Controller has Possessed
     * Use GetControlledPawn() method to retrieve the Pawn Object
@@ -18,7 +18,7 @@ public class Controller
     private Pawn ControlledPawn;
 
     /**
-    Possess method
+    <b>Possess</b>
     * Allows the Controller class to control and possess a Pawn
     * @param Vessel  Vessel is for which pawn to possess
     */
@@ -31,7 +31,7 @@ public class Controller
     }
 
     /**
-    GetControlledPawn
+    <b>GetControlledPawn</b>
     * @return the ControlledPawn object if not null
     * @see  Pawn
     */

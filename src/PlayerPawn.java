@@ -12,13 +12,13 @@ import java.util.*;
 public class PlayerPawn extends Pawn
 {
     /**
-     * Inventory
+     * <b>Inventory</b>
      * An ArrayList that holds Items the PlayerPawn is currently holding
      */
     ArrayList<Item> Inventory = new ArrayList<Item>();
 
     /**
-     * CONSTRUCTOR
+     * <b>CONSTRUCTOR</b>
      */
     PlayerPawn()
     {
