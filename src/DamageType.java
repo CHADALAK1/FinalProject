@@ -56,7 +56,7 @@ public class DamageType
 
     /**
      * SetMagicPenetration
-     * Method taht sets the MagicPenetration value
+     * Method that sets the MagicPenetration value
      * @param Amount  integer value parameter to set MagicPenetration
      */
     public void SetMagicPenetration(int Amount)
