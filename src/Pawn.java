@@ -53,7 +53,7 @@ public class Pawn extends Entity
      * private
      * Rotator enum holding where the player is facing
      */
-    private Rotator Direction;
+    private Rotator Rotation;
 
     /**
     <b>Move</b>
@@ -63,7 +63,45 @@ public class Pawn extends Entity
      */
     public void Move(int x, int y)
     {
+        //set new location of the Pawn
         SetLocation(x,y);
+
+        //Store local variables for the Current forward vector x and y
+        int CurrentX = GetForwardVector().GetX();
+        int CurrentY = GetForwardVector().GetY();
+
+        //DIRECTION CHECKS
+        if(GetRotation() == Rotator.NORTH)
+        {
+            //TODO: Add Bounds check with current Level and room
+            ForwardVector = new Vector2D(CurrentX,CurrentY-1);
+        }
+        if(GetRotation() == Rotator.SOUTH)
+        {
+            //TODO: Add Bounds check with current Level and room
+            ForwardVector = new Vector2D(CurrentX,CurrentY+1);
+        }
+        if(GetRotation() == Rotator.EAST)
+        {
+            //TODO: Add Bounds check with current Level and room
+            ForwardVector = new Vector2D(CurrentX+1,CurrentY);
+        }
+        if(GetRotation() == Rotator.WEST)
+        {
+            //TODO: Add Bounds check with current Level and room
+            ForwardVector = new Vector2D(CurrentX-1,CurrentY-1);
+        }
+    }
+
+    /**
+     * Rotate
+     * Method that sets teh Rotation Enum so the
+     * Pawn can rotate
+     * @param Dir Rotator Enum to change the direction
+     */
+    public void Rotate(Rotator Dir)
+    {
+        Rotation = Dir;
     }
 
     /**
@@ -222,6 +260,26 @@ public class Pawn extends Entity
     public int GetArmor()
     {
         return Armor;
+    }
+
+    /**
+     * Rotator
+     * Method that returns the Rotation Enum
+     * @return Rotation
+     */
+    public Rotator GetRotation()
+    {
+        return Rotation;
+    }
+
+    /**
+     * GetForwardVector
+     * Method that gets the ForwardVector Vector2D
+     * @return ForwardVector
+     */
+    public Vector2D GetForwardVector()
+    {
+        return ForwardVector;
     }
 
     /**
