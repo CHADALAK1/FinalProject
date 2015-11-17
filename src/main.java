@@ -1,7 +1,5 @@
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.ImageIcon;
-import java.awt.Toolkit;
+
 
 /**
  * JAVA FINAL PROJECT
@@ -10,32 +8,34 @@ import java.awt.Toolkit;
  * Created by: Chad, Jake, Josie, David
  */
 
-/**
+/**Notes from Jake;
  * Note 11/16; Added basic layout for the game, using Absolute layout though Oracle.
- *
+ * Note 11/16; Fixed comments. Removed unnecessary packages.
  *
  */
 
-public class main extends  JFrame
+public class main extends JFrame
 {
-    private JPanel panel;
-
-    private JButton btnOne;
-    private JButton btnTwo;
-    private JTextArea StoryOutput;
-    private JTextField StoryInput;
-    private JSlider HitCrit;
-    private JList Inventory;
-    private JLabel Health;
-    private JLabel Armor;
+    public JPanel panel;
+    public JButton btnOne;
+    public JButton btnTwo;
+    public JTextArea StoryOutput;
+    public JTextField StoryInput;
+    public JSlider HitCrit;
+    public JList Inventory;
+    public JLabel Health;
+    public JLabel Armor;
 
     public main()
     {
+
+        //Final window size.
         final int Window_H = 768;
         final int Window_W = 1024;
 
         //Create a test window.
 
+        //TODO: Game Title
         //Title
         setTitle("--Game Title--");
 
@@ -47,16 +47,17 @@ public class main extends  JFrame
 
         //What happens when CLOSE is clicked.
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         //Disable Maximize button.
         setResizable(false);
 
         //Construct a new JPanel.
         panel = new JPanel();
 
-        //PoC inventory...
-        //Is there an Inventory class?
+        //TODO: Create a Inventory Class.
         String[] InvList = {"Sword", "Shield", "Mace"};
 
+        //TODO: Link GUI components to classes.
         //Construct GUI components.
         StoryInput = new JTextField (5);
         StoryOutput = new JTextArea (5, 5);
@@ -78,18 +79,27 @@ public class main extends  JFrame
         StoryOutput.setEditable(false);
 
         //Story line Example.
+        //TODO: Create Story Line class/strings.
         StoryOutput.setText("The quick brown fox jumps over the lazy dog.");
 
-        //Positioning of objects on panel. (Positioning is Rough guess as of 11/16)
-        //                      (xLeftRight, yUpdown, width, Height)
-        StoryOutput.setBounds    (10, 450, 995, 115);
-        StoryInput.setBounds   (10, 580, 995, 25);
+        //Positioning of objects on panel. This will give us more control on everything UI based.
+        //----------------------(xLeftRight, yUpdown, width, Height)
+        //TODO: Finalize setBounds.
+        StoryOutput.setBounds   (10, 450, 995, 115);
+        StoryInput.setBounds    (10, 580, 995, 25);
         Inventory.setBounds     (900, 650, 100, 75);
         HitCrit.setBounds       (450, 680, 400, 50);
         btnOne.setBounds        (10, 700, 100, 25);
         btnTwo.setBounds        (120, 700, 100, 25);
         Health.setBounds        (250, 700, 100, 25);
         Armor.setBounds         (350, 700, 100, 25);
+
+        //TODO: Create area for gameplay images.
+        /**
+         *
+         *
+         *
+         */
 
         //Add components to panel.
         add(btnOne);
@@ -101,21 +111,14 @@ public class main extends  JFrame
         add(Health);
         add(Armor);
 
-        /**
-         * add(panel) and setVisible(true) need to stay below this.
-         */
-
-        //add panel.
+        //add(panel) and setVisible(true) need to stay below this.
         add(panel);
-        //Display window.
         setVisible(true);
-
     }
 
     //Start
     public static void main(String[] args){
         main frame = new main();
     }
-
 
 }
