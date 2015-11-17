@@ -25,7 +25,6 @@ public class Pawn extends Entity
      */
     private int Armor;
 
-
     /**
      * <b>MagicResistance</b>
      * private
@@ -41,6 +40,20 @@ public class Pawn extends Entity
      */
     private boolean bIsDead;
 
+    /**
+     * <b>ForwardVector</b>
+     * private
+     * Vector2D object that holds the vector location
+     * where the Pawn is facing
+     */
+    private Vector2D ForwardVector;
+
+    /**
+     * <b>Direction</b>
+     * private
+     * Rotator enum holding where the player is facing
+     */
+    private Rotator Direction;
 
     /**
     <b>Move</b>

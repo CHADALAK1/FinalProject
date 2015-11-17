@@ -18,11 +18,11 @@ public class Door extends Entity
     /**
      * <b>CONSTRUCTOR</b>
      * @author Chad Reddick
-     * @param IsLocked to initialize if the door requires a key
+     * @param Locked to initialize if the door requires a key
      */
-    Door(boolean IsLocked)
+    Door(boolean Locked)
     {
-
+        IsLocked = Locked;
     }
 
     /**
