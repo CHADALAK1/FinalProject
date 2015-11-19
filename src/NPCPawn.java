@@ -11,7 +11,7 @@ public class NPCPawn extends Pawn
 {
     /**
      * <b>int XPValue</b>
-     * private
+     * <p>private</p>
      * an integer value that gives the PlayerController if the Player kills
      * the NPCPawn
      */

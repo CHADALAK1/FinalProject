@@ -13,9 +13,10 @@ public class PlayerPawn extends Pawn
 {
     /**
      * <b>Inventory</b>
+     * <p>private</p>
      * An ArrayList that holds Items the PlayerPawn is currently holding
      */
-    ArrayList<Item> Inventory = new ArrayList<Item>();
+    private ArrayList<Item> Inventory = new ArrayList<Item>();
 
     /**
      * <b>CONSTRUCTOR</b>

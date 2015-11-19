@@ -9,7 +9,7 @@ public class Door extends Entity
 {
     /**
      * <b>boolean IsLocked</b>
-     * private
+     * <p>private</p>
      * Determines if this door requires a key to be opened
      * @author Chad Reddick
      */

@@ -11,24 +11,28 @@ public class Weapon extends Item
 
     /**
      * <b>MeleeDamage</b>
+     * <p>private</p>
      * MeleeDamageType object to give the weapon Melee Damage
      */
     private MeleeDamageType MeleeDamage;
 
     /**
      * <b>RangeDamage</b>
+     * <p>private</p>
      * RangeDamageType object to give the weapon Range Damage
      */
     private RangeDamageType RangeDamage;
 
     /**
      * <b>MaxDamage</b>
+     * <p>private</p>
      * integer value to cap the maximum damage of the weapon
      */
     private int MaxDamage;
 
     /**
      * <b>HitChance</b>
+     * <p>private</p>
      * integer value to give the chance of the attack hitting or missing
      */
     private int HitChance;
@@ -36,7 +40,7 @@ public class Weapon extends Item
 
     /**
      * <b>bCanCriticalHit</b>
-     * private
+     * <p>private</p>
      * Boolean that decides whether this weapon can make a
      * critical hit on Pawns
      */

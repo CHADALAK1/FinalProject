@@ -15,22 +15,31 @@ public class Entity
 {
     /**
      * <b>Location</b>
+     * <p>private</p>
      * Holds a Vector2D Object of the Entity's location in the level
      */
-    Vector2D Location;
+    private Vector2D Location;
 
     /**
      * <b>SplashArt</b>
+     * <p>private</p>
      * Image object that holds the entity's splash art
      */
-    Image SplashArt;
+    private Image SplashArt;
 
     /**
      * <b>boolean bHasCollision</b>
-     * private
+     * <p>private</p>
      * boolean that checks if this Entity has Collision bounds
      */
     private boolean bHasCollision;
+
+    /**
+     * <b>CurrentLevel</b>
+     * <p>private</p>
+     * Level Object that holds the level the Entity is currently inside
+     */
+    private Level CurrentLevel;
 
     /**
      * <b>SetLocation</b>
@@ -46,6 +55,18 @@ public class Entity
     public void SetCollision(boolean Collision)
     {
         bHasCollision = Collision;
+    }
+
+    /**
+     * <b>SerCurrentLevel</b>
+     * Sets the new current level for the Entity. If the Entity
+     * is needed to be in a different level, this method will be of that
+     * use
+     * @param NewLevel Parameter to assign CurrentLevel
+     */
+    public void SetCurrentLevel(Level NewLevel)
+    {
+        CurrentLevel = NewLevel;
     }
 
     /**
@@ -66,5 +87,10 @@ public class Entity
     public boolean GetHasCollision()
     {
         return bHasCollision;
+    }
+
+    public Level GetCurrentLevel()
+    {
+        return CurrentLevel;
     }
 }

@@ -11,7 +11,7 @@ public class Controller
 {
     /**
     <b>ControlledPawn</b>
-    * private
+    * <p>private</p>
     * Pawn Object that holds the Pawn the Controller has Possessed
     * Use GetControlledPawn() method to retrieve the Pawn Object
      */

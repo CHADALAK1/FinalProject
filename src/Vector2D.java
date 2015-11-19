@@ -9,14 +9,14 @@ public class Vector2D
 {
     /**
      * <b>int X</b>
-     * private
+     * <p>private</p>
      * integer value that holds the horizontal value of the object
      */
     private int X;
 
     /**
      * <b>int Y</b>
-     * private
+     * <p>private</p>
      * integer value that holds the vertical value of the object
      */
     private int Y;

@@ -18,25 +18,28 @@ public class DamageType
 {
     /**
      * <b>int DamageAmount</b>
+     * <p>private</p>
      * integer value of the amount of damage to be applied
      */
     private int DamageAmount;
 
     /**
      * <b>int ArmorPenetration</b>
+     * <p>private</p>
      * amount of penetration to ignore Armor if applicable
      */
     private int ArmorPenetration;
 
     /**
      * <b>int MagicPenetration</b>
+     * <p>private</p>
      * amount of penetration to ignore MagicResistance if applicable
      */
     private int MagicPenetration;
 
     /**
      * <b>int Range</b>
-     * private
+     * <p>private</p>
      * integer variable that holds the distance the damage can be fired
      */
     private int Range;

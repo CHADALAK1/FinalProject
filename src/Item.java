@@ -10,13 +10,14 @@ public class Item extends Entity
 {
     /**
      * <b>MyPawn</b>
+     * <p>private</p>
      * Pawn object to hold the owner of this weapon
      */
-    Pawn MyPawn;
+    private Pawn MyPawn;
 
     /**
      * <b>Name</b>
-     * private
+     * <p>private</p>
      * String to give the Item a name
      */
     private String Name;

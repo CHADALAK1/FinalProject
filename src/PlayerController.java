@@ -20,7 +20,7 @@ public class PlayerController extends Controller
 
     /**
      <b>int XP</b>
-     * private
+     * <p>private</p>
      * <p>
      *     XP(or Experience Points) makes the player have the ability to increase
      *     stats based on XP range and ratio. Reason for XP to be in PlayerController

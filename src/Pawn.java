@@ -11,7 +11,7 @@ public class Pawn extends Entity
 {
     /**
     <b>int Health</b>
-    * private
+    * <p>private</p>
     * Holds the Health value for the Pawn
     * Use the GetHealth() method to get the Health value
      */
@@ -19,7 +19,7 @@ public class Pawn extends Entity
 
     /**
     <b>int Armor</b>
-    * private
+    * <p>private</p>
     * Holds the Armor value for the Pawn
     * Use the GetArmor() method to get the Armor value
      */
@@ -27,14 +27,14 @@ public class Pawn extends Entity
 
     /**
      * <b>MagicResistance</b>
-     * private
+     * <p>private</p>
      * integer variable to debate how much MR(Magic Resistance) the Pawn has
      */
     private int MagicResistance;
 
     /**
     <b>boolean bIsDead</b>
-    * private
+    * <p>private</p>
     * holds the boolean value to check if Pawn is dead
     * Use the IsDead() method to get the bIsDead boolean value
      */
@@ -42,7 +42,7 @@ public class Pawn extends Entity
 
     /**
      * <b>ForwardVector</b>
-     * private
+     * <p>private</p>
      * Vector2D object that holds the vector location
      * where the Pawn is facing
      */
@@ -50,7 +50,7 @@ public class Pawn extends Entity
 
     /**
      * <b>Direction</b>
-     * private
+     * <p>private</p>
      * Rotator enum holding where the player is facing
      */
     private Rotator Rotation;
