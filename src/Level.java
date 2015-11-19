@@ -8,20 +8,25 @@
 public class Level
 {
     /**
-     *<b>Grid</b>
-     * A 2D Array that any Entity can be in. Must be Initialized
-     * in order to make level layout.
+     *<b>Hallway</b>
+     * A 2D Array that any Entity can be in for the hallway. Must be Initialized
      */
-    private Entity Grid[][];
+    private Entity Hallway[][];
+
+    /**
+     *<b>Room</b>
+     * A 2D Array that any Entity can be in for the Room. Must be Initialized
+     */
+    private Entity Room[][];
 
     /**
      * <b>GetGrid</b>
      * returns the level Grid 2DArray
      * @return Grid
      */
-    public Entity[][] GetGrid()
+    public Entity[][] GetHallway()
     {
-        return Grid;
+        return Hallway;
     }
 
     /**
@@ -30,24 +35,46 @@ public class Level
      * @param X Horizonal Dimension
      * @param Y Vertical Dimension
      */
-    public void SetGrid(int X, int Y)
+    public void SetHallway(int X, int Y)
     {
-        Grid = new Entity[X][Y];
+        Hallway = new Entity[X][Y];
+    }
+
+    /**
+     * <b>GetRoom</b>
+     * returns the Room Entity object
+     * @return Room
+     */
+    public Entity[][] GetRoom()
+    {
+        return Room;
+    }
+
+    /**
+     * <b>SetRoomSize</b>
+     * Method that sets the X and Y area of the Room Array
+     * @param X
+     * @param Y
+     */
+    public void SetRoomSize(int X, int Y)
+    {
+        Room = new Entity[X][Y];
     }
 
     /**
      * <b>SetBounds</b>
      * Method that sets the collision bounds of the Level Grid
+     * @param Grid Array to set bounds to(Hallway, Room, etc.)
      * @param X Horizontal Dimension
      * @param Y Vertical Dimension
      * @param Bounds boolean to turn on or off collision
      */
-    public void SetBounds(int X, int Y, boolean Bounds)
+    public void SetBounds(Entity[][] Grid,int X, int Y, boolean Bounds)
     {
-        GetGrid()[X][Y].SetCollision(true);
+        if(Grid[X][Y] != null)
+        {
+            Grid[X][Y].SetCollision(Bounds);
+        }
     }
-
-
-
-
+    
 }

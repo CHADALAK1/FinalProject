@@ -5,6 +5,6 @@ public class Level01 extends Level
 {
     public Level01()
     {
-        SetGrid(30,30);
+
     }
 }
