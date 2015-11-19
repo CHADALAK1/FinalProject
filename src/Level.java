@@ -10,71 +10,94 @@ public class Level
     /**
      *<b>Hallway</b>
      * <p>private</p>
-     * A 2D Array that any Entity can be in for the hallway. Must be Initialized
+     * An Array of 2D Arrays that any Entity can be in for the hallway. Must be Initialized
      */
-    private Entity Hallway[][];
+    private Entity[][] Hallway[];
 
     /**
      *<b>Room</b>
      * <p>private</p>
-     * A 2D Array that any Entity can be in for the Room. Must be Initialized
+     * An Array of 2D Arrays that any Entity can be in for the Room. Must be Initialized
      */
-    private Entity Room[][];
+    private Entity[][] Room[];
 
     /**
      * <b>GetGrid</b>
      * returns the level Grid 2DArray
+     * @param Slot Which Hallway in the Array
      * @return Grid
      */
-    public Entity[][] GetHallway()
+    public Entity[][] GetHallway(int Slot)
     {
-        return Hallway;
+        return Hallway[Slot];
     }
 
     /**
      * <b>SetGrid</b>
      * Sets the size of the 2D Array Grid
-     * @param X Horizonal Dimension
-     * @param Y Vertical Dimension
+     * @param Slot Which Hallway in the Array
+     * @param Size Vector2D coordinates Size of the room
      */
-    public void SetHallway(int X, int Y)
+    public void SetHallway(int Slot, Vector2D Size)
     {
-        Hallway = new Entity[X][Y];
+        Hallway[Slot] = new Entity[Size.GetX()][Size.GetY()];
     }
 
     /**
      * <b>GetRoom</b>
      * returns the Room Entity object
+     * @param Slot Which Room in the Array
      * @return Room
      */
-    public Entity[][] GetRoom()
+    public Entity[][] GetRoom(int Slot)
     {
-        return Room;
+        return Room[Slot];
     }
 
     /**
      * <b>SetRoomSize</b>
      * Method that sets the X and Y area of the Room Array
-     * @param X Horizontal Dimension
-     * @param Y Verticle Dimension
+     * @param Slot Which Room in the Array
+     * @param Size Vector2D coordinates Size of the room
      */
-    public void SetRoomSize(int X, int Y)
+    public void SetRoomSize(int Slot,Vector2D Size)
     {
-        Room = new Entity[X][Y];
+        Room[Slot] = new Entity[Size.GetX()][Size.GetY()];
+    }
+
+    /**
+     * <b>SetTotalRooms</b>
+     * Method that sets the size of the Room Array
+     * @param Size How many rooms in level
+     */
+    public void SetTotalRooms(int Size)
+    {
+        Room = new Entity[0][0][Size];
+    }
+
+    /**
+     * <b>SetTotalHallways</b>
+     * Method that sets the size of the Hallway array
+     * @param Size How many hallways in level
+     */
+    public void SetTotalHallways(int Size)
+    {
+        Hallway = new Entity[0][0][Size];
     }
 
     /**
      * <b>SetBounds</b>
      * Method that sets the collision bounds of the Level Grid
      * @param Grid Array to set bounds to(Hallway, Room, etc.)
+     * @param Slot int variable to tell which slot
      * @param Loc Vector that holds the X and Y coordinate to set bound location
      * @param Bounds boolean to turn on or off collision
      */
-    public void SetBounds(Entity[][] Grid,Vector2D Loc, boolean Bounds)
+    public void SetBounds(Entity[][][] Grid,int Slot, Vector2D Loc, boolean Bounds)
     {
-        if(Grid[Loc.GetX()][Loc.GetY()] != null)
+        if(Grid[Loc.GetX()][Loc.GetY()][Slot] != null)
         {
-            Grid[Loc.GetX()][Loc.GetY()].SetCollision(Bounds);
+            Grid[Loc.GetX()][Loc.GetY()][Slot].SetCollision(Bounds);
         }
     }
 
