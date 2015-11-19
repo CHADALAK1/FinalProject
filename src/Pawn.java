@@ -66,6 +66,8 @@ public class Pawn extends Entity
         //set new location of the Pawn
         SetLocation(x,y);
 
+        GetCurrentLevel().SetPlayerLocation(new Vector2D(x,y));
+
         //Store local variables for the Current forward vector x and y
         int CurrentX = GetForwardVector().GetX();
         int CurrentY = GetForwardVector().GetY();
@@ -74,7 +76,7 @@ public class Pawn extends Entity
         if(GetRotation() == Rotator.NORTH)
         {
             //TODO: Add Bounds check with current Level and room
-            ForwardVector = new Vector2D(CurrentX,CurrentY-1);
+            ForwardVector = new Vector2D(CurrentX, CurrentY - 1);
         }
         if(GetRotation() == Rotator.SOUTH)
         {

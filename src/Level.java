@@ -22,6 +22,21 @@ public class Level
     private Entity[][] Room[];
 
     /**
+     * <b>Player</b>
+     * <p>private</p>
+     * PlayerPawn object to spawn player into the level
+     */
+    private PlayerPawn Player = new PlayerPawn();
+
+    /**
+     * <b>Monsters</b>
+     * <p>private</p>
+     * MonsterPawn Array that holds the amount of monsters in the
+     * level to spawn
+     */
+    private MonsterPawn[] Monsters;
+
+    /**
      * <b>GetGrid</b>
      * returns the level Grid 2DArray
      * @param Slot Which Hallway in the Array
@@ -33,12 +48,12 @@ public class Level
     }
 
     /**
-     * <b>SetGrid</b>
-     * Sets the size of the 2D Array Grid
+     * <b>SetHallwaySize</b>
+     * Sets the size of the Hallway 2D Array
      * @param Slot Which Hallway in the Array
      * @param Size Vector2D coordinates Size of the room
      */
-    public void SetHallway(int Slot, Vector2D Size)
+    public void SetHallwaySize(int Slot, Vector2D Size)
     {
         Hallway[Slot] = new Entity[Size.GetX()][Size.GetY()];
     }
@@ -99,6 +114,39 @@ public class Level
         {
             Grid[Loc.GetX()][Loc.GetY()][Slot].SetCollision(Bounds);
         }
+    }
+
+    public MonsterPawn[] GetMonsters()
+    {
+        return Monsters;
+    }
+
+    public PlayerPawn GetPlayer()
+    {
+        return Player;
+    }
+
+    public void SpawnPlayer(PlayerPawn NewPlayer, Vector2D Loc, Rotator Rot)
+    {
+        if(Player != null)
+        {
+            if(GetHallway(0) != null)
+            {
+                GetHallway(0)[Loc.GetX()][Loc.GetY()] = NewPlayer;
+                NewPlayer.SetLocation(Loc.GetX(), Loc.GetY());
+                NewPlayer.Rotate(Rot);
+            }
+        }
+    }
+
+    public Vector2D GetPlayerLocation()
+    {
+        return Player.GetLocation();
+    }
+
+    public void SetPlayerLocation(Vector2D NewLocation)
+    {
+        Player.SetLocation(NewLocation.GetX(),NewLocation.GetY());
     }
 
 }
