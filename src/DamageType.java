@@ -17,22 +17,29 @@
 public class DamageType
 {
     /**
-     * <b>DamageAmount</b>
+     * <b>int DamageAmount</b>
      * integer value of the amount of damage to be applied
      */
     private int DamageAmount;
 
     /**
-     * <b>ArmorPenetration</b>
+     * <b>int ArmorPenetration</b>
      * amount of penetration to ignore Armor if applicable
      */
     private int ArmorPenetration;
 
     /**
-     * <b>MagicPenetration</b>
+     * <b>int MagicPenetration</b>
      * amount of penetration to ignore MagicResistance if applicable
      */
     private int MagicPenetration;
+
+    /**
+     * <b>int Range</b>
+     * private
+     * integer variable that holds the distance the damage can be fired
+     */
+    private int Range;
 
     /**
      * <b>SetDamageAmount</b>
@@ -65,6 +72,16 @@ public class DamageType
     }
 
     /**
+     * <b>SetRange</b>
+     * Method that sets the Range value
+     * @param Amount integer value parameter to set Range
+     */
+    public void SetRange(int Amount)
+    {
+        Range = Amount;
+    }
+
+    /**
      * <b>GetDamageAmount</b>
      * gets the DamageAmount value
      * @return DamageAmount
@@ -92,5 +109,15 @@ public class DamageType
     public int GetMagicPen()
     {
         return MagicPenetration;
+    }
+
+    /**
+     * <b>GetRange</b>
+     * gets the Range value
+     * @return Range
+     */
+    public int GetRange()
+    {
+        return Range;
     }
 }

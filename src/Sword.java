@@ -9,5 +9,8 @@
  */
 public class Sword extends Weapon
 {
-    //MeleeDamage = new MeleeDamageType(10,10,0);
+    public Sword()
+    {
+        SetMeleeDamage(10,0,5);
+    }
 }

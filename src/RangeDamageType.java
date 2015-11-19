@@ -7,5 +7,10 @@
  */
 public class RangeDamageType extends DamageType
 {
-
+    RangeDamageType(int Range, int Damage, int ArmorPen)
+    {
+        SetRange(Range);
+        SetDamageAmount(Damage);
+        SetArmorPenetration(ArmorPen);
+    }
 }

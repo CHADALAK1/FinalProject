@@ -13,13 +13,13 @@ public class Weapon extends Item
      * <b>MeleeDamage</b>
      * MeleeDamageType object to give the weapon Melee Damage
      */
-    MeleeDamageType MeleeDamage;
+    private MeleeDamageType MeleeDamage;
 
     /**
      * <b>RangeDamage</b>
      * RangeDamageType object to give the weapon Range Damage
      */
-    RangeDamageType RangeDamage;
+    private RangeDamageType RangeDamage;
 
     /**
      * <b>MaxDamage</b>
@@ -92,6 +92,50 @@ public class Weapon extends Item
     public boolean GetCanCriticalHit()
     {
         return bCanCriticalHit;
+    }
+
+    /**
+     * GetMeleeDamage
+     * returns the MeleeDamage object
+     * @return MeleeDamage
+     */
+    public MeleeDamageType GetMeleeDamage()
+    {
+        return MeleeDamage;
+    }
+
+    /**
+     * SetMeleeDamage
+     * Method that Sets the MeleeDamage object class variables
+     * @param Damage Amount of Damage to be applied when used
+     * @param MagicPen Amount of MagicPenetration when used
+     * @param ArmorPen Amount of ArmorPenetration when used
+     */
+    public void SetMeleeDamage(int Damage, int MagicPen, int ArmorPen)
+    {
+        MeleeDamage = new MeleeDamageType(Damage,MagicPen,ArmorPen);
+    }
+
+    /**
+     * SetRangeDamage
+     * Method that Sets the RangeDamage object variables
+     * @param Range The distance the damage can be applied
+     * @param Damage Amount of Damage when used
+     * @param ArmorPen Amount of ArmorPenetration when used
+     */
+    public void SetRangeDamage(int Range,int Damage, int ArmorPen)
+    {
+        RangeDamage = new RangeDamageType(Range,Damage,ArmorPen);
+    }
+
+    /**
+     * GetRangeDamage
+     * returns the RangeDamage object
+     * @return RangeDamage
+     */
+    public RangeDamageType GetRangeDamage()
+    {
+        return RangeDamage;
     }
 
 }

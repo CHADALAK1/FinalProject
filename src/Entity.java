@@ -26,6 +26,13 @@ public class Entity
     Image SplashArt;
 
     /**
+     * <b>boolean bHasCollision</b>
+     * private
+     * boolean that checks if this Entity has Collision bounds
+     */
+    private boolean bHasCollision;
+
+    /**
      * <b>SetLocation</b>
      * Method that sets the Location of the Entity in the level
      * @param x
@@ -36,6 +43,11 @@ public class Entity
         Location = new Vector2D(x,y);
     }
 
+    public void SetCollision(boolean Collision)
+    {
+        bHasCollision = Collision;
+    }
+
     /**
      * <b>GetLocation</b>
      * Method that gets the current location of the Entity in the level
@@ -44,5 +56,15 @@ public class Entity
     public Vector2D GetLocation()
     {
         return Location;
+    }
+
+    /**
+     * <b>GetHasCollision</b>
+     * Method that returns the bHasCollision boolean
+     * @return bHasCollision
+     */
+    public boolean GetHasCollision()
+    {
+        return bHasCollision;
     }
 }
