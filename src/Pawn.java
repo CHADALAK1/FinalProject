@@ -56,42 +56,95 @@ public class Pawn extends Entity
     private Rotator Rotation;
 
     /**
-    <b>Move</b>
-    * Method that Allows the pawn to move in directions according to the Level grid
-     * @param x Vector2D X coordinate
-     * @param y Vector2D Y coordinate
+    <b>MoveUp</b>
+    * Method that Allows the pawn to move <b>UP</b> in the level grid
+     * @param y Vector2D X coordinate
      */
-    public void Move(int x, int y)
+    public void MoveUp(int y)
     {
-        //set new location of the Pawn
-        SetLocation(x,y);
-
-        GetCurrentLevel().SetPlayerLocation(new Vector2D(x,y));
-
-        //Store local variables for the Current forward vector x and y
-        int CurrentX = GetForwardVector().GetX();
-        int CurrentY = GetForwardVector().GetY();
-
-        //DIRECTION CHECKS
-        if(GetRotation() == Rotator.NORTH)
+        int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
+        int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
+        if (GetRotation() == Rotator.NORTH)
         {
-            //TODO: Add Bounds check with current Level and room
-            ForwardVector = new Vector2D(CurrentX, CurrentY - 1);
+            if (GetForwardVector().GetY() > 0)
+            {
+                //set new location of the Pawn
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - y));
+
+                SetForwardVector(new Vector2D(CurrXLocation, y - 1));
+            }
         }
-        if(GetRotation() == Rotator.SOUTH)
+        else
         {
-            //TODO: Add Bounds check with current Level and room
-            ForwardVector = new Vector2D(CurrentX,CurrentY+1);
+            Rotation = Rotator.NORTH;
+            SetForwardVector(new Vector2D(CurrXLocation,y - 1));
         }
-        if(GetRotation() == Rotator.EAST)
+    }
+
+    /**
+     <b>MoveDown</b>
+     * Method that Allows the pawn to move <b>DOWN</b> in the level grid
+     * @param y Vector2D X coordinate
+     */
+    public void MoveDown(int y)
+    {
+        int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
+        int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
+        if (GetRotation() == Rotator.SOUTH)
         {
-            //TODO: Add Bounds check with current Level and room
-            ForwardVector = new Vector2D(CurrentX+1,CurrentY);
+            if(GetForwardVector().GetY() < GetCurrentLevel().GetMaxBoundaries().GetY())
+            {
+                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + y));
+            }
         }
+        else
+        {
+            Rotation = Rotator.SOUTH;
+            SetForwardVector(new Vector2D(CurrXLocation, y + 1));
+        }
+    }
+
+    /**
+     <b>MoveRight</b>
+     * Method that Allows the pawn to move <b>RIGHT</b> in the level grid
+     * @param x Vector2D Y coordinate
+     */
+    public void MoveRight(int x)
+    {
+        int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
+        int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
+        if (GetRotation() == Rotator.EAST)
+        {
+            if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX())
+            SetForwardVector(new Vector2D(CurrXLocation + x, CurrYLocation));
+        }
+        else
+        {
+            Rotation = Rotator.EAST;
+            SetForwardVector(new Vector2D(x + 1, CurrYLocation));
+        }
+    }
+
+    /**
+     <b>MoveLeft</b>
+     * Method that Allows the pawn to move <b>LEFT</b> in the level grid
+     * @param x Vector2D Y coordinate
+     */
+    public void MoveLeft(int x)
+    {
+        int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
+        int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if(GetRotation() == Rotator.WEST)
         {
-            //TODO: Add Bounds check with current Level and room
-            ForwardVector = new Vector2D(CurrentX-1,CurrentY-1);
+            if(GetForwardVector().GetX() > 0)
+            {
+                SetForwardVector(new Vector2D(CurrXLocation - 1, CurrYLocation));
+            }
+        }
+        else
+        {
+            Rotation = Rotator.WEST;
+            SetForwardVector(new Vector2D(CurrXLocation - 1,CurrYLocation));
         }
     }
 
@@ -282,6 +335,11 @@ public class Pawn extends Entity
     public Vector2D GetForwardVector()
     {
         return ForwardVector;
+    }
+
+    public void SetForwardVector(Vector2D NewVector2D)
+    {
+        ForwardVector = NewVector2D;
     }
 
     /**

@@ -8,14 +8,11 @@ public class Level01 extends Level
      */
     public Level01()
     {
-        //Set the amount of rooms and hallways
-        SetTotalRooms(2);
-        SetTotalHallways(1);
+        //Set the amount of levels
+        SetTotalLevels(1);
 
         //Set the hallway and room sizes
-        SetRoomSize(0,new Vector2D(20,20));
-        SetRoomSize(1,new Vector2D(40,40));
-        SetHallwaySize(0,new Vector2D(50,30));
+        SetGridSize(0,new Vector2D(50,50));
 
         //Spawn the player
         SpawnPlayer(GetPlayer(),new Vector2D(10,10),Rotator.NORTH);

@@ -12,14 +12,7 @@ public class Level
      * <p>private</p>
      * An Array of 2D Arrays that any Entity can be in for the hallway. Must be Initialized
      */
-    private Entity[][] Hallway[];
-
-    /**
-     *<b>Room</b>
-     * <p>private</p>
-     * An Array of 2D Arrays that any Entity can be in for the Room. Must be Initialized
-     */
-    private Entity[][] Room[];
+    private Entity[][] Grid[];
 
     /**
      * <b>Player</b>
@@ -37,14 +30,22 @@ public class Level
     private MonsterPawn[] Monsters;
 
     /**
+     * <b>MaxBoundaries</b>
+     * <p>private</p>
+     * Holds the Vector2D value of the x and y max boundaries of the level
+     * initializes at <b>SetGridSize</b> Method
+     */
+    private Vector2D MaxBoundaries;
+
+    /**
      * <b>GetGrid</b>
      * returns the level Grid 2DArray
      * @param Slot Which Hallway in the Array
      * @return Grid
      */
-    public Entity[][] GetHallway(int Slot)
+    public Entity[][] GetLevel(int Slot)
     {
-        return Hallway[Slot];
+        return Grid[Slot];
     }
 
     /**
@@ -53,41 +54,22 @@ public class Level
      * @param Slot Which Hallway in the Array
      * @param Size Vector2D coordinates Size of the room
      */
-    public void SetHallwaySize(int Slot, Vector2D Size)
+    public void SetGridSize(int Slot, Vector2D Size)
     {
-        Hallway[Slot] = new Entity[Size.GetX()][Size.GetY()];
+        Grid[Slot] = new Entity[Size.GetX()][Size.GetY()];
+        //Where MaxBoundaries is initialized
+        MaxBoundaries = new Vector2D(Size.GetX(), Size.GetY());
     }
 
     /**
-     * <b>GetRoom</b>
-     * returns the Room Entity object
-     * @param Slot Which Room in the Array
-     * @return Room
+     * GetMaxBoundaries
+     * Method that returns the Vector2D value of MaxBoundaries
+     * @see Vector2D
+     * @return MaxBoundaries
      */
-    public Entity[][] GetRoom(int Slot)
+    public Vector2D GetMaxBoundaries()
     {
-        return Room[Slot];
-    }
-
-    /**
-     * <b>SetRoomSize</b>
-     * Method that sets the X and Y area of the Room Array
-     * @param Slot Which Room in the Array
-     * @param Size Vector2D coordinates Size of the room
-     */
-    public void SetRoomSize(int Slot,Vector2D Size)
-    {
-        Room[Slot] = new Entity[Size.GetX()][Size.GetY()];
-    }
-
-    /**
-     * <b>SetTotalRooms</b>
-     * Method that sets the size of the Room Array
-     * @param Size How many rooms in level
-     */
-    public void SetTotalRooms(int Size)
-    {
-        Room = new Entity[0][0][Size];
+        return MaxBoundaries;
     }
 
     /**
@@ -95,24 +77,24 @@ public class Level
      * Method that sets the size of the Hallway array
      * @param Size How many hallways in level
      */
-    public void SetTotalHallways(int Size)
+    public void SetTotalLevels(int Size)
     {
-        Hallway = new Entity[0][0][Size];
+        Grid = new Entity[0][0][Size];
     }
 
     /**
      * <b>SetBounds</b>
      * Method that sets the collision bounds of the Level Grid
-     * @param Grid Array to set bounds to(Hallway, Room, etc.)
+     * @param GetGrid Array to set bounds to(Hallway, Room, etc.)
      * @param Slot int variable to tell which slot
      * @param Loc Vector that holds the X and Y coordinate to set bound location
      * @param Bounds boolean to turn on or off collision
      */
-    public void SetBounds(Entity[][][] Grid,int Slot, Vector2D Loc, boolean Bounds)
+    public void SetBounds(Entity[][][] GetGrid,int Slot, Vector2D Loc, boolean Bounds)
     {
-        if(Grid[Loc.GetX()][Loc.GetY()][Slot] != null)
+        if(GetGrid[Loc.GetX()][Loc.GetY()][Slot] != null)
         {
-            Grid[Loc.GetX()][Loc.GetY()][Slot].SetCollision(Bounds);
+            GetGrid[Loc.GetX()][Loc.GetY()][Slot].SetCollision(Bounds);
         }
     }
 
@@ -130,11 +112,30 @@ public class Level
     {
         if(Player != null)
         {
-            if(GetHallway(0) != null)
+            if(GetLevel(0) != null)
             {
-                GetHallway(0)[Loc.GetX()][Loc.GetY()] = NewPlayer;
-                NewPlayer.SetLocation(Loc.GetX(), Loc.GetY());
-                NewPlayer.Rotate(Rot);
+                Player = NewPlayer;
+                GetLevel(0)[Loc.GetX()][Loc.GetY()] = Player;
+                Player.SetLocation(Loc.GetX(), Loc.GetY());
+                Player.Rotate(Rot);
+                //Sets the ForwardVector for the Player Vector2D
+                switch(Rot)
+                {
+                    case NORTH:
+                        Player.SetForwardVector(new Vector2D(Loc.GetX(),Loc.GetY() - 1));
+                        break;
+                    case SOUTH:
+                        Player.SetForwardVector(new Vector2D(Loc.GetX(),Loc.GetY() + 1));
+                        break;
+                    case EAST:
+                        Player.SetForwardVector(new Vector2D(Loc.GetX() + 1,Loc.GetY()));
+                        break;
+                    case WEST:
+                        Player.SetForwardVector(new Vector2D(Loc.GetX() - 1,Loc.GetY() - 1));
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
