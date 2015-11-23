@@ -85,16 +85,16 @@ public class Level
     /**
      * <b>SetBounds</b>
      * Method that sets the collision bounds of the Level Grid
-     * @param GetGrid Array to set bounds to(Hallway, Room, etc.)
+     * @param GetGrid Array to set bounds to the Level
      * @param Slot int variable to tell which slot
      * @param Loc Vector that holds the X and Y coordinate to set bound location
-     * @param Bounds boolean to turn on or off collision
      */
-    public void SetBounds(Entity[][][] GetGrid,int Slot, Vector2D Loc, boolean Bounds)
+    public void SetBounds(Entity[][][] GetGrid,int Slot, Vector2D Loc)
     {
-        if(GetGrid[Loc.GetX()][Loc.GetY()][Slot] != null)
+        if(GetGrid[Loc.GetX()][Loc.GetY()][Slot] == null)
         {
-            GetGrid[Loc.GetX()][Loc.GetY()][Slot].SetCollision(Bounds);
+            //Create Wall at Location
+            GetGrid[Loc.GetX()][Loc.GetY()][Slot] = new Wall();
         }
     }
 

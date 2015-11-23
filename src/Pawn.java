@@ -58,9 +58,8 @@ public class Pawn extends Entity
     /**
     <b>MoveUp</b>
     * Method that Allows the pawn to move <b>UP</b> in the level grid
-     * @param y Vector2D X coordinate
      */
-    public void MoveUp(int y)
+    public void MoveUp()
     {
         int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
@@ -69,24 +68,23 @@ public class Pawn extends Entity
             if (GetForwardVector().GetY() > 0)
             {
                 //set new location of the Pawn
-                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - y));
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
 
-                SetForwardVector(new Vector2D(CurrXLocation, y - 1));
+                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation - 1));
             }
         }
         else
         {
             Rotation = Rotator.NORTH;
-            SetForwardVector(new Vector2D(CurrXLocation,y - 1));
+            SetForwardVector(new Vector2D(CurrXLocation,CurrYLocation - 1));
         }
     }
 
     /**
      <b>MoveDown</b>
      * Method that Allows the pawn to move <b>DOWN</b> in the level grid
-     * @param y Vector2D X coordinate
      */
-    public void MoveDown(int y)
+    public void MoveDown()
     {
         int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
@@ -94,43 +92,45 @@ public class Pawn extends Entity
         {
             if(GetForwardVector().GetY() < GetCurrentLevel().GetMaxBoundaries().GetY())
             {
-                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + y));
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation + 1));
+                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
             }
         }
         else
         {
             Rotation = Rotator.SOUTH;
-            SetForwardVector(new Vector2D(CurrXLocation, y + 1));
+            SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
         }
     }
 
     /**
      <b>MoveRight</b>
      * Method that Allows the pawn to move <b>RIGHT</b> in the level grid
-     * @param x Vector2D Y coordinate
      */
-    public void MoveRight(int x)
+    public void MoveRight()
     {
         int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.EAST)
         {
             if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX())
-            SetForwardVector(new Vector2D(CurrXLocation + x, CurrYLocation));
+            {
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation + 1, CurrYLocation));
+                SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
+            }
         }
         else
         {
             Rotation = Rotator.EAST;
-            SetForwardVector(new Vector2D(x + 1, CurrYLocation));
+            SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
         }
     }
 
     /**
      <b>MoveLeft</b>
      * Method that Allows the pawn to move <b>LEFT</b> in the level grid
-     * @param x Vector2D Y coordinate
      */
-    public void MoveLeft(int x)
+    public void MoveLeft()
     {
         int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();

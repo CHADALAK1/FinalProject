@@ -5,7 +5,7 @@
  *     @see Key for locked details
  * </p>
  */
-public class Door extends Entity
+public class Door extends Wall
 {
     /**
      * <b>boolean IsLocked</b>

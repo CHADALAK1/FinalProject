@@ -42,6 +42,14 @@ public class Entity
     private Level CurrentLevel;
 
     /**
+     * <b>LevelSlot</b>
+     * <p>private</p>
+     * Holds the int value for the current Level in the Grid Array
+     * @see Level
+     */
+    private int LevelSlot;
+
+    /**
      * <b>SetLocation</b>
      * Method that sets the Location of the Entity in the level
      * @param x
@@ -52,13 +60,18 @@ public class Entity
         Location = new Vector2D(x,y);
     }
 
+    /**
+     * <b>SetCollision</b>
+     * Method that adds collision to this object(Mostly for level collision purposes
+     * @param Collision makes the new value true or false for the bHasCollision boolean
+     */
     public void SetCollision(boolean Collision)
     {
         bHasCollision = Collision;
     }
 
     /**
-     * <b>SerCurrentLevel</b>
+     * <b>SetCurrentLevel</b>
      * Sets the new current level for the Entity. If the Entity
      * is needed to be in a different level, this method will be of that
      * use
@@ -89,8 +102,37 @@ public class Entity
         return bHasCollision;
     }
 
+    /**
+     * <b>GetCurrentLevel</b>
+     * Method that returns the CurrentLevel Object
+     * @return CurrentLevel
+     */
     public Level GetCurrentLevel()
     {
         return CurrentLevel;
+    }
+
+    /**
+     * <b>GetLevelSlot</b>
+     * Method that returns the LevelSlot integer
+     * @return LevelSlot
+     */
+    public int GetLevelSlot()
+    {
+        return LevelSlot;
+    }
+
+    /**
+     * <b>SetLevelSlot</b>
+     * Method that sets the integer LevelSlot. ONLY if the Grid Array in Level has it
+     * @see Level
+     * @param NewSlot new int value for LevelSlot
+     */
+    public void SetLevelSlot(int NewSlot)
+    {
+        if(GetCurrentLevel().GetLevel(NewSlot) != null)
+        {
+            LevelSlot = NewSlot;
+        }
     }
 }
