@@ -19,7 +19,7 @@ public class Level
      * <p>private</p>
      * PlayerPawn object to spawn player into the level
      */
-    private PlayerPawn Player = new PlayerPawn();
+    private PlayerPawn Player;
 
     /**
      * <b>Monsters</b>
@@ -98,26 +98,53 @@ public class Level
         }
     }
 
+    /**
+     * <b>GetMonsters</b>
+     * returns the amount of monsters in the Level
+     * @return Monsters
+     */
     public MonsterPawn[] GetMonsters()
     {
         return Monsters;
     }
 
+    /**
+     * <b>GetPlayer</b>
+     * returns the PlayerPawn in the Level
+     * @return Player
+     */
     public PlayerPawn GetPlayer()
     {
         return Player;
     }
 
+    /**
+     * <b>SpawnPlayer</b>
+     * Creates a player in the Level along with its location and rotation
+     * @param NewPlayer when creating, use new PlayerPawn()
+     * @param Loc Vector2D for where the player will be spawned
+     * @param Rot Rotator for where the player will be facing when spawned
+     */
     public void SpawnPlayer(PlayerPawn NewPlayer, Vector2D Loc, Rotator Rot)
     {
-        if(Player != null)
+        //if there's no player object in this level
+        if(Player == null)
         {
+            //if the level exists
             if(GetLevel(0) != null)
             {
+                //Set the Player object
                 Player = NewPlayer;
+
+                //assign the player's location in the Level Object
                 GetLevel(0)[Loc.GetX()][Loc.GetY()] = Player;
+
+                //Set the Location locally with the player
                 Player.SetLocation(Loc.GetX(), Loc.GetY());
+
+                //Set the player's rotation
                 Player.Rotate(Rot);
+
                 //Sets the ForwardVector for the Player Vector2D
                 switch(Rot)
                 {
@@ -140,11 +167,21 @@ public class Level
         }
     }
 
+    /**
+     * <b>GetPlayerLocation</b>
+     * returns the Vector2D location of the Player
+     * @return Player.GetLocation()
+     */
     public Vector2D GetPlayerLocation()
     {
         return Player.GetLocation();
     }
 
+    /**
+     * <b>SetPlayerLocation</b>
+     * Sets a new location for the player in the level
+     * @param NewLocation New Vector2D location for the player to be
+     */
     public void SetPlayerLocation(Vector2D NewLocation)
     {
         Player.SetLocation(NewLocation.GetX(),NewLocation.GetY());
