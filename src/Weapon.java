@@ -50,7 +50,7 @@ public class Weapon extends Item
      * virtual from Item to fire weapon
      * reason is so Pawn can hold Items in the
      * Inventory ArrayList and trigger Use
-     * @see Item
+     * @see Entity
      */
     public void Use()
     {

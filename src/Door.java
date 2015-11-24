@@ -8,12 +8,12 @@
 public class Door extends Wall
 {
     /**
-     * <b>boolean IsLocked</b>
+     * <b>boolean bIsLocked</b>
      * <p>private</p>
      * Determines if this door requires a key to be opened
      * @author Chad Reddick
      */
-    private boolean IsLocked;
+    private boolean bIsLocked;
 
     /**
      * <b>CONSTRUCTOR</b>
@@ -22,7 +22,33 @@ public class Door extends Wall
      */
     Door(boolean Locked)
     {
-        IsLocked = Locked;
+        bIsLocked = Locked;
+    }
+
+    public void Use()
+    {
+        super.Use();
+
+        //if Door is locked
+        if(GetIsLocked())
+        {
+            //if the player has the key
+            if(GetCurrentLevel().GetPlayer().GetInventory().contains(Key.class))
+            {
+                //Unlock the door
+                UnlockDoor();
+            }
+        }
+    }
+
+    /**
+     * <b>GetIsLocked</b>
+     * returns to check if this door is locked
+     * @return bIsLocked
+     */
+    public boolean GetIsLocked()
+    {
+        return bIsLocked;
     }
 
     /**
@@ -32,6 +58,7 @@ public class Door extends Wall
      */
     public void UnlockDoor()
     {
-        IsLocked = false;
+        bIsLocked = false;
+        SetCollision(false);
     }
 }

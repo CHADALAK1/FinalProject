@@ -27,9 +27,25 @@ public class PlayerPawn extends Pawn
         SetArmor(50);
     }
 
+    /**
+     * <b>GetInventory</b>
+     * returns the ArrayList of Items called Inventory
+     * @return Inventory
+     */
+    public ArrayList<Item> GetInventory()
+    {
+        return Inventory;
+    }
+
     public void Interact()
     {
         //override the method
         super.Interact();
+
+        //check if there's a door in front of the player
+        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Door)
+        {
+            GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Use();
+        }
     }
 }

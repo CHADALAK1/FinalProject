@@ -113,6 +113,13 @@ public class Entity
     }
 
     /**
+     * <b>Use</b>
+     * Method that uses the Entity. Can override
+     * this method to fire weapon, open doors, etc.
+     */
+    public void Use(){}
+
+    /**
      * <b>GetLevelSlot</b>
      * Method that returns the LevelSlot integer
      * @return LevelSlot
