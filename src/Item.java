@@ -26,13 +26,22 @@ public class Item extends Entity
      * <b>Pickup</b>
      * Method that picks up the Item
      */
-    public void Pickup(){}
+    public void Pickup()
+    {
+        GetOwner().GetInventory().add(this);
+    }
 
     /**
      * <b>Drop</b>
      * Method that Drops the Item
      */
-    public void Drop(){}
+    public void Drop()
+    {
+        if(GetOwner().GetWeapon() != null)
+        {
+            GetOwner().SetWeapon(null);
+        }
+    }
 
     /**
      * <b>SetOwner</b>

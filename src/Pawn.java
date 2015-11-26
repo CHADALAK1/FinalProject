@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by Chad Reddick on 11/15/15.
  * <p>
@@ -54,6 +56,20 @@ public class Pawn extends Entity
      * Rotator enum holding where the player is facing
      */
     private Rotator Rotation;
+
+    /**
+     * <b>Inventory</b>
+     * <p>private</p>
+     * An ArrayList that holds Items the Pawn is currently holding
+     */
+    private ArrayList<Item> Inventory = new ArrayList<Item>();
+
+    /**
+     * <b>Hands</b>
+     * <p>private</p>
+     * A Weapon object that holds what Weapon the Pawn is holding
+     */
+    private Weapon Hand;
 
     /**
     <b>MoveUp</b>
@@ -340,6 +356,31 @@ public class Pawn extends Entity
     public void SetForwardVector(Vector2D NewVector2D)
     {
         ForwardVector = NewVector2D;
+    }
+
+    /**
+     * <b>GetInventory</b>
+     * returns the ArrayList of Items called Inventory
+     * @return Inventory
+     */
+    public ArrayList<Item> GetInventory()
+    {
+        return Inventory;
+    }
+
+    /**
+     * <b>GetWeapon</b>
+     * returns the Hand object which holds what weapon is there or not
+     * @return Hand
+     */
+    public Weapon GetWeapon()
+    {
+        return Hand;
+    }
+
+    public void SetWeapon(Weapon NewWeapon)
+    {
+        Hand = NewWeapon;
     }
 
     /**

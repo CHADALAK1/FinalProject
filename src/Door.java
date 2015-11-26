@@ -33,10 +33,15 @@ public class Door extends Wall
         if(GetIsLocked())
         {
             //if the player has the key
-            if(GetCurrentLevel().GetPlayer().GetInventory().contains(Key.class))
+            for(int i = 0; i < GetCurrentLevel().GetPlayer().GetInventory().size(); i++)
             {
-                //Unlock the door
-                UnlockDoor();
+                if (GetCurrentLevel().GetPlayer().GetInventory().get(i) instanceof Key)
+                {
+                    //Unlock the door
+                    UnlockDoor();
+                    //remove the key
+                    GetCurrentLevel().GetPlayer().GetInventory().remove(i);
+                }
             }
         }
     }
