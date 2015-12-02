@@ -400,4 +400,15 @@ public class Pawn extends Entity
         }
         return bIsDead;
     }
+
+    /**
+     * <b>SetIsDead</b>
+     * Sets this pawn Dead or Alive
+     * @param IsAlive sets the boolean bIsDead true or false
+     */
+    public void SetIsDead(boolean IsAlive)
+    {
+        bIsDead = IsAlive;
+    }
+
 }

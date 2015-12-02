@@ -28,6 +28,13 @@ public class Entity
     private Image SplashArt;
 
     /**
+     * <b>Name</b>
+     * <p>private</p>
+     * String object that holds the NAME of the object
+     */
+    private String Name;
+
+    /**
      * <b>boolean bHasCollision</b>
      * <p>private</p>
      * boolean that checks if this Entity has Collision bounds
@@ -80,6 +87,26 @@ public class Entity
     public void SetCurrentLevel(Level NewLevel)
     {
         CurrentLevel = NewLevel;
+    }
+
+    /**
+     * <b>SetName</b>
+     * Sets the Name String object
+     * @param NewName Name for the new string
+     */
+    public void SetName(String NewName)
+    {
+        Name = NewName;
+    }
+
+    /**
+     * <b>GetName</b>
+     * returns the Name of the object
+     * @return Name
+     */
+    public String GetName()
+    {
+        return Name;
     }
 
     /**

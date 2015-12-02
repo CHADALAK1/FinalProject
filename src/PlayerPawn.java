@@ -28,5 +28,23 @@ public class PlayerPawn extends Pawn
         {
             GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Use();
         }
+
+        //check if there's a weapon in front of the player
+        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Item)
+        {
+
+        }
+        //check if there's a monster in front of the player
+        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
+        {
+            for(int i = 0; i < GetCurrentLevel().GetMonsters().length; i++)
+            {
+                if(GetForwardVector() == GetCurrentLevel().GetMonsters()[i].GetLocation() &&
+                        !GetCurrentLevel().GetMonsters()[i].IsDead())
+                {
+                    GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters()[i]);
+                }
+            }
+        }
     }
 }

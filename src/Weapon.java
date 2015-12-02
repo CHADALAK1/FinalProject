@@ -55,14 +55,7 @@ public class Weapon extends Item
     public void Use()
     {
         super.Use();
-        Fire();
     }
-
-    /**
-     * <b>Fire</b>
-     * Method that triggers the fire of the weapon
-     */
-    protected void Fire(){}
 
     /**
      * <b>CriticalHitChance</b>
@@ -140,6 +133,31 @@ public class Weapon extends Item
     public RangeDamageType GetRangeDamage()
     {
         return RangeDamage;
+    }
+
+
+    /**
+     * <b>ApplyDamage</b>
+     * Applys damage to pawn getting hit by weaon
+     * @param DamagedPawn Pawn that is taking the Damage
+     */
+    public void ApplyDamage(Pawn DamagedPawn)
+    {
+        if(DamagedPawn.GetArmor() > 0)
+        {
+
+        }
+        else
+        {
+            if(DamagedPawn.GetHealth() > 0)
+            {
+
+            }
+            else
+            {
+                DamagedPawn.SetIsDead(true);
+            }
+        }
     }
 
 }
