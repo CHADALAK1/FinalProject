@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by Chad Reddick on 11/19/15.
  * <p>
@@ -24,10 +26,18 @@ public class Level
     /**
      * <b>Monsters</b>
      * <p>private</p>
-     * MonsterPawn Array that holds the amount of monsters in the
+     * MonsterPawn ArrayList that holds the amount of monsters in the
      * level to spawn
      */
-    private MonsterPawn[] Monsters;
+    private ArrayList<MonsterPawn> Monsters = new ArrayList<MonsterPawn>();
+
+    /**
+     * <b>MonsterControllers</b>
+     * <p>private</p>
+     * MonsterController ArrayList that holds the Controllers for the Monsters.
+     * Reasoning for this is to know what NPC controls MonsterPawn in the world
+     */
+    private ArrayList<MonsterController> MonsterControllers = new ArrayList<MonsterController>();
 
     /**
      * <b>MaxBoundaries</b>
@@ -103,9 +113,19 @@ public class Level
      * returns the amount of monsters in the Level
      * @return Monsters
      */
-    public MonsterPawn[] GetMonsters()
+    public ArrayList<MonsterPawn> GetMonsters()
     {
         return Monsters;
+    }
+
+    /**
+     * <b>GetMonsterControllers</b>
+     * returns the ArrayList of MonsterControllers in the Level
+     * @return MonsterControllers
+     */
+    public ArrayList<MonsterController> GetMonsterControllers()
+    {
+        return MonsterControllers;
     }
 
     /**
@@ -165,6 +185,33 @@ public class Level
                 }
             }
         }
+    }
+
+    /**
+     * <b>SpawnMonster</b>
+     * Spawns Monster in the Level.
+     * @param NewMonster Monster to spawn in the level
+     * @param Loc Location of the monster in the level
+     */
+    public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc)
+    {
+        //Initialize Controller AI for new spawned monster
+        MonsterController TempController = new MonsterController();
+
+        //Set it's local Location
+        NewMonster.SetLocation(Loc.GetX(), Loc.GetY());
+
+        //Initialize it's World Location
+        GetLevel(0)[NewMonster.GetLocation().GetX()][NewMonster.GetLocation().GetY()] = NewMonster;
+
+        //have MonsterController Possess the new spawned MonsterPawn
+        TempController.Possess(NewMonster);
+
+        //Add to Monsters ArrayList
+        Monsters.add(NewMonster);
+
+        //add the controller to the MonsterControllers ArrayList
+        MonsterControllers.add(TempController);
     }
 
     /**
