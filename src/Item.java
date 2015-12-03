@@ -16,13 +16,6 @@ public class Item extends Entity
     private Pawn MyPawn;
 
     /**
-     * <b>Name</b>
-     * <p>private</p>
-     * String to give the Item a name
-     */
-    private String Name;
-
-    /**
      * <b>Pickup</b>
      * Method that picks up the Item
      * <p>Sets the Owner</p>
