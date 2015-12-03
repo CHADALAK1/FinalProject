@@ -72,6 +72,13 @@ public class Pawn extends Entity
     private Weapon Hand;
 
     /**
+     * <b>PawnController</b>
+     * <p>private</p>
+     * A Controller object that holds the Controller Possessing this pawn(if any)
+     */
+    private Controller PawnController;
+
+    /**
     <b>MoveUp</b>
     * Method that Allows the pawn to move <b>UP</b> in the level grid
      */
@@ -81,7 +88,7 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.NORTH)
         {
-            if (GetForwardVector().GetY() > 0)
+            if (GetForwardVector().GetY() > 0 || !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 //set new location of the Pawn
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
@@ -106,7 +113,8 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.SOUTH)
         {
-            if(GetForwardVector().GetY() < GetCurrentLevel().GetMaxBoundaries().GetY())
+            if(GetForwardVector().GetY() < GetCurrentLevel().GetMaxBoundaries().GetY() ||
+                    !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation + 1));
                 SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
@@ -129,7 +137,8 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.EAST)
         {
-            if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX())
+            if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX() ||
+                    !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation + 1, CurrYLocation));
                 SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
@@ -152,7 +161,7 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if(GetRotation() == Rotator.WEST)
         {
-            if(GetForwardVector().GetX() > 0)
+            if(GetForwardVector().GetX() > 0 || !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 SetForwardVector(new Vector2D(CurrXLocation - 1, CurrYLocation));
             }
@@ -180,6 +189,26 @@ public class Pawn extends Entity
     * Method that Allows the Pawn to interact with the world.
     */
     public void Interact(){}
+
+    /**
+     * <b>GetController</b>
+     * returns the PawnController object
+     * @return PawnController
+     */
+    public Controller GetController()
+    {
+        return PawnController;
+    }
+
+    /**
+     * <b>SetController</b>
+     * Sets the Controller Possessing this Pawn
+     * @param Possesser The Controller Possessing the Pawn
+     */
+    public void SetController(Controller Possesser)
+    {
+        PawnController = Possesser;
+    }
 
 
     /**
@@ -353,6 +382,11 @@ public class Pawn extends Entity
         return ForwardVector;
     }
 
+    /**
+     * <b>SetForwardVector</b>
+     * Sets the Vector2D Location in front of the Pawn
+     * @param NewVector2D Vector2D to become the new ForwardVector
+     */
     public void SetForwardVector(Vector2D NewVector2D)
     {
         ForwardVector = NewVector2D;
@@ -378,6 +412,11 @@ public class Pawn extends Entity
         return Hand;
     }
 
+    /**
+     * <b>SetWeapon</b>
+     * Puts the Weapon into the Player's Hand(Can Also Remove from hand
+     * @param NewWeapon Weapon to put into Pawn's hand
+     */
     public void SetWeapon(Weapon NewWeapon)
     {
         Hand = NewWeapon;

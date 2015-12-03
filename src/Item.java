@@ -25,10 +25,15 @@ public class Item extends Entity
     /**
      * <b>Pickup</b>
      * Method that picks up the Item
+     * <p>Sets the Owner</p>
+     * <p>Adds to Owner's Inventory</p>
+     * <p>Removes from Level</p>
      */
     public void Pickup()
     {
+        SetOwner(GetCurrentLevel().GetPlayer());
         GetOwner().GetInventory().add(this);
+        GetCurrentLevel().GetLevel(GetLevelSlot())[GetLocation().GetX()][GetLocation().GetY()] = new Entity();
     }
 
     /**

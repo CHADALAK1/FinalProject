@@ -145,13 +145,13 @@ public class Weapon extends Item
     {
         if(DamagedPawn.GetArmor() > 0)
         {
-
+            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
         }
         else
         {
             if(DamagedPawn.GetHealth() > 0)
             {
-
+                DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
             }
             else
             {

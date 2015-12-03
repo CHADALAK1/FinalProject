@@ -27,6 +27,7 @@ public class Controller
         if(ControlledPawn == null)
         {
             ControlledPawn = Vessel;
+            ControlledPawn.SetController(this);
         }
     }
 
