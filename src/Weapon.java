@@ -52,6 +52,7 @@ public class Weapon extends Item
      * Inventory ArrayList and trigger Use
      * @see Entity
      */
+    @Override
     public void Use()
     {
         super.Use();

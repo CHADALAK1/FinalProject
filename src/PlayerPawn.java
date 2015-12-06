@@ -18,6 +18,7 @@ public class PlayerPawn extends Pawn
         SetArmor(50);
     }
 
+    @Override
     public void Interact()
     {
         //override the method

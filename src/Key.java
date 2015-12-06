@@ -8,6 +8,7 @@
  */
 public class Key extends Item
 {
+    @Override
     public void Use()
     {
         super.Use();

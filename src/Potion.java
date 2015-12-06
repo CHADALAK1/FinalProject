@@ -12,6 +12,7 @@ public class Potion extends Item
         SetCollision(true);
     }
 
+    @Override
     public void Use()
     {
         super.Use();
@@ -26,6 +27,7 @@ public class Potion extends Item
         System.out.println("Added 10 Health");
     }
 
+    @Override
     public void Pickup()
     {
         super.Pickup();

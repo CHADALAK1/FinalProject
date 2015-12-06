@@ -25,6 +25,7 @@ public class Door extends Wall
         bIsLocked = Locked;
     }
 
+    @Override
     public void Use()
     {
         super.Use();
