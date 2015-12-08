@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af278cc6-4c15-40fd-8449-ad35f0a8e3ec" name="Default" comment="Added BossPawn and BossController(if we need it)&#10;&#10;Signed by CHADALAK1">
+    <list default="true" id="af278cc6-4c15-40fd-8449-ad35f0a8e3ec" name="Default" comment="Added a Vector2D for easier movement of the &#10;&#10;Signed by CHADALAK1">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity.java" afterPath="$PROJECT_DIR$/src/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Item.java" afterPath="$PROJECT_DIR$/src/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PlayerPawn.java" afterPath="$PROJECT_DIR$/src/PlayerPawn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameMode.java" afterPath="$PROJECT_DIR$/src/GameMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="FinalProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,8 +18,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FinalProject$main.coverage" NAME="main Coverage Results" MODIFIED="1449105933007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -27,144 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Item.java">
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-              <folding>
-                <marker date="1449596308000" expanded="true" signature="448:462" placeholder="/**...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Potion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Potion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pawn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pawn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="70.62963">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding>
-                <element signature="e#5822#5823#0" expanded="true" />
-                <element signature="e#5852#5853#0" expanded="true" />
-                <element signature="e#6139#6140#0" expanded="true" />
-                <element signature="e#6176#6177#0" expanded="true" />
-                <element signature="e#6386#6387#0" expanded="true" />
-                <element signature="e#6428#6429#0" expanded="true" />
-                <element signature="e#6541#6542#0" expanded="true" />
-                <element signature="e#6570#6571#0" expanded="true" />
-                <element signature="e#8117#8118#0" expanded="true" />
-                <element signature="e#8155#8156#0" expanded="true" />
-                <element signature="e#8383#8384#0" expanded="true" />
-                <element signature="e#8422#8423#0" expanded="true" />
-                <element signature="e#8655#8656#0" expanded="true" />
-                <element signature="e#8697#8698#0" expanded="true" />
-                <element signature="e#9955#9956#0" expanded="true" />
-                <element signature="e#9983#9984#0" expanded="true" />
-                <element signature="e#10123#10124#0" expanded="true" />
-                <element signature="e#10154#10155#0" expanded="true" />
-                <element signature="e#10320#10321#0" expanded="true" />
-                <element signature="e#10356#10357#0" expanded="true" />
-                <element signature="e#10587#10588#0" expanded="true" />
-                <element signature="e#10630#10631#0" expanded="true" />
-                <element signature="e#10802#10803#0" expanded="true" />
-                <element signature="e#10834#10835#0" expanded="true" />
-                <element signature="e#11002#11003#0" expanded="true" />
-                <element signature="e#11029#11030#0" expanded="true" />
-                <element signature="e#11247#11248#0" expanded="true" />
-                <element signature="e#11279#11280#0" expanded="true" />
-                <element signature="e#11813#11814#0" expanded="true" />
-                <element signature="e#11846#11847#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3797#3798#0" expanded="true" />
-                <element signature="e#3829#3830#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Weapon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Weapon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1167#1168#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerPawn.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PlayerPawn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37313432">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sword.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Sword.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-              <folding>
-                <element signature="e#306#307#0" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vector2D.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.682243">
+              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -194,36 +68,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MeleeDamage.java" />
-        <option value="$PROJECT_DIR$/src/MagicDamageType.java" />
-        <option value="$PROJECT_DIR$/src/GameMode.java" />
-        <option value="$PROJECT_DIR$/src/NPCController.java" />
-        <option value="$PROJECT_DIR$/src/MonsterController.java" />
-        <option value="$PROJECT_DIR$/src/MonsterPawn.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/Rotator.java" />
-        <option value="$PROJECT_DIR$/src/RangeDamageType.java" />
-        <option value="$PROJECT_DIR$/src/Sword.java" />
-        <option value="$PROJECT_DIR$/src/Vector2D.java" />
-        <option value="$PROJECT_DIR$/src/Controller.java" />
-        <option value="$PROJECT_DIR$/src/DamageType.java" />
-        <option value="$PROJECT_DIR$/src/NPCPawn.java" />
-        <option value="$PROJECT_DIR$/src/PlayerController.java" />
-        <option value="$PROJECT_DIR$/src/Level01.java" />
-        <option value="$PROJECT_DIR$/src/Wall.java" />
-        <option value="$PROJECT_DIR$/src/Level.java" />
-        <option value="$PROJECT_DIR$/src/MeleeDamageType.java" />
-        <option value="$PROJECT_DIR$/src/Pawn.java" />
-        <option value="$PROJECT_DIR$/src/BossPawn.java" />
-        <option value="$PROJECT_DIR$/src/BossController.java" />
-        <option value="$PROJECT_DIR$/src/Armor.java" />
-        <option value="$PROJECT_DIR$/src/Weapon.java" />
-        <option value="$PROJECT_DIR$/src/Potion.java" />
-        <option value="$PROJECT_DIR$/src/Door.java" />
-        <option value="$PROJECT_DIR$/src/Key.java" />
-        <option value="$PROJECT_DIR$/src/Entity.java" />
-        <option value="$PROJECT_DIR$/src/Item.java" />
         <option value="$PROJECT_DIR$/src/PlayerPawn.java" />
+        <option value="$PROJECT_DIR$/src/PlayerController.java" />
+        <option value="$PROJECT_DIR$/src/NPCController.java" />
+        <option value="$PROJECT_DIR$/src/MonsterPawn.java" />
+        <option value="$PROJECT_DIR$/src/MonsterController.java" />
+        <option value="$PROJECT_DIR$/src/NPCPawn.java" />
+        <option value="$PROJECT_DIR$/src/MeleeDamage.java" />
+        <option value="$PROJECT_DIR$/src/DamageType.java" />
+        <option value="$PROJECT_DIR$/src/MeleeDamageType.java" />
+        <option value="$PROJECT_DIR$/src/MagicDamageType.java" />
+        <option value="$PROJECT_DIR$/src/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
+        <option value="$PROJECT_DIR$/src/Vector2D.java" />
+        <option value="$PROJECT_DIR$/src/Entity.java" />
+        <option value="$PROJECT_DIR$/src/Pawn.java" />
+        <option value="$PROJECT_DIR$/src/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/GameMode.java" />
+        <option value="$PROJECT_DIR$/src/Level01.java" />
+        <option value="$PROJECT_DIR$/src/Level.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
       </list>
     </option>
   </component>
@@ -235,24 +99,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Android</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -280,8 +130,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,10 +164,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="/usr/bin/git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -340,7 +190,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="921" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Lossy/IdeaProjects/FinalProject/src/GameMode.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lossy\IdeaProjects\FinalProject\src\res" />
+      <recent name="C:\Users\Lossy\IdeaProjects\FinalProject\src" />
+      <recent name="C:\Users\Lossy\IdeaProjects\FinalProject\res" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -669,261 +526,55 @@
       <option name="project" value="LOCAL" />
       <updated>1447603159373</updated>
     </task>
-    <task id="LOCAL-00009" summary="Added a Vector2D for easier object placement of Entities.&#10;Added Item class for inventory objects&#10;More Documentation updates&#10;&#10;Signed by CHADALAK1">
-      <created>1447604768648</created>
+    <task id="LOCAL-00009" summary="Started ground layout for the User Interface&#10;-Jake">
+      <created>1447730693919</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1447604768648</updated>
+      <updated>1447730693919</updated>
     </task>
-    <task id="LOCAL-00010" summary="Removed MagicDamageType and made damage types based on Range and Melee&#10;Added RangeDamageType class&#10;Added necessary values for DamageType&#10;Improved Documentation&#10;&#10;Signed by CHADALAK1">
-      <created>1447605932516</created>
+    <task id="LOCAL-00010" summary="Removed unneeded packages, cleaned up code, and added TODO's.&#10;-Jake">
+      <created>1447732112188</created>
       <option name="number" value="00010" />
       <option name="project" value="LOCAL" />
-      <updated>1447605932516</updated>
+      <updated>1447732112188</updated>
     </task>
-    <task id="LOCAL-00011" summary="Added ArrayList Inventory to PlayerPawn&#10;Fixed Typos in Vector2D class&#10;&#10;Signed by CHADALAK1">
-      <created>1447606593327</created>
+    <task id="LOCAL-00011" summary="Updated Main&#10;-Jake">
+      <created>1449602903365</created>
       <option name="number" value="00011" />
       <option name="project" value="LOCAL" />
-      <updated>1447606593327</updated>
+      <updated>1449602903365</updated>
     </task>
-    <task id="LOCAL-00012" summary="Added Weapon class&#10;Updated Item and MeleeDamageType functions and variables&#10;&#10;Signed by CHADALAK1">
-      <created>1447612733437</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1447612733437</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added GameMode class for game rules and game initialization&#10;Added override for Interact method in PlayerPawn&#10;&#10;Signed by CHADALAK1">
-      <created>1447613705934</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1447613705934</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Updated documentation for all of the classes&#10;&#10;Signed by CHADALAK1">
-      <created>1447677263461</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1447677263461</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed typo in DamageType documentation&#10;&#10;Signed by CHADALAK1">
-      <created>1447680915773</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1447680915773</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Added Critical hit methods and variables for later in the project&#10;&#10;Signed by CHADALAK1">
-      <created>1447681575903</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1447681575903</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Added a virtual method called Use() in Item so Weapon and other Items can be Consumable or have the weapon to Fire&#10;&#10;Signed by CHADALAK1">
-      <created>1447681929730</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1447681929730</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Fixed game breaking error with Controller with ControlledPawn variable assignment with the GetControlledPawn() method&#10;&#10;Signed by CHADALAK1">
-      <created>1447682127397</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1447682127397</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Fixed Documentation with weapon on Use Method&#10;&#10;Signed by CHADALAK1">
-      <created>1447683007624</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1447683007624</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Updated documentation for all of the classes&#10;&#10;Signed by CHADALAK1">
-      <created>1447683112686</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1447683112686</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Updated documentation for all of the classes&#10;&#10;Signed by CHADALAK1">
-      <created>1447683268271</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1447683268271</updated>
-    </task>
-    <task id="LOCAL-00022" summary="switched some methods to protected&#10;&#10;Signed by CHADALAK1">
-      <created>1447683799128</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1447683799128</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Bold fonted Subjects of variable and method Documentations&#10;&#10;Signed by CHADALAK1">
-      <created>1447686551275</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1447686551275</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added Potion class and updated the Weapon, item and entity&#10;                   &#10; Signed by CHADALAK1">
-      <created>1447698810506</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1447698810506</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added Door and Key Classes&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447703172582</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1447703172582</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added Key and Door methods and variables&#10;Added more documentation&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447704072714</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1447704072714</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added Rotator class &#10;Fixed Door clas with Unlock() Method&#10;Added ForwardVector and Direction Variables&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447781750885</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1447781750885</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added Get methods for Forward Vector and Rotation into the Pawn class. Also Implemented rotation and forward vector together in the Move() method&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447790360976</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1447790360976</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added new Weapon class called 'Sword'&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447790837772</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1447790837772</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Fixed DamageType classes to work on 'Set' value Methods&#10;Added Level and Level01 Object classes to get the levels started.&#10;&#10;Added collision bounds to the Entity&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447940782356</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1447940782356</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Fixed Location Prototyping with Grid. Now using two different arrays for Hallway and for Rooms. &#10;Improved documentation&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447950036730</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1447950036730</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Updated documentation for all of the classes&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447951121898</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1447951121898</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Replaced int x int y with Vector2D for 'Set' Methods&#10;                   &#10;Signed by CHADALAK1">
-      <created>1447953015631</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1447953015631</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Fixed issue with Player and Level not communicating with Location inside the level. &#10;                   &#10;Signed by CHADALAK1">
-      <created>1447964686109</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1447964686109</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Fixed the Movement and Level code with better design and flow. Can use the 'Move' Methods to key listen&#10;                   &#10;Signed by CHADALAK1">
-      <created>1448294924704</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1448294924704</updated>
-    </task>
-    <task id="LOCAL-00036" summary="#NEW ADDS AND MOVEMENT CHANGES&#10;Added Wall class for better collision application and 'Door' Class properties&#10;Fixed the Pawn Movement Methods for accurate movement locations(Still needs to check for bounds yet for ForwardVector)&#10;Added LevelSlot integer in the 'Entity' class for easier Level navigation and typecasting&#10;                   &#10;Signed by CHADALAK1">
-      <created>1448296624002</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1448296624002</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Updated missing documentation for Level class&#10;                   &#10;Signed by CHADALAK1">
-      <created>1448378687991</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1448378687991</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Updated some docs, Added Door unlock functionallity, Added 'Get' Method for Inventory in the PlayerPawn class, Moved the 'Use' Method to Entity for more variety of uses for all subclasses of Entity&#10;                   &#10;Signed by CHADALAK1">
-      <created>1448383154647</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1448383154647</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Fixed virtual Method issues&#10;                   &#10;Signed by CHADALAK1">
-      <created>1448513406179</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1448513406179</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Able to get world and apply damage to pawns. Fixed some data structure of the code&#10;                   &#10;Signed by CHADALAK1">
-      <created>1449090764358</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1449090764358</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Added BossPawn and BossController(if we need it)&#10;&#10;Signed by CHADALAK1">
-      <created>1449429843984</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1449429843985</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Added Armor class with Use&#10;&#10;Signed by CHADALAK1">
-      <created>1449430258405</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1449430258405</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Added Override Doc and Comment notes&#10;&#10;Signed by CHADALAK1">
-      <created>1449430648841</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1449430648842</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Added more documentation to PlayerPawn&#10;&#10;Signed by CHADALAK1">
-      <created>1449595335164</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1449595335164</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25503355" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664755" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3037249" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25503355" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24924472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25426438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17833173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -938,36 +589,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Documentation with weapon on Use Method&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Updated documentation for all of the classes&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="switched some methods to protected&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Bold fonted Subjects of variable and method Documentations&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Potion class and updated the Weapon, item and entity&#10;                   &#10; Signed by CHADALAK1" />
-    <MESSAGE value="Added Door and Key Classes&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Key and Door methods and variables&#10;Added more documentation&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Rotator class &#10;Fixed Door clas with Unlock() Method&#10;Added ForwardVector and Direction Variables&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Get methods for Forward Vector and Rotation into the Pawn class. Also Implemented rotation and forward vector together in the Move() method&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added new Weapon class called 'Sword'&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Fixed DamageType classes to work on 'Set' value Methods&#10;Added Level and Level01 Object classes to get the levels started.&#10;&#10;Added collision bounds to the Entity&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Fixed Location Prototyping with Grid. Now using two different arrays for Hallway and for Rooms. &#10;Improved documentation&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Updated documentation for all of the classes&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Replaced int x int y with Vector2D for 'Set' Methods&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Fixed issue with Player and Level not communicating with Location inside the level. &#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Fixed the Movement and Level code with better design and flow. Can use the 'Move' Methods to key listen&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="#NEW ADDS AND MOVEMENT CHANGES&#10;Added Wall class for better collision application and 'Door' Class properties&#10;Fixed the Pawn Movement Methods for accurate movement locations(Still needs to check for bounds yet for ForwardVector)&#10;Added LevelSlot integer in the 'Entity' class for easier Level navigation and typecasting&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Updated missing documentation for Level class&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Updated some docs, Added Door unlock functionallity, Added 'Get' Method for Inventory in the PlayerPawn class, Moved the 'Use' Method to Entity for more variety of uses for all subclasses of Entity&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Fixed virtual Method issues&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Able to get world and apply damage to pawns. Fixed some data structure of the code&#10;                   &#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added BossPawn and BossController(if we need it)&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Armor class with Use&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added Override Doc and Comment notes&#10;&#10;Signed by CHADALAK1" />
-    <MESSAGE value="Added more documentation to PlayerPawn&#10;&#10;Signed by CHADALAK1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more documentation to PlayerPawn&#10;&#10;Signed by CHADALAK1" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;src/main.java&#10;" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;src/main.java&#10;fixed comment format &#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Added Base Java files for Pawns and Controllers&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Started to add base methods to Pawn and Controller class&#10;&#10;Also added a integer Health value to the Pawn Class&#10;&#10;Pawn:&#10;  Move&#10;  Interact&#10;  &#10;Controller:&#10;  Possess&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Updated Documentation and added new values to the Controller and Pawn class&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Updated more documentation to make sense more of the concept of each Object class in progress right now&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Added DamageType classes to the project. Help with more variety to the battle sequences later in the project. &#10;Added XP values to the PlayerController Class&#10;Also updated more documentation to the project.&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Updated More documentation with Entity and DamageType&#10;Added new base class Entity to control the locations inside the level&#10;&#10;Signed by CHADALAK1" />
+    <MESSAGE value="Started ground layout for the User Interface&#10;-Jake" />
+    <MESSAGE value="Removed unneeded packages, cleaned up code, and added TODO's.&#10;-Jake" />
+    <MESSAGE value="Updated Main&#10;-Jake" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Main&#10;-Jake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -976,282 +615,119 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DamageType.java">
+    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1325#1326#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1893#1894#0" expanded="false" />
+            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#2114#2115#0" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#1325#1326#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1893#1894#0" expanded="false" />
+            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#2114#2115#0" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#1325#1326#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1893#1894#0" expanded="false" />
+            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#2114#2115#0" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#5822#5823#0" expanded="true" />
-            <element signature="e#5852#5853#0" expanded="true" />
-            <element signature="e#6139#6140#0" expanded="true" />
-            <element signature="e#6176#6177#0" expanded="true" />
-            <element signature="e#6386#6387#0" expanded="true" />
-            <element signature="e#6428#6429#0" expanded="true" />
-            <element signature="e#6541#6542#0" expanded="true" />
-            <element signature="e#6570#6571#0" expanded="true" />
-            <element signature="e#8117#8118#0" expanded="true" />
-            <element signature="e#8155#8156#0" expanded="true" />
-            <element signature="e#8383#8384#0" expanded="true" />
-            <element signature="e#8422#8423#0" expanded="true" />
-            <element signature="e#8655#8656#0" expanded="true" />
-            <element signature="e#8697#8698#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#9983#9984#0" expanded="true" />
-            <element signature="e#10123#10124#0" expanded="true" />
-            <element signature="e#10154#10155#0" expanded="true" />
-            <element signature="e#10320#10321#0" expanded="true" />
-            <element signature="e#10356#10357#0" expanded="true" />
-            <element signature="e#10587#10588#0" expanded="true" />
-            <element signature="e#10630#10631#0" expanded="true" />
-            <element signature="e#10802#10803#0" expanded="true" />
-            <element signature="e#10834#10835#0" expanded="true" />
-            <element signature="e#11002#11003#0" expanded="true" />
-            <element signature="e#11029#11030#0" expanded="true" />
-            <element signature="e#11247#11248#0" expanded="true" />
-            <element signature="e#11279#11280#0" expanded="true" />
-            <element signature="e#11813#11814#0" expanded="true" />
-            <element signature="e#11846#11847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <marker date="1449596308000" expanded="true" signature="448:462" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2498#2499#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3271#3272#0" expanded="true" />
-            <element signature="e#3306#3307#0" expanded="true" />
-            <element signature="e#3797#3798#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DamageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#5822#5823#0" expanded="true" />
-            <element signature="e#5852#5853#0" expanded="true" />
-            <element signature="e#6139#6140#0" expanded="true" />
-            <element signature="e#6176#6177#0" expanded="true" />
-            <element signature="e#6386#6387#0" expanded="true" />
-            <element signature="e#6428#6429#0" expanded="true" />
-            <element signature="e#6541#6542#0" expanded="true" />
-            <element signature="e#6570#6571#0" expanded="true" />
-            <element signature="e#8117#8118#0" expanded="true" />
-            <element signature="e#8155#8156#0" expanded="true" />
-            <element signature="e#8383#8384#0" expanded="true" />
-            <element signature="e#8422#8423#0" expanded="true" />
-            <element signature="e#8655#8656#0" expanded="true" />
-            <element signature="e#8697#8698#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#9983#9984#0" expanded="true" />
-            <element signature="e#10123#10124#0" expanded="true" />
-            <element signature="e#10154#10155#0" expanded="true" />
-            <element signature="e#10320#10321#0" expanded="true" />
-            <element signature="e#10356#10357#0" expanded="true" />
-            <element signature="e#10587#10588#0" expanded="true" />
-            <element signature="e#10630#10631#0" expanded="true" />
-            <element signature="e#10802#10803#0" expanded="true" />
-            <element signature="e#10834#10835#0" expanded="true" />
-            <element signature="e#11002#11003#0" expanded="true" />
-            <element signature="e#11029#11030#0" expanded="true" />
-            <element signature="e#11247#11248#0" expanded="true" />
-            <element signature="e#11279#11280#0" expanded="true" />
-            <element signature="e#11813#11814#0" expanded="true" />
-            <element signature="e#11846#11847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <marker date="1449596308000" expanded="true" signature="448:462" placeholder="/**...*/" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rotator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RangeDamageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NPCPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4609929">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1259,125 +735,7 @@
     <entry file="file://$PROJECT_DIR$/src/DamageType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BossPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BossController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06716418">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="70" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
-          <folding>
-            <element signature="e#790#803#0" expanded="true" />
-            <element signature="e#1114#1133#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1584#1585#0" expanded="true" />
-            <element signature="e#2210#2211#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2441#2442#0" expanded="true" />
-            <element signature="e#2486#2487#0" expanded="true" />
-            <element signature="e#3212#3213#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3464#3465#0" expanded="true" />
-            <element signature="e#3505#3506#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3680#3681#0" expanded="true" />
-            <element signature="e#6603#6604#0" expanded="true" />
-            <element signature="e#6646#6647#0" expanded="true" />
-            <element signature="e#6881#6882#0" expanded="true" />
-            <element signature="e#6954#6955#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Level01.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47014925">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NPCController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26865673">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MonsterPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24626866">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MonsterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17910448">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Armor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38059703">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1385,23 +743,15 @@
     <entry file="file://$PROJECT_DIR$/src/MeleeDamageType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wall.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1409,84 +759,23 @@
     <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-          </folding>
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sword.java">
+    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-          <folding>
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pawn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="70.62963">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding>
-            <element signature="e#5822#5823#0" expanded="true" />
-            <element signature="e#5852#5853#0" expanded="true" />
-            <element signature="e#6139#6140#0" expanded="true" />
-            <element signature="e#6176#6177#0" expanded="true" />
-            <element signature="e#6386#6387#0" expanded="true" />
-            <element signature="e#6428#6429#0" expanded="true" />
-            <element signature="e#6541#6542#0" expanded="true" />
-            <element signature="e#6570#6571#0" expanded="true" />
-            <element signature="e#8117#8118#0" expanded="true" />
-            <element signature="e#8155#8156#0" expanded="true" />
-            <element signature="e#8383#8384#0" expanded="true" />
-            <element signature="e#8422#8423#0" expanded="true" />
-            <element signature="e#8655#8656#0" expanded="true" />
-            <element signature="e#8697#8698#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#9983#9984#0" expanded="true" />
-            <element signature="e#10123#10124#0" expanded="true" />
-            <element signature="e#10154#10155#0" expanded="true" />
-            <element signature="e#10320#10321#0" expanded="true" />
-            <element signature="e#10356#10357#0" expanded="true" />
-            <element signature="e#10587#10588#0" expanded="true" />
-            <element signature="e#10630#10631#0" expanded="true" />
-            <element signature="e#10802#10803#0" expanded="true" />
-            <element signature="e#10834#10835#0" expanded="true" />
-            <element signature="e#11002#11003#0" expanded="true" />
-            <element signature="e#11029#11030#0" expanded="true" />
-            <element signature="e#11247#11248#0" expanded="true" />
-            <element signature="e#11279#11280#0" expanded="true" />
-            <element signature="e#11813#11814#0" expanded="true" />
-            <element signature="e#11846#11847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Potion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1494,29 +783,270 @@
     <entry file="file://$PROJECT_DIR$/src/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3797#3798#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
-          </folding>
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <marker date="1449596308000" expanded="true" signature="448:462" placeholder="/**...*/" />
-          </folding>
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DamageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MeleeDamageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayerPawn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37313432">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NPCPawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <element signature="e#680#681#0" expanded="false" />
+            <element signature="e#710#711#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MonsterPawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NPCController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0397878">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vector2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0655106">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DamageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2947977">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MeleeDamageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08188824">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0655106">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27842003">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.172414">
+          <caret line="202" column="30" selection-start-line="202" selection-start-column="21" selection-end-line="202" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#1325#1326#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1893#1894#0" expanded="false" />
+            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#2114#2115#0" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Potion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerPawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MonsterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24607961">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Level01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016732283">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.682243">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
           <folding />
         </state>
       </provider>
