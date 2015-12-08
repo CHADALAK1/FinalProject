@@ -30,20 +30,27 @@ public class PlayerPawn extends Pawn
             GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Use();
         }
 
-        //check if there's a weapon in front of the player
+        //check if there's a Item in front of the player
         if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Item)
         {
-
+            //Pick up the Item
+            GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Pickup();
         }
         //check if there's a monster in front of the player
         if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
         {
+            //find out which monster it is
             for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
             {
+                //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
                 if (GetForwardVector() == GetCurrentLevel().GetMonsters().get(i).GetLocation() &&
                         !GetCurrentLevel().GetMonsters().get(i).IsDead())
                 {
-                    GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                    //if the player has a weapon in hand
+                    if(GetWeapon() != null)
+                    {
+                        GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                    }
                 }
             }
         }
