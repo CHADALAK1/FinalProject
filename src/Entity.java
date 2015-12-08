@@ -147,6 +147,13 @@ public class Entity
     public void Use(){}
 
     /**
+     * <b>Pickup</b>
+     * Method that Picks up the entity. Override
+     * in Item Class and any sort of extension further of that
+     */
+    public void Pickup(){}
+
+    /**
      * <b>GetLevelSlot</b>
      * Method that returns the LevelSlot integer
      * @return LevelSlot
