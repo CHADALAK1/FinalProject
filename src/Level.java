@@ -12,9 +12,16 @@ public class Level
     /**
      *<b>Hallway</b>
      * <p>private</p>
-     * An Array of 2D Arrays that any Entity can be in for the hallway. Must be Initialized
+     * A 2D Arrays that any Entity can be in for the hallway. Must be Initialized
      */
     private Entity[][] Grid;
+
+    /**
+     * <b>VisualGrid</b>
+     * <p>private</p>
+     * A 2D Array of chars that visually show text what the world look like
+     */
+    private char[][] VisualGrid;
 
     /**
      * <b>Player</b>
@@ -74,6 +81,67 @@ public class Level
         Grid = new Entity[Size.GetX()][Size.GetY()];
         //Where MaxBoundaries is initialized
         MaxBoundaries = new Vector2D(Size.GetX(), Size.GetY());
+        SetMaxBoundaries();
+    }
+
+    /**
+     * <b>SetMaxBoundaries</b>
+     * Sets the MaxBoundaries Vectors into Wall objects
+     * <p><b>MUST HAVE SetGridSize INITIALIZED BEFORE CALLING</b></p>
+     */
+    public void SetMaxBoundaries()
+    {
+        if(MaxBoundaries != null)
+        {
+            for(int i = 0; i < GetMaxBoundaries().GetX(); i++)
+            {
+                GetLevel()[i][0] = new Wall();
+            }
+            for(int i = 0; i < GetMaxBoundaries().GetY(); i++)
+            {
+                GetLevel()[0][i] = new Wall();
+            }
+            for(int i = 0; i < GetMaxBoundaries().GetX(); i++)
+            {
+                GetLevel()[i][GetMaxBoundaries().GetY() - 1] = new Wall();
+            }
+            for(int i = 0; i < GetMaxBoundaries().GetY(); i++)
+            {
+                GetLevel()[GetMaxBoundaries().GetX() - 1][i] = new Wall();
+            }
+        }
+    }
+
+    public char[][] GetVisualGrid()
+    {
+        return VisualGrid;
+    }
+
+    public void SetVisualGrid()
+    {
+        VisualGrid = new char[GetMaxBoundaries().GetX()][GetMaxBoundaries().GetY()];
+        for(int i = 0; i<Grid.length; i++)
+        {
+            for(int j = 0; j <Grid[i].length; j++)
+            {
+                if(GetLevel()[i][j] instanceof Wall)
+                {
+                    GetVisualGrid()[i][j] = 'X';
+                }
+                if(GetLevel()[i][j] instanceof MonsterPawn)
+                {
+                    GetVisualGrid()[i][j] = 'M';
+                }
+                if(GetLevel()[i][j] instanceof PlayerPawn)
+                {
+                    GetVisualGrid()[i][j] = 'P';
+                }
+                else
+                {
+                    GetVisualGrid()[i][j] = ' ';
+                }
+            }
+        }
     }
 
     /**

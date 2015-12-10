@@ -20,5 +20,7 @@ public class Level01 extends Level
 
         //Set the Current Level for the Player
         GetPlayer().SetCurrentLevel(this);
+
+        SetVisualGrid();
     }
 }
