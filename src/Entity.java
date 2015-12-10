@@ -152,28 +152,4 @@ public class Entity
      * in Item Class and any sort of extension further of that
      */
     public void Pickup(){}
-
-    /**
-     * <b>GetLevelSlot</b>
-     * Method that returns the LevelSlot integer
-     * @return LevelSlot
-     */
-    public int GetLevelSlot()
-    {
-        return LevelSlot;
-    }
-
-    /**
-     * <b>SetLevelSlot</b>
-     * Method that sets the integer LevelSlot. ONLY if the Grid Array in Level has it
-     * @see Level
-     * @param NewSlot new int value for LevelSlot
-     */
-    public void SetLevelSlot(int NewSlot)
-    {
-        if(GetCurrentLevel().GetLevel(NewSlot) != null)
-        {
-            LevelSlot = NewSlot;
-        }
-    }
 }

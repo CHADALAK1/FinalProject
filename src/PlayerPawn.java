@@ -25,19 +25,19 @@ public class PlayerPawn extends Pawn
         super.Interact();
 
         //check if there's a door in front of the player
-        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Door)
+        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Door)
         {
-            GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Use();
+            GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].Use();
         }
 
         //check if there's a Item in front of the player
-        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Item)
+        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof Item)
         {
             //Pick up the Item
-            GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].Pickup();
+            GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].Pickup();
         }
         //check if there's a monster in front of the player
-        if(GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
+        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
         {
             //find out which monster it is
             for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)

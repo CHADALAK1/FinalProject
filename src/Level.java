@@ -14,7 +14,7 @@ public class Level
      * <p>private</p>
      * An Array of 2D Arrays that any Entity can be in for the hallway. Must be Initialized
      */
-    private Entity[][] Grid[];
+    private Entity[][] Grid;
 
     /**
      * <b>Player</b>
@@ -57,23 +57,21 @@ public class Level
     /**
      * <b>GetGrid</b>
      * returns the level Grid 2DArray
-     * @param Slot Which Hallway in the Array
      * @return Grid
      */
-    public Entity[][] GetLevel(int Slot)
+    public Entity[][] GetLevel()
     {
-        return Grid[Slot];
+        return Grid;
     }
 
     /**
      * <b>SetHallwaySize</b>
      * Sets the size of the Hallway 2D Array
-     * @param Slot Which Hallway in the Array
      * @param Size Vector2D coordinates Size of the room
      */
-    public void SetGridSize(int Slot, Vector2D Size)
+    public void SetGridSize(Vector2D Size)
     {
-        Grid[Slot] = new Entity[Size.GetX()][Size.GetY()];
+        Grid = new Entity[Size.GetX()][Size.GetY()];
         //Where MaxBoundaries is initialized
         MaxBoundaries = new Vector2D(Size.GetX(), Size.GetY());
     }
@@ -89,15 +87,6 @@ public class Level
         return MaxBoundaries;
     }
 
-    /**
-     * <b>SetTotalHallways</b>
-     * Method that sets the size of the Hallway array
-     * @param Size How many hallways in level
-     */
-    public void SetTotalLevels(int Size)
-    {
-        Grid = new Entity[Size][0][0];
-    }
 
     /**
      * <b>SetBounds</b>
@@ -169,7 +158,7 @@ public class Level
         if(Player == null)
         {
             //if the level exists
-            if(GetLevel(0) != null)
+            if(GetLevel() != null)
             {
                 //Set the Player object
                 Player = NewPlayer;
@@ -179,7 +168,7 @@ public class Level
                 PC.Possess(Player);
 
                 //assign the player's location in the Level Object
-                GetLevel(0)[Loc.GetX()][Loc.GetY()] = Player;
+                GetLevel()[Loc.GetX()][Loc.GetY()] = Player;
 
                 //Set the Location locally with the player
                 Player.SetLocation(Loc.GetX(), Loc.GetY());
@@ -224,7 +213,7 @@ public class Level
         NewMonster.SetLocation(Loc.GetX(), Loc.GetY());
 
         //Initialize it's World Location
-        GetLevel(0)[NewMonster.GetLocation().GetX()][NewMonster.GetLocation().GetY()] = NewMonster;
+        GetLevel()[NewMonster.GetLocation().GetX()][NewMonster.GetLocation().GetY()] = NewMonster;
 
         //have MonsterController Possess the new spawned MonsterPawn
         TempController.Possess(NewMonster);

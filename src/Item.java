@@ -27,7 +27,7 @@ public class Item extends Entity
         super.Pickup();
         SetOwner(GetCurrentLevel().GetPlayer());
         GetOwner().GetInventory().add(this);
-        GetCurrentLevel().GetLevel(GetLevelSlot())[GetLocation().GetX()][GetLocation().GetY()] = new Entity();
+        GetCurrentLevel().GetLevel()[GetLocation().GetX()][GetLocation().GetY()] = new Entity();
     }
 
     /**

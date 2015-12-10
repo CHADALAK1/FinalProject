@@ -88,7 +88,7 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.NORTH)
         {
-            if (GetForwardVector().GetY() > 0 || !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+            if (GetForwardVector().GetY() > 0 || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 //set new location of the Pawn
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
@@ -114,7 +114,7 @@ public class Pawn extends Entity
         if (GetRotation() == Rotator.SOUTH)
         {
             if(GetForwardVector().GetY() < GetCurrentLevel().GetMaxBoundaries().GetY() ||
-                    !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+                    !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation + 1));
                 SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
@@ -138,7 +138,7 @@ public class Pawn extends Entity
         if (GetRotation() == Rotator.EAST)
         {
             if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX() ||
-                    !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+                    !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation + 1, CurrYLocation));
                 SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
@@ -161,7 +161,7 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if(GetRotation() == Rotator.WEST)
         {
-            if(GetForwardVector().GetX() > 0 || !GetCurrentLevel().GetLevel(GetLevelSlot())[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+            if(GetForwardVector().GetX() > 0 || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 SetForwardVector(new Vector2D(CurrXLocation - 1, CurrYLocation));
             }
