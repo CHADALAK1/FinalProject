@@ -24,8 +24,14 @@ public class main
         JFrame frame = new JFrame();
         final String GameTitle = "Super Spook 9000";
 
+        //Start the game.
+        Level01 L01 = new Level01();
+
+        //Get Player Controller(SO WE CAN MOVE!!! b0ss!!)
+        PlayerController PC = L01.GetPC();
+
         //Set up default health/armor
-        PlayerPawn a = new PlayerPawn();
+        PlayerPawn a = L01.GetPlayer();
         health = a.GetHealth();
         armor = a.GetArmor();
 
@@ -87,8 +93,7 @@ public class main
         frame.add(panel);
         frame.setVisible(true);
 
-        //Start the game.
-        new Level01();
+
 
     }
 

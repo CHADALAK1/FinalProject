@@ -24,6 +24,13 @@ public class Level
     private PlayerPawn Player;
 
     /**
+     * <b>PC</b>
+     * <p>private</p>
+     * PlayerController object to control the Player Pawn
+     */
+    private PlayerController PC;
+
+    /**
      * <b>Monsters</b>
      * <p>private</p>
      * MonsterPawn ArrayList that holds the amount of monsters in the
@@ -89,7 +96,7 @@ public class Level
      */
     public void SetTotalLevels(int Size)
     {
-        Grid = new Entity[0][0][Size];
+        Grid = new Entity[Size][0][0];
     }
 
     /**
@@ -139,13 +146,24 @@ public class Level
     }
 
     /**
+     * <b>GetPC</b>
+     * returns the PC object
+     * @return PC
+     */
+    public PlayerController GetPC()
+    {
+        return PC;
+    }
+
+    /**
      * <b>SpawnPlayer</b>
      * Creates a player in the Level along with its location and rotation
      * @param NewPlayer when creating, use new PlayerPawn()
+     * @param NewPC  when creating, use new PlayerController()
      * @param Loc Vector2D for where the player will be spawned
      * @param Rot Rotator for where the player will be facing when spawned
      */
-    public void SpawnPlayer(PlayerPawn NewPlayer, Vector2D Loc, Rotator Rot)
+    public void SpawnPlayer(PlayerPawn NewPlayer,PlayerController NewPC, Vector2D Loc, Rotator Rot)
     {
         //if there's no player object in this level
         if(Player == null)
@@ -155,6 +173,10 @@ public class Level
             {
                 //Set the Player object
                 Player = NewPlayer;
+
+                PC = NewPC;
+
+                PC.Possess(Player);
 
                 //assign the player's location in the Level Object
                 GetLevel(0)[Loc.GetX()][Loc.GetY()] = Player;

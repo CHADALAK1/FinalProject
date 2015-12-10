@@ -9,13 +9,13 @@ public class Level01 extends Level
     public Level01()
     {
         //Set the amount of levels
-        SetTotalLevels(1);
+        SetTotalLevels(0);
 
         //Set the hallway and room sizes
         SetGridSize(0,new Vector2D(50,50));
 
         //Spawn the player
-        SpawnPlayer(GetPlayer(),new Vector2D(10,10),Rotator.NORTH);
+        SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(10,10),Rotator.NORTH);
 
         //Spawn the Monster
         SpawnMonster(new MonsterPawn(),new Vector2D(35,35));
