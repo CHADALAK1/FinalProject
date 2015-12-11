@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public class main
 {
     public JPanel panel;
-    public JTextArea StoryOutput;
+    public JTextArea StoryOutput, LevelGrid;
     public JButton useSword, useMace,goNorth, goSouth, goEast, goWest;
     public JLabel Health, Armor;
     public int health, armor;
@@ -36,6 +36,7 @@ public class main
         final int Window_H = 280;
         final int Window_W = 600;
 
+        //Get health information to display on window.
         health = a.GetHealth();
         armor = a.GetArmor();
 
@@ -59,6 +60,7 @@ public class main
 
         //Construct GUI components.
         StoryOutput = new JTextArea (5, 5);
+        LevelGrid = new JTextArea(50,50);
         Health = new JLabel ("Health: " + health + "%");
         Armor = new JLabel ("Armor: " + armor + "%");
         useSword = new JButton ("Use Sword");
@@ -74,6 +76,7 @@ public class main
         //Positioning of objects on panel. This will give us more control on everything UI based.
         //----------------------(xLeft/Right, yUp/down, width, Height)
         StoryOutput.setBounds   (10, 20, 450, 115);
+        LevelGrid.setBounds     (470, 20, 115, 115);
         goNorth.setBounds       (10, 150, 100, 25);
         goSouth.setBounds       (120, 150, 100, 25);
         goEast.setBounds        (240, 150, 100, 25);
@@ -92,6 +95,7 @@ public class main
         frame.add(goEast);
         frame.add(goWest);
         frame.add(StoryOutput);
+        frame.add(LevelGrid);
         frame.add(Health);
         frame.add(Armor);
 
@@ -99,39 +103,52 @@ public class main
         frame.add(panel);
         frame.setVisible(true);
 
-        //TODO: JTextArea feedback
-        //TODO: Player Movement & Feedback
-        //TODO: Implement buttons.
+
         //TODO: Get health and armor
         //TODO: Interation in PlayerPawn
         //TODO: Feedback for monster.
 
-        //useSword.addActionListener(new swordActionListener());
-        //useMace.addActionListener(new maceActionListener());
-        goNorth.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PC.moveNorth();
-                StoryOutput.append("Player went NORTH one step. \n");
-            }
-        });
-        goSouth.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PC.moveSouth();
-                StoryOutput.append("Player went SOUTH one step. \n");
-            }
-        });
-        goEast.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PC.moveEast();
-                StoryOutput.append("Player went EAST one step. \n");
-            }
-        });
-        goWest.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                PC.moveWest();
-                StoryOutput.append("Player went WEST one step. \n");
-            }
-        });
+        //TODO: This fails to work, it doesn't loop.
+        int die = 0;
+        do {
+            //useSword.addActionListener(new swordActionListener());
+            //useMace.addActionListener(new maceActionListener());
+            goNorth.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    PC.moveNorth();
+                    StoryOutput.append("Player went NORTH one step. \n");
+                }
+            });
+            goSouth.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    PC.moveSouth();
+                    StoryOutput.append("Player went SOUTH one step. \n");
+                }
+            });
+            goEast.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    PC.moveEast();
+                    StoryOutput.append("Player went EAST one step. \n");
+                }
+            });
+            goWest.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    PC.moveWest();
+                    StoryOutput.append("Player went WEST one step. \n");
+                }
+            });
+
+            die++;
+            System.out.println(die);
+        }
+        while (die == 5);
+
+        if (die == 5)
+        {
+            System.exit(0);
+        }
+
+
     }
 
     //Start
