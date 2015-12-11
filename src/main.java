@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * JAVA FINAL PROJECT
@@ -10,12 +12,9 @@ import javax.swing.*;
 public class main
 {
     public JPanel panel;
-    public JButton btnOne;
-    public JButton btnTwo;
     public JTextArea StoryOutput;
-    public JTextField StoryInput;
-    public JLabel Health;
-    public JLabel Armor;
+    public JButton useSword, useMace,goNorth, goSouth, goEast, goWest;
+    public JLabel Health, Armor;
     public int health, armor;
 
     public main()
@@ -58,34 +57,40 @@ public class main
         panel = new JPanel();
 
         //Construct GUI components.
-        StoryInput = new JTextField (5);
         StoryOutput = new JTextArea (5, 5);
         Health = new JLabel ("Health: " + health + "%");
         Armor = new JLabel ("Armor: " + armor + "%");
-        btnOne = new JButton ("Use Sword");
-        btnTwo = new JButton ("Use Mace");
+        useSword = new JButton ("Use Sword");
+        useMace = new JButton ("Use Mace");
+        goNorth = new JButton ("Go North");
+        goSouth = new JButton ("Go South");
+        goEast = new JButton ("Go East");
+        goWest = new JButton ("Go West");
 
         //Set StoryOutput to Not Editable
         StoryOutput.setEditable(false);
 
-        //Story line Example.
-        StoryOutput.setText("Welcome to " + GameTitle + "!");
-
         //Positioning of objects on panel. This will give us more control on everything UI based.
-        //----------------------(xLeftRight, yUpdown, width, Height)
-        StoryOutput.setBounds   (10, 20, 570, 115);
-        StoryInput.setBounds    (10, 150, 570, 25);
-        btnOne.setBounds        (10, 200, 100, 25);
-        btnTwo.setBounds        (120, 200, 100, 25);
+        //----------------------(xLeft/Right, yUp/down, width, Height)
+        StoryOutput.setBounds   (10, 20, 450, 115);
+        goNorth.setBounds       (10, 150, 100, 25);
+        goSouth.setBounds       (120, 150, 100, 25);
+        goEast.setBounds        (240, 150, 100, 25);
+        goWest.setBounds        (360, 150, 100, 25);
+        useSword.setBounds      (10, 200, 100, 25);
+        useMace.setBounds       (120, 200, 100, 25);
         Health.setBounds        (250, 200, 100, 25);
         Armor.setBounds         (350, 200, 100, 25);
 
 
         //Add components to panel.
-        frame.add(btnOne);
-        frame.add(btnTwo);
+        frame.add(useSword);
+        frame.add(useMace);
+        frame.add(goNorth);
+        frame.add(goSouth);
+        frame.add(goEast);
+        frame.add(goWest);
         frame.add(StoryOutput);
-        frame.add(StoryInput);
         frame.add(Health);
         frame.add(Armor);
 
@@ -93,13 +98,42 @@ public class main
         frame.add(panel);
         frame.setVisible(true);
 
+        //TODO: JTextArea feedback
+        //TODO: Player Movement & Feedback
+        //TODO: Implement buttons.
+        //TODO: Get health and armor
+        //TODO: Interation in PlayerPawn
+        //TODO: Feedback for monster.
+
+        useSword.addActionListener(new swordActionListener());
+        useMace.addActionListener(new maceActionListener());
+        goNorth.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PC.moveNorth();
+            }
+        });
+        goSouth.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        goEast.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        goWest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
 
 
     }
-
     //Start
-    public static void main(String[] args){
-        new main();
-
-    }
+    public static void main(String[] args){new main();}
 }

@@ -61,4 +61,24 @@ public class PlayerController extends Controller
             XP += AddedXP;
         }
     }
+
+    public void moveNorth()
+    {
+        GetControlledPawn().MoveUp();
+    }
+
+    public void moveSouth()
+    {
+        GetControlledPawn().MoveDown();
+    }
+
+    public void moveWest()
+    {
+        GetControlledPawn().MoveLeft();
+    }
+
+    public void moveEast()
+    {
+        GetControlledPawn().MoveRight();
+    }
 }
