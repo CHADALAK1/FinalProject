@@ -101,6 +101,9 @@ public class Pawn extends Entity
             Rotation = Rotator.NORTH;
             SetForwardVector(new Vector2D(CurrXLocation,CurrYLocation - 1));
         }
+
+        //DEBUG
+        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
     }
 
     /**
@@ -125,6 +128,9 @@ public class Pawn extends Entity
             Rotation = Rotator.SOUTH;
             SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
         }
+
+        //DEBUG
+        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
     }
 
     /**
@@ -149,6 +155,9 @@ public class Pawn extends Entity
             Rotation = Rotator.EAST;
             SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
         }
+
+        //DEBUG
+        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
     }
 
     /**
@@ -171,6 +180,9 @@ public class Pawn extends Entity
             Rotation = Rotator.WEST;
             SetForwardVector(new Vector2D(CurrXLocation - 1,CurrYLocation));
         }
+
+        //DEBUG
+        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
     }
 
     /**

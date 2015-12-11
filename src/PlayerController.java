@@ -62,6 +62,9 @@ public class PlayerController extends Controller
         }
     }
 
+    /**
+     * Below are the calls to move player in 'x' direction.
+     */
     public void moveNorth()
     {
         GetControlledPawn().MoveUp();

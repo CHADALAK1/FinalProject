@@ -17,26 +17,27 @@ public class main
     public JLabel Health, Armor;
     public int health, armor;
 
+    //Start the game.
+    Level01 L01 = new Level01();
+
+    //Get Player Controller(SO WE CAN MOVE!!! b0ss!!)
+    PlayerController PC = L01.GetPC();
+
+    //Set up default health/armor
+    PlayerPawn a = L01.GetPlayer();
+
     public main()
     {
 
         JFrame frame = new JFrame();
         final String GameTitle = "Super Spook 9000";
 
-        //Start the game.
-        Level01 L01 = new Level01();
-
-        //Get Player Controller(SO WE CAN MOVE!!! b0ss!!)
-        PlayerController PC = L01.GetPC();
-
-        //Set up default health/armor
-        PlayerPawn a = L01.GetPlayer();
-        health = a.GetHealth();
-        armor = a.GetArmor();
-
         //Final window size.
         final int Window_H = 280;
         final int Window_W = 600;
+
+        health = a.GetHealth();
+        armor = a.GetArmor();
 
         //Title
         frame.setTitle(GameTitle);
@@ -105,35 +106,34 @@ public class main
         //TODO: Interation in PlayerPawn
         //TODO: Feedback for monster.
 
-        useSword.addActionListener(new swordActionListener());
-        useMace.addActionListener(new maceActionListener());
+        //useSword.addActionListener(new swordActionListener());
+        //useMace.addActionListener(new maceActionListener());
         goNorth.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 PC.moveNorth();
+                StoryOutput.append("Player went NORTH one step. \n");
             }
         });
         goSouth.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-
+                PC.moveSouth();
+                StoryOutput.append("Player went SOUTH one step. \n");
             }
         });
         goEast.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-
+                PC.moveEast();
+                StoryOutput.append("Player went EAST one step. \n");
             }
         });
         goWest.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-
+                PC.moveWest();
+                StoryOutput.append("Player went WEST one step. \n");
             }
         });
-
-
-
     }
+
     //Start
     public static void main(String[] args){new main();}
 }
