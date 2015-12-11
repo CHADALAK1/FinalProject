@@ -144,21 +144,7 @@ public class Weapon extends Item
      */
     public void ApplyDamage(Pawn DamagedPawn)
     {
-        if(DamagedPawn.GetArmor() > 0)
-        {
-            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
-        }
-        else
-        {
-            if(DamagedPawn.GetHealth() > 0)
-            {
-                DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
-            }
-            else
-            {
-                DamagedPawn.SetIsDead(true);
-            }
-        }
+        DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
     }
 
 }
