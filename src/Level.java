@@ -119,11 +119,21 @@ public class Level
         }
     }
 
+    /**
+     * <b>GetVisualGrid</b>
+     * Gets the VisualGrid
+     * @return VisualGrid
+     */
     public char[][] GetVisualGrid()
     {
         return VisualGrid;
     }
 
+    /**
+     * <b>SetVisualGrid</b>
+     * Initializes the VisualGrid chars <b>AFTER</b> the level and objects have
+     * been initialized.
+     */
     public void SetVisualGrid()
     {
         VisualGrid = new char[GetMaxBoundaries().GetX()][GetMaxBoundaries().GetY()];
@@ -162,22 +172,6 @@ public class Level
         return MaxBoundaries;
     }
 
-
-    /**
-     * <b>SetBounds</b>
-     * Method that sets the collision bounds of the Level Grid
-     * @param GetGrid Array to set bounds to the Level
-     * @param Slot int variable to tell which slot
-     * @param Loc Vector that holds the X and Y coordinate to set bound location
-     */
-    public void SetBounds(Entity[][][] GetGrid,int Slot, Vector2D Loc)
-    {
-        if(GetGrid[Loc.GetX()][Loc.GetY()][Slot] == null)
-        {
-            //Create Wall at Location
-            GetGrid[Loc.GetX()][Loc.GetY()][Slot] = new Wall();
-        }
-    }
 
     /**
      * <b>GetMonsters</b>
