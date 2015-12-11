@@ -108,48 +108,116 @@ public class main
         //TODO: Interation in PlayerPawn
         //TODO: Feedback for monster.
 
-        //TODO: This fails to work, it doesn't loop.
-        int die = 0;
-        do {
-            //useSword.addActionListener(new swordActionListener());
-            //useMace.addActionListener(new maceActionListener());
-            goNorth.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+        ActionClass actionEvent = new ActionClass();
+
+            useSword.addActionListener(actionEvent);
+            useSword.setActionCommand("4");
+
+            useMace.addActionListener(actionEvent);
+            useMace.setActionCommand("5");
+
+            goNorth.addActionListener(actionEvent);
+            goNorth.setActionCommand("0");
+
+            goSouth.addActionListener(actionEvent);
+            goSouth.setActionCommand("1");
+
+            goEast.addActionListener(actionEvent);
+            goEast.setActionCommand("2");
+
+            goWest.addActionListener(actionEvent);
+            goWest.setActionCommand("3");
+
+    }
+
+    //This class will perform the direction of player. Then goto carry on to continue game.
+    class ActionClass implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            int action = Integer.parseInt(e.getActionCommand());
+
+            switch (action) {
+                case 0:
                     PC.moveNorth();
                     StoryOutput.append("Player went NORTH one step. \n");
-                }
-            });
-            goSouth.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+                    carryOn("North");
+                    break;
+                case 1:
                     PC.moveSouth();
                     StoryOutput.append("Player went SOUTH one step. \n");
-                }
-            });
-            goEast.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+                    carryOn("South");
+                    break;
+                case 2:
                     PC.moveEast();
                     StoryOutput.append("Player went EAST one step. \n");
-                }
-            });
-            goWest.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+                    carryOn("East");
+                    break;
+                case 3:
                     PC.moveWest();
                     StoryOutput.append("Player went WEST one step. \n");
-                }
-            });
-
-            die++;
-            System.out.println(die);
+                    carryOn("West");
+                    break;
+                case 4:
+                    StoryOutput.append("Player swung Sword! \n");
+                    carryOn("Sword");
+                    break;
+                case 5:
+                    StoryOutput.append("Player swung Mace! \n");
+                    carryOn("Mace");
+                    break;
+            }
         }
-        while (die == 5);
+    }
 
-        if (die == 5)
+    public String carryOn (String action)
+    {
+        //Debug
+        System.out.println(action);
+
+        //TODO: Refresh Health and Armor.
+
+        //TODO: refresh LevelGrid (after creating level)
+        LevelGrid.append("");//TODO how to get: L01.SetVisualGrid()
+
+        //Turn action into a command, complete necessary game code. IE: wall, item, fight.
+        //TODO: Combat should be ~5-6 iterations before cpu run's away (Battle), random 'crits' upon CPU and PLAYER weapons. (damage+crit%)
+
+        if (action == "Sword")
         {
+            //TODO: action for Sword.
+        }
+
+        if (action == "Mace")
+        {
+            //TODO: action for Mace.
+        }
+
+        //TODO: Auto pickup any perks.
+
+
+        //TODO: (Win ending?)
+
+
+        //Keep towards the end to check for player's death.
+        if (a.IsDead())
+        {
+            StoryOutput.append("Game Over!");
+            try
+            {
+                Thread.sleep(5000);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
             System.exit(0);
         }
 
-
+        return null;
     }
+
+
+
 
     //Start
     public static void main(String[] args){new main();}

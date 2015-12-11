@@ -139,7 +139,7 @@ public class Weapon extends Item
 
     /**
      * <b>ApplyDamage</b>
-     * Applys damage to pawn getting hit by weaon
+     * Applies damage to pawn getting hit by weapon
      * @param DamagedPawn Pawn that is taking the Damage
      */
     public void ApplyDamage(Pawn DamagedPawn)
