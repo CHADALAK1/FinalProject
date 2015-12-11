@@ -49,19 +49,29 @@ public class PlayerPawn extends Pawn
                     //if the player has a weapon in hand
                     if(GetWeapon() != null)
                     {
+                        //if there's no BattleReferee in the level
                         if(GetCurrentLevel().GetReferee() == null)
                         {
-                            GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i),this));
+                            //spawn the referee                                     Monster player's attacking      Player
+                            GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i), this));
+                            //Set the player's turn
                             GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+                            //ensure it's not the monsters turn
                             GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+                            //apply damage to the monster
                             GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                            //end player's turn
                             GetCurrentLevel().GetReferee().Turn();
                         }
+                        //if there is a BattleReferee in the level
                         else
                         {
+                            //if it's the player's tur
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
+                                //apply damage to the monster
                                 GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                                //end turn
                                 GetCurrentLevel().GetReferee().Turn();
                             }
                         }

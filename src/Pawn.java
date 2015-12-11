@@ -359,28 +359,40 @@ public class Pawn extends Entity
     */
     public void TakeDamage(int Damage, Controller Instigator, DamageType TypeOfDamage)
     {
+        //if we know who's attacking this pawn
         if(Instigator != null)
         {
+            //if pawn still has armor
             if (GetArmor() > 0)
             {
+                //if the damage being applied still is greater than 0
                 if((GetArmor() - Damage) > 0)
                 {
+                    //deplete armor(with math to the ArmorPenetration)
                     Armor -= (Damage + TypeOfDamage.GetArmorPen());
                 }
+                //if less than 0
                 else
                 {
+                    //no more armor left
                     Armor = 0;
                 }
             }
+            //if pawn still has Health
             else if(GetHealth() > 0)
             {
+                //if the damage being applied still is greater than 0
                 if((GetHealth() - Damage) > 0)
                 {
+                    //deplete Health
                     Health -= Damage;
                 }
+                //if less than 0
                 else
                 {
+                    //no more health left
                     Health = 0;
+                    //ensure this pawn is dead
                     SetIsDead(true);
                 }
 

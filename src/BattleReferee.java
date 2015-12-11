@@ -45,13 +45,17 @@ public class BattleReferee
 
     public void Turn()
     {
+        //if called when player ends turn
         if(GetIsPlayerTurn() && !GetIsMonsterTurn())
         {
+            //make it the monster's turn
             SetIsMonsterTurn(true);
             SetIsPlayerTurn(false);
         }
+        //if called when monster ends turn
         else
         {
+            //make it the player's turn
             SetIsMonsterTurn(false);
             SetIsPlayerTurn(true);
         }
