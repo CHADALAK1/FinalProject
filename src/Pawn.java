@@ -145,7 +145,8 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.EAST)
         {
-            if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX() || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+            if(GetForwardVector().GetX() < GetCurrentLevel().GetMaxBoundaries().GetX() ||
+                    !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation + 1, CurrYLocation));
                 SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
@@ -165,7 +166,6 @@ public class Pawn extends Entity
      <b>MoveLeft</b>
      * Method that Allows the pawn to move <b>LEFT | West</b> in the level grid
      */
-    //TODO: This does not iterate -1
     public void MoveLeft()
     {
         int CurrXLocation = GetCurrentLevel().GetPlayerLocation().GetX();
@@ -174,6 +174,7 @@ public class Pawn extends Entity
         {
             if(GetForwardVector().GetX() > 0 || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation - 1, CurrYLocation));
                 SetForwardVector(new Vector2D(CurrXLocation - 1, CurrYLocation));
             }
         }
