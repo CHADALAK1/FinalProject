@@ -38,6 +38,13 @@ public class Level
     private PlayerController PC;
 
     /**
+     * <b>Referee</b>
+     * <p>private</p>
+     * BattleReferee Object to have level spawn and set battles in charge of this object
+     */
+    private BattleReferee Referee;
+
+    /**
      * <b>Monsters</b>
      * <p>private</p>
      * MonsterPawn ArrayList that holds the amount of monsters in the
@@ -213,6 +220,16 @@ public class Level
     }
 
     /**
+     * <b>GetBattleReferee</b>
+     * Gets the BattleReferee object called Referee
+     * @return Referee
+     */
+    public BattleReferee GetReferee()
+    {
+        return Referee;
+    }
+
+    /**
      * <b>SpawnPlayer</b>
      * Creates a player in the Level along with its location and rotation
      * @param NewPlayer when creating, use new PlayerPawn()
@@ -291,6 +308,28 @@ public class Level
 
         //add the controller to the MonsterControllers ArrayList
         MonsterControllers.add(TempController);
+    }
+
+    /**
+     * <b>SpawnReferee</b>
+     * Spawn the BattleReferee object when a battle is happening in the level
+     * @param NewRef BattleReferee to spawn and reference with Referee object
+     */
+    public void SpawnReferee(BattleReferee NewRef)
+    {
+        Referee = NewRef;
+    }
+
+    /**
+     * <b>DestroyReferee</b>
+     * Removes the Referee from battle when the battle is completed
+     */
+    public void DestroyReferee()
+    {
+        if(Referee != null)
+        {
+            Referee = null;
+        }
     }
 
     /**

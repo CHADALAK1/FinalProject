@@ -90,7 +90,8 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if (GetRotation() == Rotator.NORTH)
         {
-            if (GetForwardVector().GetY() > 0 || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+            if (GetForwardVector().GetY() > 0 ||
+                    !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 //set new location of the Pawn
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
@@ -358,13 +359,32 @@ public class Pawn extends Entity
     */
     public void TakeDamage(int Damage, Controller Instigator, DamageType TypeOfDamage)
     {
-        if(Health > 0)
+        if(Instigator != null)
         {
-            if(Instigator != null)
+            if (GetArmor() > 0)
             {
+                if((GetArmor() - Damage) > 0)
+                {
+                    Armor -= (Damage + TypeOfDamage.GetArmorPen());
+                }
+                else
+                {
+                    Armor = 0;
+                }
+            }
+            else if(GetHealth() > 0)
+            {
+                if((GetHealth() - Damage) > 0)
+                {
+                    Health -= Damage;
+                }
+                else
+                {
+                    Health = 0;
+                    SetIsDead(true);
+                }
 
             }
-            Health -= Damage;
         }
     }
 

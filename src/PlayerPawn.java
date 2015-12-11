@@ -49,7 +49,22 @@ public class PlayerPawn extends Pawn
                     //if the player has a weapon in hand
                     if(GetWeapon() != null)
                     {
-                        GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                        if(GetCurrentLevel().GetReferee() == null)
+                        {
+                            GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i),this));
+                            GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+                            GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+                            GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                            GetCurrentLevel().GetReferee().Turn();
+                        }
+                        else
+                        {
+                            if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
+                            {
+                                GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                                GetCurrentLevel().GetReferee().Turn();
+                            }
+                        }
                     }
                 }
             }
