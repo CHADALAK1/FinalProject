@@ -178,6 +178,7 @@ public class main
         //Call SetVisualGrid to refresh, clear LevelGrid, then apply updated information for a 'map'.
         L01.SetVisualGrid();
         LevelGrid.setText("");
+
         //TODO: Does not display X (walls) and does not refresh player location.
         char[][] VisualGrid = L01.GetVisualGrid();
 
@@ -194,7 +195,41 @@ public class main
 
         //Turn action into a command, complete necessary game code. IE: wall, item, fight.
         //TODO: Battle. Random 'crits' upon CPU and PLAYER weapons. (damage+crit%).
+        //TODO: Feedback for monster.
+        /** pseudo code
+         *
+         *          if ( battle triggered )         <Dont forget CriticalHitChance/buff  for 'hit' action.
+         *          {
+         *              do
+         *               {
+         *                  if (player is first from Turn() )
+         *                      {
+         *                          wait for action
+         *                          append StoryOutput with action
+         *                          'hit' monster with sword or mace.
+         *                          change Turn()
+         *                      }
+         *                   if (monster is first from Turn() )
+         *                      {
+         *                          do action
+         *                          append StoryOutput with action
+         *                          'hit' player
+         *                          change Turn()
+         *                      }
+         *               }
+         *
+         *               while (battle ended or a.IsDead())
+         *
+         *               if (battle ended)
+         *                  {
+         *                      Give player bonus
+         *                      Display win on Story output
+         *                  }
+         *
+         */
 
+
+        //Result if player pressed on Use <weapon> instead of moving.
         if (action.equals("Sword") || action.equals("Mace"))
         {
             PC.GetControlledPawn().InteractBattle();
@@ -203,13 +238,14 @@ public class main
             System.out.println("Used "  + action);
         }
 
-        //TODO: Auto pickup any perks.
+        //Interact will pickup any items (armor or health).
         PC.GetControlledPawn().Interact();
 
-        //TODO: Feedback for monster.
 
 
         //TODO: (Win ending?).. Count NPC to 0.
+
+
         //Keep towards the end to check for player's death.
         if (a.IsDead())
         {
