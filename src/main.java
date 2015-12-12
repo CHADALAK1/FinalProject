@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -59,9 +60,11 @@ public class main
         panel = new JPanel();
 
         //Construct GUI components.
-        StoryOutput = new JTextArea (5, 5);
+        StoryOutput = new JTextArea (2000, 39);
+        Font font = new Font("Arial", Font.ITALIC, 8);
         JScrollPane sp = new JScrollPane(StoryOutput);
         LevelGrid = new JTextArea(50,50);
+        LevelGrid.setFont(font);
         Health = new JLabel ("Health: " + health + "%");
         Armor = new JLabel ("Armor: " + armor + "%");
         useSword = new JButton ("Use Sword");
@@ -76,7 +79,6 @@ public class main
 
         //Positioning of objects on panel. This will give us more control on everything UI based.
         //----------------------(xLeft/Right, yUp/down, width, Height)
-        StoryOutput.setBounds   (10, 20, 450, 115);
         sp.setBounds            (10, 20, 450, 115);
         LevelGrid.setBounds     (470, 20, 115, 115);
         goNorth.setBounds       (10, 150, 100, 25);
@@ -96,8 +98,7 @@ public class main
         frame.add(goSouth);
         frame.add(goEast);
         frame.add(goWest);
-        frame.add(StoryOutput);
-        sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        frame.add(sp);
         frame.add(LevelGrid);
         frame.add(Health);
         frame.add(Armor);
@@ -106,9 +107,6 @@ public class main
         frame.add(panel);
         frame.setVisible(true);
 
-
-        //TODO: Storyoutput to scrollable.
-        //TODO: Feedback for monster.
 
         ActionClass actionEvent = new ActionClass();
 
@@ -173,34 +171,45 @@ public class main
 
     public String carryOn (String action)
     {
-        //Debug
-        System.out.println(action);
-
-
-        //TODO: Refresh label to apply H and A.
+        //Refresh Health and Armor with each iteration.
         a.GetHealth();
         a.GetArmor();
 
+        //Call SetVisualGrid to refresh, clear LevelGrid, then apply updated information for a 'map'.
+        L01.SetVisualGrid();
+        LevelGrid.setText("");
+        //TODO: Does not display X (walls) and does not refresh player location.
+        char[][] VisualGrid = L01.GetVisualGrid();
 
-        //TODO: refresh LevelGrid (after creating level)
-        LevelGrid.setText(""); //Clear
-
+        for(int x = 0; x < VisualGrid.length; x++)
+        {
+            for(int y = 0; y < VisualGrid[x].length; y++)
+            {
+                LevelGrid.append(Character.toString(VisualGrid[x][y]));
+                //System.out.print(VisualGrid[x][y]);
+            }
+            //System.out.print("\n");
+            LevelGrid.append("\n");
+        }
 
         //Turn action into a command, complete necessary game code. IE: wall, item, fight.
         //TODO: Battle. Random 'crits' upon CPU and PLAYER weapons. (damage+crit%).
 
-        if (action == "Sword" || action == "Mace")
+        if (action.equals("Sword") || action.equals("Mace"))
         {
-            PC.GetControlledPawn().Interact();
+            PC.GetControlledPawn().InteractBattle();
+
+            //Debug
+            System.out.println("Used "  + action);
         }
 
         //TODO: Auto pickup any perks.
         PC.GetControlledPawn().Interact();
 
+        //TODO: Feedback for monster.
+
 
         //TODO: (Win ending?).. Count NPC to 0.
-
-
         //Keep towards the end to check for player's death.
         if (a.IsDead())
         {

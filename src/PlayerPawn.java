@@ -36,6 +36,14 @@ public class PlayerPawn extends Pawn
             //Pick up the Item
             GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].Pickup();
         }
+    }
+
+    //TODO: Chad, is this correct to separate interaction battle Interacts...
+    @Override
+    public void InteractBattle()
+    {
+        super.InteractBattle();
+
         //check if there's a monster in front of the player
         if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
         {

@@ -1,5 +1,4 @@
 import java.awt.Image;
-import java.awt.image.*;
 
 /**
  * Created by Chad Reddick on 11/15/15.

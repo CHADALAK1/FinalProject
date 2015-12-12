@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by Chad Reddick on 11/15/15.
  * <p>
@@ -63,11 +65,18 @@ public class Weapon extends Item
      * Method that calculates the random chance of making a
      * Critical hit on the Pawn
      */
+
+    //TODO: call for CriticalHitChance during battle
     protected void CriticalHitChance()
     {
         if(GetCanCriticalHit())
         {
-            //LOGIC GOES HERE FOR CRITICAL HIT CALULATIONS
+            //Create Random object, assign tempCrit between 1 and 20.
+            //Then give HitChange the value in INT form.
+            Random random = new Random();
+            int tempCrit = random.nextInt(20) + 1;
+
+            HitChance = tempCrit;
         }
     }
 

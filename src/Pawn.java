@@ -78,8 +78,6 @@ public class Pawn extends Entity
      */
     private Controller PawnController;
 
-
-    //TODO: It takes 2-3 clicks for buttons to set Rotator and iterate x position.
     /**
     <b>MoveUp</b>
     * Method that Allows the pawn to move <b>UP</b> in the level grid
@@ -205,6 +203,9 @@ public class Pawn extends Entity
     * Method that Allows the Pawn to interact with the world.
     */
     public void Interact(){}
+
+    //TODO: Chad, is this correct to separate interaction battle Interacts...
+    public void InteractBattle(){}
 
     /**
      * <b>GetController</b>
