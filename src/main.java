@@ -60,6 +60,7 @@ public class main
 
         //Construct GUI components.
         StoryOutput = new JTextArea (5, 5);
+        JScrollPane sp = new JScrollPane(StoryOutput);
         LevelGrid = new JTextArea(50,50);
         Health = new JLabel ("Health: " + health + "%");
         Armor = new JLabel ("Armor: " + armor + "%");
@@ -76,6 +77,7 @@ public class main
         //Positioning of objects on panel. This will give us more control on everything UI based.
         //----------------------(xLeft/Right, yUp/down, width, Height)
         StoryOutput.setBounds   (10, 20, 450, 115);
+        sp.setBounds            (10, 20, 450, 115);
         LevelGrid.setBounds     (470, 20, 115, 115);
         goNorth.setBounds       (10, 150, 100, 25);
         goSouth.setBounds       (120, 150, 100, 25);
@@ -95,6 +97,7 @@ public class main
         frame.add(goEast);
         frame.add(goWest);
         frame.add(StoryOutput);
+        sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         frame.add(LevelGrid);
         frame.add(Health);
         frame.add(Armor);
@@ -104,8 +107,7 @@ public class main
         frame.setVisible(true);
 
 
-        //TODO: Get health and armor
-        //TODO: Interation in PlayerPawn
+        //TODO: Storyoutput to scrollable.
         //TODO: Feedback for monster.
 
         ActionClass actionEvent = new ActionClass();
@@ -174,28 +176,29 @@ public class main
         //Debug
         System.out.println(action);
 
-        //TODO: Refresh Health and Armor.
+
+        //TODO: Refresh label to apply H and A.
+        a.GetHealth();
+        a.GetArmor();
+
 
         //TODO: refresh LevelGrid (after creating level)
-        LevelGrid.append("");//TODO how to get: L01.SetVisualGrid()
+        LevelGrid.setText(""); //Clear
+
 
         //Turn action into a command, complete necessary game code. IE: wall, item, fight.
-        //TODO: Combat should be ~5-6 iterations before cpu run's away (Battle), random 'crits' upon CPU and PLAYER weapons. (damage+crit%)
+        //TODO: Battle. Random 'crits' upon CPU and PLAYER weapons. (damage+crit%).
 
-        if (action == "Sword")
+        if (action == "Sword" || action == "Mace")
         {
-            //TODO: action for Sword.
-        }
-
-        if (action == "Mace")
-        {
-            //TODO: action for Mace.
+            PC.GetControlledPawn().Interact();
         }
 
         //TODO: Auto pickup any perks.
+        PC.GetControlledPawn().Interact();
 
 
-        //TODO: (Win ending?)
+        //TODO: (Win ending?).. Count NPC to 0.
 
 
         //Keep towards the end to check for player's death.
