@@ -10,7 +10,7 @@ public class Level01 extends Level
     {
 
         //Set the hallway and room sizes
-        SetGridSize(new Vector2D(50,50));
+        SetGridSize(new Vector2D(20,20));
 
         //Spawn the player
         SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(10,10),Rotator.NORTH);

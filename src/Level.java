@@ -143,7 +143,7 @@ public class Level
             {
                 if(GetLevel()[i][j] instanceof Wall)
                 {
-                    GetVisualGrid()[i][j] = 'X';
+                    GetVisualGrid()[i][j] = '▓';
                 }
                 else if(GetLevel()[i][j] instanceof MonsterPawn)
                 {
@@ -155,7 +155,7 @@ public class Level
                 }
                 else
                 {
-                    GetVisualGrid()[i][j] = ' ';
+                    GetVisualGrid()[i][j] = '—';
                 }
             }
         }

@@ -35,7 +35,7 @@ public class main
 
         //Final window size.
         final int Window_H = 280;
-        final int Window_W = 600;
+        final int Window_W = 700;
 
         //Get health information to display on window.
         health = a.GetHealth();
@@ -80,7 +80,7 @@ public class main
         //Positioning of objects on panel. This will give us more control on everything UI based.
         //----------------------(xLeft/Right, yUp/down, width, Height)
         sp.setBounds            (10, 20, 450, 115);
-        LevelGrid.setBounds     (470, 20, 115, 115);
+        LevelGrid.setBounds     (470, 20, 200, 210);
         goNorth.setBounds       (10, 150, 100, 25);
         goSouth.setBounds       (120, 150, 100, 25);
         goEast.setBounds        (240, 150, 100, 25);
@@ -90,6 +90,8 @@ public class main
         Health.setBounds        (250, 200, 100, 25);
         Armor.setBounds         (350, 200, 100, 25);
 
+        //Tutorial.
+        StoryOutput.setText("Press a button to start....");
 
         //Add components to panel.
         frame.add(useSword);
@@ -186,7 +188,7 @@ public class main
         {
             for(int y = 0; y < VisualGrid[x].length; y++)
             {
-                LevelGrid.append(Character.toString(VisualGrid[y][x]));
+                LevelGrid.append(Character.toString(VisualGrid[y][x]) + " ");
                 //System.out.print(VisualGrid[x][y]);
             }
             //System.out.print("\n");

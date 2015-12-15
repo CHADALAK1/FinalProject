@@ -40,7 +40,7 @@ public class Pawn extends Entity
     * holds the boolean value to check if Pawn is dead
     * Use the IsDead() method to get the bIsDead boolean value
      */
-    private boolean bIsDead;
+    private boolean bIsDead = false;
 
     /**
      * <b>ForwardVector</b>
