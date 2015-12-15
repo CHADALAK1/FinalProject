@@ -186,7 +186,7 @@ public class main
         {
             for(int y = 0; y < VisualGrid[x].length; y++)
             {
-                LevelGrid.append(Character.toString(VisualGrid[x][y]));
+                LevelGrid.append(Character.toString(VisualGrid[y][x]));
                 //System.out.print(VisualGrid[x][y]);
             }
             //System.out.print("\n");
