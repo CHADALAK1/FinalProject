@@ -94,7 +94,7 @@ public class Pawn extends Entity
                 //set new location of the Pawn
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() - 1));
 
-                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation - 1));
+                SetForwardVector(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() - 1));
             }
         }
         else
@@ -104,7 +104,7 @@ public class Pawn extends Entity
         }
 
         //DEBUG
-        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
         System.out.println("FV " + GetCurrentLevel().GetPlayerLocation().GetX() + " " + GetCurrentLevel().GetPlayerLocation().GetY());
     }
 
@@ -132,7 +132,7 @@ public class Pawn extends Entity
         }
 
         //DEBUG
-        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
     }
 
     /**
@@ -159,7 +159,7 @@ public class Pawn extends Entity
         }
 
         //DEBUG
-        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
     }
 
     /**
@@ -180,7 +180,7 @@ public class Pawn extends Entity
             }
             else
             {
-                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation));
+                System.out.println("CANNOT MOVE FOOL!");
             }
         }
         else
@@ -190,7 +190,7 @@ public class Pawn extends Entity
         }
 
         //DEBUG
-        System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
         System.out.println("FV " + GetForwardVector().GetX() + " " + GetForwardVector().GetY());
         System.out.println(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision());
     }
