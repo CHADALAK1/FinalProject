@@ -9,5 +9,24 @@
  */
 public class MonsterPawn extends NPCPawn
 {
+    public MonsterPawn()
+    {
+        SetCollision(true);
+        SetName("DerpY");
+        System.out.println(GetName());
+    }
 
+    public void Attack()
+    {
+        if(GetCurrentLevel().GetPlayer() != null)
+        {
+            PlayerPawn P = GetCurrentLevel().GetPlayer();
+            if(GetCurrentLevel().GetReferee().GetIsMonsterTurn())
+            {
+                GetWeapon().ApplyDamage(P);
+                GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+                GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+            }
+        }
+    }
 }

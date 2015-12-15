@@ -259,16 +259,16 @@ public class Level
                 switch(Rot)
                 {
                     case NORTH:
-                        Player.SetForwardVector(new Vector2D(Loc.GetX(),Loc.GetY() - 1));
+                        Player.SetForwardVector(new Vector2D(GetPlayer().GetLocation().GetX(),GetPlayer().GetLocation().GetY() - 1));
                         break;
                     case SOUTH:
-                        Player.SetForwardVector(new Vector2D(Loc.GetX(),Loc.GetY() + 1));
+                        Player.SetForwardVector(new Vector2D(GetPlayer().GetLocation().GetX(),GetPlayer().GetLocation().GetY() + 1));
                         break;
                     case EAST:
-                        Player.SetForwardVector(new Vector2D(Loc.GetX() + 1,Loc.GetY()));
+                        Player.SetForwardVector(new Vector2D(GetPlayer().GetLocation().GetX() + 1,GetPlayer().GetLocation().GetY()));
                         break;
                     case WEST:
-                        Player.SetForwardVector(new Vector2D(Loc.GetX() - 1,Loc.GetY() - 1));
+                        Player.SetForwardVector(new Vector2D(GetPlayer().GetLocation().GetX() - 1,GetPlayer().GetLocation().GetY() - 1));
                         break;
                     default:
                         break;
@@ -296,6 +296,8 @@ public class Level
 
         //have MonsterController Possess the new spawned MonsterPawn
         TempController.Possess(NewMonster);
+
+        NewMonster.SetCollision(true);
 
         //Add to Monsters ArrayList
         Monsters.add(NewMonster);

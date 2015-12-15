@@ -92,7 +92,7 @@ public class Pawn extends Entity
                     !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 //set new location of the Pawn
-                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() - 1));
 
                 SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation - 1));
             }
@@ -105,6 +105,7 @@ public class Pawn extends Entity
 
         //DEBUG
         System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("FV " + GetCurrentLevel().GetPlayerLocation().GetX() + " " + GetCurrentLevel().GetPlayerLocation().GetY());
     }
 
     /**
@@ -121,7 +122,7 @@ public class Pawn extends Entity
                     !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation + 1));
-                SetForwardVector(new Vector2D(CurrXLocation, CurrYLocation + 1));
+                SetForwardVector(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() + 1));
             }
         }
         else
@@ -148,7 +149,7 @@ public class Pawn extends Entity
                     !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation + 1, CurrYLocation));
-                SetForwardVector(new Vector2D(CurrXLocation + 1, CurrYLocation));
+                SetForwardVector(new Vector2D(GetForwardVector().GetX() + 1, GetForwardVector().GetY())) ;
             }
         }
         else
@@ -171,10 +172,15 @@ public class Pawn extends Entity
         int CurrYLocation = GetCurrentLevel().GetPlayerLocation().GetY();
         if(GetRotation() == Rotator.WEST)
         {
-            if(GetForwardVector().GetX() > 0 || !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
+            if(GetForwardVector().GetX() > 0 ||
+                    !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation - 1, CurrYLocation));
-                SetForwardVector(new Vector2D(CurrXLocation - 1, CurrYLocation));
+                SetForwardVector(new Vector2D(GetForwardVector().GetX() - 1, GetForwardVector().GetY()));
+            }
+            else
+            {
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation));
             }
         }
         else
@@ -185,11 +191,13 @@ public class Pawn extends Entity
 
         //DEBUG
         System.out.println("X: " + CurrXLocation + "and Y: " + CurrYLocation);
+        System.out.println("FV " + GetForwardVector().GetX() + " " + GetForwardVector().GetY());
+        System.out.println(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision());
     }
 
     /**
      * Rotate
-     * Method that sets teh Rotation Enum so the
+     * Method that sets the Rotation Enum so the
      * Pawn can rotate
      * @param Dir Rotator Enum to change the direction
      */
