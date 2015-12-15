@@ -343,7 +343,10 @@ public class Level
      */
     public void SetPlayerLocation(Vector2D NewLocation)
     {
+        Vector2D PrevLoc = GetPlayerLocation();
         Player.SetLocation(NewLocation.GetX(),NewLocation.GetY());
+        GetLevel()[GetPlayer().GetLocation().GetX()][GetPlayer().GetLocation().GetY()] = Player;
+        GetLevel()[PrevLoc.GetX()][PrevLoc.GetY()] = new Entity();
     }
 
 }
