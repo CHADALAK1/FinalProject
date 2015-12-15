@@ -98,7 +98,7 @@ public class Level
      */
     public void SetMaxBoundaries()
     {
-        if(MaxBoundaries != null)
+        if(GetMaxBoundaries() != null)
         {
             for(int i = 0; i < GetMaxBoundaries().GetX(); i++)
             {
@@ -145,11 +145,11 @@ public class Level
                 {
                     GetVisualGrid()[i][j] = 'X';
                 }
-                if(GetLevel()[i][j] instanceof MonsterPawn)
+                else if(GetLevel()[i][j] instanceof MonsterPawn)
                 {
                     GetVisualGrid()[i][j] = 'M';
                 }
-                if(GetLevel()[i][j] instanceof PlayerPawn)
+                else if(GetLevel()[i][j] instanceof PlayerPawn)
                 {
                     GetVisualGrid()[i][j] = 'P';
                 }

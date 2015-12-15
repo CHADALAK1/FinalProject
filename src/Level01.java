@@ -16,7 +16,7 @@ public class Level01 extends Level
         SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(10,10),Rotator.NORTH);
 
         //Spawn the Monster
-        SpawnMonster(new MonsterPawn(),new Vector2D(35,35));
+        SpawnMonster(new MonsterPawn(),new Vector2D(8,10));
 
         //Set the Current Level for the Player
         GetPlayer().SetCurrentLevel(this);
