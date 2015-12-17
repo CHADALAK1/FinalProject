@@ -23,7 +23,7 @@ public class MonsterPawn extends NPCPawn
             PlayerPawn P = GetCurrentLevel().GetPlayer();
             if(GetCurrentLevel().GetReferee().GetIsMonsterTurn())
             {
-                GetWeapon()[0].ApplyDamage(P);
+                GetWeapon().get(0).ApplyDamage(P);
                 GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
                 GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
             }

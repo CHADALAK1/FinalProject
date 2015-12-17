@@ -231,7 +231,7 @@ public class Level
      * @param Loc Vector2D for where the player will be spawned
      * @param Rot Rotator for where the player will be facing when spawned
      */
-    public void SpawnPlayer(PlayerPawn NewPlayer,PlayerController NewPC, Vector2D Loc, Rotator Rot)
+    public void SpawnPlayer(PlayerPawn NewPlayer,PlayerController NewPC, Vector2D Loc, Rotator Rot, Weapon NewSword, Weapon NewMace)
     {
         //if there's no player object in this level
         if(Player == null)
@@ -273,6 +273,9 @@ public class Level
                     default:
                         break;
                 }
+
+                Player.SetWeapon(NewSword);
+                Player.SetWeapon(NewMace);
             }
         }
     }
@@ -283,7 +286,7 @@ public class Level
      * @param NewMonster Monster to spawn in the level
      * @param Loc Location of the monster in the level
      */
-    public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc)
+    public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc, Weapon NewWeap)
     {
         //Initialize Controller AI for new spawned monster
         MonsterController TempController = new MonsterController();
@@ -298,6 +301,8 @@ public class Level
         TempController.Possess(NewMonster);
 
         NewMonster.SetCollision(true);
+
+        NewMonster.SetWeapon(NewWeap);
 
         //Add to Monsters ArrayList
         Monsters.add(NewMonster);
