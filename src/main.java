@@ -250,6 +250,30 @@ public class main
 
 
         //TODO: (Win ending?).. Count NPC to 0.
+        int NPCcount = 0;
+
+        for(int x = 0; x < L01.GetMonsters().size(); x++)
+        {
+            NPCcount++;
+        }
+
+        //Debug
+        System.out.print(NPCcount);
+
+        if (NPCcount == 0)
+        {
+            StoryOutput.append("You win!");
+            try
+            {
+                Thread.sleep(5000);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
+            System.exit(0);
+
+        }
 
 
         //Keep towards the end to check for player's death.
