@@ -31,18 +31,6 @@ public class Item extends Entity
     }
 
     /**
-     * <b>Drop</b>
-     * Method that Drops the Item
-     */
-    public void Drop()
-    {
-        if(GetOwner().GetWeapon() != null)
-        {
-            GetOwner().SetWeapon(null);
-        }
-    }
-
-    /**
      * <b>SetOwner</b>
      * Method that sets the Owner of the weapon
      * @param Owner new Pawn that owns this weapon
