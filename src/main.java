@@ -21,7 +21,7 @@ public class main
     //Start the game.
     Level01 L01 = new Level01();
 
-    //Get Player Controller(SO WE CAN MOVE!!! b0ss!!)
+    //Get Player Controller in order to move.
     PlayerController PC = L01.GetPC();
 
     //Set up default health/armor
@@ -234,7 +234,11 @@ public class main
         //Result if player pressed on Use <weapon> instead of moving.
         if (action.equals("Sword") || action.equals("Mace"))
         {
-            PC.GetControlledPawn().InteractBattle();
+            if(action.equals("Sword"))
+                PC.GetControlledPawn().InteractBattle(0);
+
+            if(action.equals("Mace"))
+                PC.GetControlledPawn().InteractBattle(1);
 
             //Debug
             System.out.println("Used "  + action);
