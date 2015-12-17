@@ -40,9 +40,9 @@ public class PlayerPawn extends Pawn
 
     //TODO: Chad, is this correct to separate interaction battle Interacts...
     @Override
-    public void InteractBattle()
+    public void InteractBattle(int WeapSlot)
     {
-        super.InteractBattle();
+        super.InteractBattle(WeapSlot);
 
         //check if there's a monster in front of the player
         if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
@@ -67,7 +67,7 @@ public class PlayerPawn extends Pawn
                             //ensure it's not the monsters turn
                             GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
                             //apply damage to the monster
-                            GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                            GetWeapon()[WeapSlot].ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
                             //end player's turn
                             GetCurrentLevel().GetReferee().Turn();
                         }
@@ -78,7 +78,7 @@ public class PlayerPawn extends Pawn
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
                                 //apply damage to the monster
-                                GetWeapon().ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
+                                GetWeapon()[WeapSlot].ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
                                 //end turn
                                 GetCurrentLevel().GetReferee().Turn();
                             }

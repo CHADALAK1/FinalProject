@@ -69,7 +69,7 @@ public class Pawn extends Entity
      * <p>private</p>
      * A Weapon object that holds what Weapon the Pawn is holding
      */
-    private Weapon Hand;
+    private Weapon[] Hand;
 
     /**
      * <b>PawnController</b>
@@ -213,7 +213,7 @@ public class Pawn extends Entity
     public void Interact(){}
 
     //TODO: Chad, is this correct to separate interaction battle Interacts...
-    public void InteractBattle(){}
+    public void InteractBattle(int WeapSlot){}
 
     /**
      * <b>GetController</b>
@@ -463,7 +463,7 @@ public class Pawn extends Entity
      * returns the Hand object which holds what weapon is there or not
      * @return Hand
      */
-    public Weapon GetWeapon()
+    public Weapon[] GetWeapon()
     {
         return Hand;
     }
@@ -473,9 +473,9 @@ public class Pawn extends Entity
      * Puts the Weapon into the Player's Hand(Can Also Remove from hand
      * @param NewWeapon Weapon to put into Pawn's hand
      */
-    public void SetWeapon(Weapon NewWeapon)
+    public void SetWeapon(Weapon NewWeapon, int Slot)
     {
-        Hand = NewWeapon;
+        Hand[Slot] = NewWeapon;
     }
 
     /**
