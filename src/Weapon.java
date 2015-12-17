@@ -154,6 +154,7 @@ public class Weapon extends Item
     public void ApplyDamage(Pawn DamagedPawn)
     {
         DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
+        System.out.println(DamagedPawn.GetHealth());
     }
 
 }

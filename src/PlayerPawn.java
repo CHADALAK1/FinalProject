@@ -36,6 +36,30 @@ public class PlayerPawn extends Pawn
             //Pick up the Item
             GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].Pickup();
         }
+
+        //check if there's a monster in front of the player
+        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
+        {
+            //find out which monster it is
+            for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
+            {
+                //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
+                if (GetForwardVector() == GetCurrentLevel().GetMonsters().get(i).GetLocation() &&
+                        !GetCurrentLevel().GetMonsters().get(i).IsDead())
+                {
+                    //if there's no BattleReferee in the level
+                    if(GetCurrentLevel().GetReferee() == null)
+                    {
+                        //spawn the referee                                     Monster player's attacking      Player
+                        GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i), this));
+                        //Set the player's turn
+                        GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+                        //ensure it's not the monsters turn
+                        GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+                    }
+                }
+            }
+        }
     }
 
     @Override
@@ -57,28 +81,12 @@ public class PlayerPawn extends Pawn
                     if(GetWeapon() != null)
                     {
                         //if there's no BattleReferee in the level
-                        if(GetCurrentLevel().GetReferee() == null)
+                        if(GetCurrentLevel().GetReferee() != null)
                         {
-                            //spawn the referee                                     Monster player's attacking      Player
-                            GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i), this));
-                            //Set the player's turn
-                            GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
-                            //ensure it's not the monsters turn
-                            GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
-                            //apply damage to the monster
-                            GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
-                            //end player's turn
-                            GetCurrentLevel().GetReferee().Turn();
-                        }
-                        //if there is a BattleReferee in the level
-                        else
-                        {
-                            //if it's the player's tur
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
-                                //apply damage to the monster
                                 GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
-                                //end turn
+                                //end player's turn
                                 GetCurrentLevel().GetReferee().Turn();
                             }
                         }

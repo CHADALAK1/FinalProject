@@ -14,6 +14,8 @@ public class MonsterPawn extends NPCPawn
         SetCollision(true);
         SetName("DerpY");
         System.out.println(GetName());
+        SetHealth(100);
+        SetArmor(10);
     }
 
     public void Attack()
