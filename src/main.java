@@ -91,7 +91,7 @@ public class main
         Armor.setBounds         (350, 200, 100, 25);
 
         //Tutorial.
-        StoryOutput.setText("Press a button to start....");
+        StoryOutput.setText("Press a button to start.... \n");
 
         //Add components to panel.
         frame.add(useSword);
@@ -174,8 +174,10 @@ public class main
     public String carryOn (String action)
     {
         //Refresh Health and Armor with each iteration.
-        a.GetHealth();
-        a.GetArmor();
+        health = a.GetHealth();
+        Health.setText("Health: " + health + "%");
+        armor = a.GetArmor();
+        Armor.setText("Armor: " + armor + "%");
 
         //Call SetVisualGrid to refresh, clear LevelGrid, then apply updated information for a 'map'.
         L01.SetVisualGrid();
@@ -189,47 +191,13 @@ public class main
             for(int y = 0; y < VisualGrid[x].length; y++)
             {
                 LevelGrid.append(Character.toString(VisualGrid[y][x]) + " ");
-                //System.out.print(VisualGrid[x][y]);
             }
-            //System.out.print("\n");
             LevelGrid.append("\n");
         }
 
         //Turn action into a command, complete necessary game code. IE: wall, item, fight.
         //TODO: Battle. Random 'crits' upon CPU and PLAYER weapons. (damage+crit%).
         //TODO: Feedback for monster.
-        /** pseudo code
-         *
-         *          if ( battle triggered )         <Dont forget CriticalHitChance/buff  for 'hit' action.
-         *          {
-         *              do
-         *               {
-         *                  if (player is first from Turn() )
-         *                      {
-         *                          wait for action
-         *                          append StoryOutput with action
-         *                          'hit' monster with sword or mace.
-         *                          change Turn()
-         *                      }
-         *                   if (monster is first from Turn() )
-         *                      {
-         *                          do action
-         *                          append StoryOutput with action
-         *                          'hit' player
-         *                          change Turn()
-         *                      }
-         *               }
-         *
-         *               while (battle ended or a.IsDead())
-         *
-         *               if (battle ended)
-         *                  {
-         *                      Give player bonus
-         *                      Display win on Story output
-         *                  }
-         *
-         */
-
 
         //Result if player pressed on Use <weapon> instead of moving.
         if (action.equals("Sword") || action.equals("Mace"))
@@ -247,53 +215,66 @@ public class main
         //Interact will pickup any items (armor or health).
         PC.GetControlledPawn().Interact();
 
+        //If/When a battle is in place. User cannot move.
+        //BATTLE TO THE DEATH
+        if(L01.GetReferee() != null)
+        {
+            goNorth.setEnabled(false);
+            goSouth.setEnabled(false);
+            goEast.setEnabled(false);
+            goWest.setEnabled(false);
+        }
+        else
+        {
+            goNorth.setEnabled(true);
+            goSouth.setEnabled(true);
+            goEast.setEnabled(true);
+            goWest.setEnabled(true);
+        }
+
 
 
         //TODO: (Win ending?).. Count NPC to 0.
-        int NPCcount = 0;
+        int NPC_count = 0;
 
         for(int x = 0; x < L01.GetMonsters().size(); x++)
         {
-            NPCcount++;
+            NPC_count++;
         }
 
         //Debug
-        //System.out.print(NPCcount);
+        //System.out.print(NPC_count);
 
-        if (NPCcount == 0)
+        if (NPC_count == 0)
         {
-            StoryOutput.append("You win!");
-            try
-            {
-                Thread.sleep(5000);
-            }
-            catch(InterruptedException ex)
-            {
-                Thread.currentThread().interrupt();
-            }
-            System.exit(0);
+            StoryOutput.append("You win! \n");
+            StoryOutput.append("Congratulations!!!!!!!!!!!! \n");
 
+            endGame();
         }
 
 
         //Keep towards the end to check for player's death.
         if (a.IsDead())
         {
-            StoryOutput.append("Game Over!");
-            try
-            {
-                Thread.sleep(5000);
-            }
-            catch(InterruptedException ex)
-            {
-                Thread.currentThread().interrupt();
-            }
-            System.exit(0);
+            StoryOutput.append("You died! Game Over... \n");
+            StoryOutput.append("Restart the game to play again. \n");
+
+            endGame();
         }
 
         return null;
     }
 
+    public void endGame()
+    {
+        useSword.setEnabled(false);
+        useMace.setEnabled(false);
+        goNorth.setEnabled(false);
+        goSouth.setEnabled(false);
+        goEast.setEnabled(false);
+        goWest.setEnabled(false);
+    }
 
 
 
