@@ -1,5 +1,11 @@
 /**
- * Created by chadreddick on 12/11/15.
+ * Created by Chad Reddick on 12/11/15.
+ *
+ * <p>
+ *     BattleReferee is a class that holds the rules for the battle sequences.
+ *     Once the Monster or player is dead, the Referee will destroy itself
+ *     from the Level
+ * </p>
  */
 public class BattleReferee
 {
@@ -42,6 +48,11 @@ public class BattleReferee
         Player = PP;
     }
 
+    /**
+     * <b>Turn</b>
+     * Checks on which pawn's turn it is when in battle
+     * @param DeadPawn Which pawn to check is dead(NOT USED YET)
+     */
     public void Turn(Pawn DeadPawn)
     {
         if(GetPlayer().GetHealth() > 0 || GetMonster().GetHealth() > 0)
@@ -68,6 +79,11 @@ public class BattleReferee
         }
     }
 
+    /**
+     * <b>EndMatch</b>
+     * Ends the match between monster and player.
+     * Also Destroys self upon ending
+     */
     public void EndMatch()
     {
         System.out.println("REFEREE LEFT");

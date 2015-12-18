@@ -9,6 +9,9 @@
  */
 public class MonsterPawn extends NPCPawn
 {
+    /**
+     * CONSTRUCTOR
+     */
     public MonsterPawn()
     {
         SetCollision(true);
@@ -19,13 +22,20 @@ public class MonsterPawn extends NPCPawn
         SetIsDead(false);
     }
 
+    /**
+     * <b>Attack</b>
+     * Makes the MonsterPawn attack the player
+     */
     public void Attack()
     {
+        //if the player is in the level
         if(GetCurrentLevel().GetPlayer() != null)
         {
             PlayerPawn P = GetCurrentLevel().GetPlayer();
+            //if there is a BattleReferee on the scene
             if(GetCurrentLevel().GetReferee() != null)
             {
+                //if it's the monster's turn
                 if (GetCurrentLevel().GetReferee().GetIsMonsterTurn())
                 {
                     System.out.println("Monster is now Attacking...");
@@ -36,6 +46,10 @@ public class MonsterPawn extends NPCPawn
         }
     }
 
+    /**
+     * <b>PrepareAttack</b>
+     * Does pre-initial logic before the MonsterPawn attacks
+     */
     public void PrepareAttack()
     {
         Attack();

@@ -82,7 +82,7 @@ public class PlayerPawn extends Pawn
             //find out which monster it is
             for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
             {
-                //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
+                //if the monster found in the ArrayList is the same one the player's ForwardVector is
                 if (GetForwardVector().GetX() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetX() &&
                         GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY())
                 {
@@ -92,8 +92,10 @@ public class PlayerPawn extends Pawn
                         //if there's no BattleReferee in the level
                         if(GetCurrentLevel().GetReferee() != null)
                         {
+                            //if it's the player's turn
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
+                                //if the monster's heal is still there
                                 if(GetCurrentLevel().GetMonsters().get(i).GetHealth() > 0)
                                 {
                                     GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
@@ -104,11 +106,16 @@ public class PlayerPawn extends Pawn
                                 }
                                 else
                                 {
+                                    //store monster's Vector2D location temporarily
                                     Vector2D Loc = GetCurrentLevel().GetMonsters().get(i).GetLocation();
                                     System.out.println("DEAD MONSTER");
+                                    //set monster's health to 0
                                     GetCurrentLevel().GetReferee().GetMonster().SetHealth(0);
+                                    //End the match with the referee
                                     GetCurrentLevel().GetReferee().EndMatch();
+                                    //remove the monster in the ArrayList
                                     GetCurrentLevel().GetMonsters().remove(i);
+                                    //Make the space in the level an empty entity space where the monster used to be
                                     GetCurrentLevel().GetLevel()[Loc.GetX()][Loc.GetY()] = new Entity();
                                 }
                             }
