@@ -66,7 +66,6 @@ public class Weapon extends Item
      * Critical hit on the Pawn
      */
 
-    //TODO: call for CriticalHitChance during battle
     protected void CriticalHitChance()
     {
         if(GetCanCriticalHit())

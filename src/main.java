@@ -233,29 +233,19 @@ public class main
             goWest.setEnabled(true);
         }
 
-        //TODO: Disable 'X' movement button if they are at a border (or wall)
-        /**if (a.GetForwardVector().GetY() < 2)
+        //Checker to disable X button in collision of a wall in the direction of ROTATE.
+        if(a.GetCurrentLevel().GetLevel()[a.GetForwardVector().GetX()][a.GetForwardVector().GetY()] instanceof Wall && a.GetCurrentLevel().GetLevel()[a.GetForwardVector().GetX()][a.GetForwardVector().GetY()].GetHasCollision())
         {
-            goNorth.setEnabled(false);
-        }
-         if (a.GetForwardVector().GetY() > 18)
-        {
-            goSouth.setEnabled(false);
-        }
-         if (a.GetForwardVector().GetX() < 1)
-        {
-            goWest.setEnabled(false);
-        }
-         if (a.GetForwardVector().GetX() > 18)
-        {
-            goEast.setEnabled(false);
-        }**/
+            if(a.GetRotation() == Rotator.NORTH)
+                goNorth.setEnabled(false);
+            if(a.GetRotation() == Rotator.SOUTH)
+                goSouth.setEnabled(false);
+            if(a.GetRotation() == Rotator.EAST)
+                goEast.setEnabled(false);
+            if(a.GetRotation() == Rotator.WEST)
+                goWest.setEnabled(false);
 
-
-        /**(a.GetCurrentLevel().GetLevel()[a.GetForwardVector().GetX()][a.GetForwardVector().GetY()] instanceof Wall && a.GetRotation() == Rotator.NORTH )
-        {
-            goNorth.setEnabled(false);
-        }**/
+        }
 
 
 
