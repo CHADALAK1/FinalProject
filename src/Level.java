@@ -21,7 +21,7 @@ public class Level
      * <p>private</p>
      * A 2D Array of chars that visually show text what the world look like
      */
-    private char[][] VisualGrid;
+    private String[][] VisualGrid;
 
     /**
      * <b>Player</b>
@@ -124,7 +124,7 @@ public class Level
      * Gets the VisualGrid
      * @return VisualGrid
      */
-    public char[][] GetVisualGrid()
+    public String[][] GetVisualGrid()
     {
         return VisualGrid;
     }
@@ -136,30 +136,64 @@ public class Level
      */
     public void SetVisualGrid()
     {
-        VisualGrid = new char[GetMaxBoundaries().GetX()][GetMaxBoundaries().GetY()];
+        VisualGrid = new String[GetMaxBoundaries().GetX()][GetMaxBoundaries().GetY()];
         for(int i = 0; i<Grid.length; i++)
         {
-            for(int j = 0; j <Grid[i].length; j++)
+            for(int j = 0; j < Grid[i].length; j++)
             {
                 if(GetLevel()[i][j] instanceof Wall)
                 {
-                    GetVisualGrid()[i][j] = '▓';
+                    GetVisualGrid()[i][j] = "▓  ";
                 }
                 else if(GetLevel()[i][j] instanceof MonsterPawn)
                 {
-                    GetVisualGrid()[i][j] = 'M';
+                    GetVisualGrid()[i][j] = "M  ";
                 }
                 else if(GetLevel()[i][j] instanceof PlayerPawn)
                 {
-                    GetVisualGrid()[i][j] = 'P';
+                    GetVisualGrid()[i][j] = "P  ";
+                }
+                //TODO: Added Health
+                /*else if (GetLevel() [i] [j] instanceof Health)
+                {
+                    GetVisualGrid()[i][j] = "H  ";
+                }*/
+                //TODO: Added Armor
+                else if (GetLevel() [i] [j] instanceof Armor)
+                {
+                    GetVisualGrid()[i][j] = "A  ";
+                }
+                //TODO: Added Keys
+                else if (GetLevel() [i] [j] instanceof Key)
+                {
+                    GetVisualGrid() [i] [j] = "K  ";
+                }
+                //TODO: Added Doors.
+                else if (GetLevel() [i] [j] instanceof Door)
+                {
+                    GetVisualGrid() [i] [j] = "D  ";
                 }
                 else
                 {
-                    GetVisualGrid()[i][j] = '—';
+                    GetVisualGrid()[i][j] = "— ";
                 }
             }
         }
     }
+
+    //TODO: Picking up armor results in;
+    /**
+     * Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+     at Item.Pickup(Item.java:28)
+     at PlayerPawn.Interact(PlayerPawn.java:37)
+     at main.carryOn(main.java:219)
+     at main$ActionClass.actionPerformed(main.java:166)
+     at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+     at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+     at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+     at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+      */
+
 
     /**
      * GetMaxBoundaries

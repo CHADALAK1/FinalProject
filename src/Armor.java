@@ -3,6 +3,11 @@
  */
 public class Armor extends Item
 {
+    /**public Armor()
+    {
+        SetCollision(false);
+    }**/
+
     @Override
     public void Use()
     {

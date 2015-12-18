@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,7 +32,7 @@ public class main
     {
 
         JFrame frame = new JFrame();
-        final String GameTitle = "Super Spook 9000";
+        final String GameTitle = "Super Spook 9000, a CIS-175 Java II final project. By: Chad and Jake";
 
         //Final window size.
         final int Window_H = 280;
@@ -63,6 +64,8 @@ public class main
         StoryOutput = new JTextArea (2000, 39);
         Font font = new Font("Arial", Font.ITALIC, 8);
         JScrollPane sp = new JScrollPane(StoryOutput);
+        DefaultCaret autoScroll = (DefaultCaret)StoryOutput.getCaret();
+        autoScroll.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         LevelGrid = new JTextArea(50,50);
         LevelGrid.setFont(font);
         Health = new JLabel ("Health: " + health + "%");
@@ -186,13 +189,13 @@ public class main
         L01.SetVisualGrid();
         LevelGrid.setText("");
 
-        char[][] VisualGrid = L01.GetVisualGrid();
+        String[][] VisualGrid = L01.GetVisualGrid();
 
         for(int x = 0; x < VisualGrid.length; x++)
         {
             for(int y = 0; y < VisualGrid[x].length; y++)
             {
-                LevelGrid.append(Character.toString(VisualGrid[y][x]) + " ");
+                LevelGrid.append ((VisualGrid[y][x]) + "");
             }
             LevelGrid.append("\n");
         }
@@ -249,6 +252,7 @@ public class main
 
 
 
+        //TODO: Add if b0ss is dead game win.
         //Int and (2) if will check how the game will end.
         //Either Win or Lose.
         int NPC_count = 0;
