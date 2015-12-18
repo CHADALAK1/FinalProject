@@ -92,7 +92,7 @@ public class Pawn extends Entity
                     !GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision())
             {
                 //set new location of the Pawn
-                GetCurrentLevel().SetPlayerLocation(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() - 1));
+                GetCurrentLevel().SetPlayerLocation(new Vector2D(CurrXLocation, CurrYLocation - 1));
 
                 SetForwardVector(new Vector2D(GetForwardVector().GetX(), GetForwardVector().GetY() - 1));
             }
