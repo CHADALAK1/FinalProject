@@ -105,7 +105,6 @@ public class Pawn extends Entity
 
         //DEBUG
         System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
-        System.out.println("FV " + GetCurrentLevel().GetPlayerLocation().GetX() + " " + GetCurrentLevel().GetPlayerLocation().GetY());
     }
 
     /**
@@ -191,8 +190,6 @@ public class Pawn extends Entity
 
         //DEBUG
         System.out.println("X: " + GetLocation().GetX() + "and Y: " + GetLocation().GetY());
-        System.out.println("FV " + GetForwardVector().GetX() + " " + GetForwardVector().GetY());
-        System.out.println(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()].GetHasCollision());
     }
 
     /**
@@ -370,6 +367,7 @@ public class Pawn extends Entity
         //if we know who's attacking this pawn
         if(Instigator != null)
         {
+            System.out.println(GetController().toString() + " Health is now " + GetHealth());
             //if pawn still has armor
             if (GetArmor() > 0)
             {
@@ -400,10 +398,13 @@ public class Pawn extends Entity
                 {
                     //no more health left
                     Health = 0;
-                    //ensure this pawn is dead
-                    SetIsDead(true);
                 }
 
+            }
+            else
+            {
+                //ensure this pawn is dead
+                SetIsDead(true);
             }
         }
     }
@@ -475,6 +476,7 @@ public class Pawn extends Entity
     public void SetWeapon(Weapon NewWeapon)
     {
         Hand.add(NewWeapon);
+        NewWeapon.SetOwner(this);
     }
 
     /**

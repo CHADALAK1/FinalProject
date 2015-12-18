@@ -230,6 +230,8 @@ public class Level
      * @param NewPC  when creating, use new PlayerController()
      * @param Loc Vector2D for where the player will be spawned
      * @param Rot Rotator for where the player will be facing when spawned
+     * @param NewSword for the player's Sword Object
+     * @param NewMace for the player's Mace Object
      */
     public void SpawnPlayer(PlayerPawn NewPlayer,PlayerController NewPC, Vector2D Loc, Rotator Rot, Weapon NewSword, Weapon NewMace)
     {
@@ -285,6 +287,7 @@ public class Level
      * Spawns Monster in the Level.
      * @param NewMonster Monster to spawn in the level
      * @param Loc Location of the monster in the level
+     * @param NewWeap New Weapon to spawn for the MonsterPawn Object
      */
     public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc, Weapon NewWeap)
     {
@@ -303,6 +306,7 @@ public class Level
         NewMonster.SetCollision(true);
 
         NewMonster.SetWeapon(NewWeap);
+        NewWeap.SetOwner(NewMonster);
 
         //Add to Monsters ArrayList
         Monsters.add(NewMonster);

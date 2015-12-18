@@ -17,9 +17,15 @@ public class Level01 extends Level
 
         //Spawn the Monster
         SpawnMonster(new MonsterPawn(),new Vector2D(8,10), new Sword());
+        SpawnMonster(new MonsterPawn(),new Vector2D(15,15),new Mace());
 
         //Set the Current Level for the Player
         GetPlayer().SetCurrentLevel(this);
+
+        for(int i = 0; i < GetMonsters().size(); i++)
+        {
+            GetMonsters().get(i).SetCurrentLevel(this);
+        }
 
         //Set the grid visuals AFTER everything is initialized in the level
         SetVisualGrid();

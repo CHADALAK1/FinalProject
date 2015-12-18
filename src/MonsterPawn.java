@@ -16,6 +16,7 @@ public class MonsterPawn extends NPCPawn
         System.out.println(GetName());
         SetHealth(100);
         SetArmor(10);
+        SetIsDead(false);
     }
 
     public void Attack()
@@ -23,12 +24,20 @@ public class MonsterPawn extends NPCPawn
         if(GetCurrentLevel().GetPlayer() != null)
         {
             PlayerPawn P = GetCurrentLevel().GetPlayer();
-            if(GetCurrentLevel().GetReferee().GetIsMonsterTurn())
+            if(GetCurrentLevel().GetReferee() != null)
             {
-                GetWeapon().get(0).ApplyDamage(P);
-                GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
-                GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+                if (GetCurrentLevel().GetReferee().GetIsMonsterTurn())
+                {
+                    System.out.println("Monster is now Attacking...");
+                    GetWeapon().get(0).ApplyDamage(P);
+                    GetCurrentLevel().GetReferee().Turn();
+                }
             }
         }
+    }
+
+    public void PrepareAttack()
+    {
+        Attack();
     }
 }

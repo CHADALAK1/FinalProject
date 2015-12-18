@@ -40,22 +40,31 @@ public class PlayerPawn extends Pawn
         //check if there's a monster in front of the player
         if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
         {
+            System.out.println("AH A MONSTER");
             //find out which monster it is
             for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
             {
                 //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
-                if (GetForwardVector() == GetCurrentLevel().GetMonsters().get(i).GetLocation() &&
+                if (GetForwardVector().GetX() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetX() &&
+                        GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY() &&
                         !GetCurrentLevel().GetMonsters().get(i).IsDead())
                 {
+                    System.out.println("I KNOW THIS MONSTER");
                     //if there's no BattleReferee in the level
                     if(GetCurrentLevel().GetReferee() == null)
                     {
+                        System.out.println("Spawning Referee....");
                         //spawn the referee                                     Monster player's attacking      Player
                         GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetMonsters().get(i), this));
                         //Set the player's turn
                         GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
                         //ensure it's not the monsters turn
                         GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+
+                        if(GetCurrentLevel().GetReferee() != null)
+                        {
+                            System.out.println("REFEREEE IS IN PLACE");
+                        }
                     }
                 }
             }
@@ -74,7 +83,8 @@ public class PlayerPawn extends Pawn
             for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
             {
                 //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
-                if (GetForwardVector() == GetCurrentLevel().GetMonsters().get(i).GetLocation() &&
+                if (GetForwardVector().GetX() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetX() &&
+                        GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY() &&
                         !GetCurrentLevel().GetMonsters().get(i).IsDead())
                 {
                     //if the player has a weapon in hand
@@ -85,9 +95,22 @@ public class PlayerPawn extends Pawn
                         {
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
-                                GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetMonsters().get(i));
-                                //end player's turn
-                                GetCurrentLevel().GetReferee().Turn();
+                                if(GetWeapon().get(WeapSlot).GetMeleeDamage().GetDamageAmount() <=
+                                        GetCurrentLevel().GetReferee().GetMonster().GetHealth())
+                                {
+                                    GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
+                                    System.out.println("Hit for " + GetWeapon().get(WeapSlot).GetMeleeDamage().GetDamageAmount() +
+                                            " with a " + GetWeapon().get(WeapSlot).GetName());
+                                    //end player's turn
+                                    GetCurrentLevel().GetReferee().Turn();
+                                }
+                                else
+
+                                {
+                                    GetCurrentLevel().GetReferee().GetMonster().SetHealth(0);
+                                    GetCurrentLevel().GetReferee().Turn();
+                                    GetCurrentLevel().GetMonsters().remove(i);
+                                }
                             }
                         }
                     }

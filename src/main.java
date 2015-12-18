@@ -258,7 +258,7 @@ public class main
         }
 
         //Debug
-        System.out.print(NPCcount);
+        //System.out.print(NPCcount);
 
         if (NPCcount == 0)
         {
