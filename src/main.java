@@ -130,6 +130,9 @@ public class main
             goWest.addActionListener(actionEvent);
             goWest.setActionCommand("3");
 
+        //Call carryOn to update the map automatically.
+        carryOn("");
+
     }
 
     //This class will perform the direction of player. Then goto carry on to continue game.
@@ -183,7 +186,6 @@ public class main
         L01.SetVisualGrid();
         LevelGrid.setText("");
 
-        //TODO: Does not display X (walls) and does not refresh player location.
         char[][] VisualGrid = L01.GetVisualGrid();
 
         for(int x = 0; x < VisualGrid.length; x++)
@@ -194,10 +196,6 @@ public class main
             }
             LevelGrid.append("\n");
         }
-
-        //Turn action into a command, complete necessary game code. IE: wall, item, fight.
-        //TODO: Battle. Random 'crits' upon CPU and PLAYER weapons. (damage+crit%).
-        //TODO: Feedback for monster.
 
         //Result if player pressed on Use <weapon> instead of moving.
         if (action.equals("Sword") || action.equals("Mace"))
@@ -214,6 +212,9 @@ public class main
 
         //Interact will pickup any items (armor or health).
         PC.GetControlledPawn().Interact();
+
+        //Monster feedback.
+        //TODO: <Pawn> hit <pawn> with a <item> for ## damage.
 
         //If/When a battle is in place. User cannot move.
         //BATTLE TO THE DEATH
@@ -232,9 +233,34 @@ public class main
             goWest.setEnabled(true);
         }
 
+        //TODO: Disable 'X' movement button if they are at a border (or wall)
+        /**if (a.GetForwardVector().GetY() < 2)
+        {
+            goNorth.setEnabled(false);
+        }
+         if (a.GetForwardVector().GetY() > 18)
+        {
+            goSouth.setEnabled(false);
+        }
+         if (a.GetForwardVector().GetX() < 1)
+        {
+            goWest.setEnabled(false);
+        }
+         if (a.GetForwardVector().GetX() > 18)
+        {
+            goEast.setEnabled(false);
+        }**/
 
 
-        //TODO: (Win ending?).. Count NPC to 0.
+        /**(a.GetCurrentLevel().GetLevel()[a.GetForwardVector().GetX()][a.GetForwardVector().GetY()] instanceof Wall && a.GetRotation() == Rotator.NORTH )
+        {
+            goNorth.setEnabled(false);
+        }**/
+
+
+
+        //Int and (2) if will check how the game will end.
+        //Either Win or Lose.
         int NPC_count = 0;
 
         for(int x = 0; x < L01.GetMonsters().size(); x++)
