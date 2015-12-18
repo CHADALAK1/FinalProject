@@ -84,8 +84,7 @@ public class PlayerPawn extends Pawn
             {
                 //if the monster found in the ArrayList is the same one the player's ForwardVector is(also check if monster isnt dead
                 if (GetForwardVector().GetX() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetX() &&
-                        GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY() &&
-                        !GetCurrentLevel().GetMonsters().get(i).IsDead())
+                        GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY())
                 {
                     //if the player has a weapon in hand
                     if(GetWeapon() != null)
@@ -95,21 +94,22 @@ public class PlayerPawn extends Pawn
                         {
                             if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
-                                if(GetWeapon().get(WeapSlot).GetMeleeDamage().GetDamageAmount() <=
-                                        GetCurrentLevel().GetReferee().GetMonster().GetHealth())
+                                if(GetCurrentLevel().GetMonsters().get(i).GetHealth() > 0)
                                 {
                                     GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
                                     System.out.println("Hit for " + GetWeapon().get(WeapSlot).GetMeleeDamage().GetDamageAmount() +
                                             " with a " + GetWeapon().get(WeapSlot).GetName());
                                     //end player's turn
-                                    GetCurrentLevel().GetReferee().Turn();
+                                    GetCurrentLevel().GetReferee().Turn(GetCurrentLevel().GetMonsters().get(i));
                                 }
                                 else
-
                                 {
+                                    Vector2D Loc = GetCurrentLevel().GetMonsters().get(i).GetLocation();
+                                    System.out.println("DEAD MONSTER");
                                     GetCurrentLevel().GetReferee().GetMonster().SetHealth(0);
-                                    GetCurrentLevel().GetReferee().Turn();
+                                    GetCurrentLevel().GetReferee().EndMatch();
                                     GetCurrentLevel().GetMonsters().remove(i);
+                                    GetCurrentLevel().GetLevel()[Loc.GetX()][Loc.GetY()] = new Entity();
                                 }
                             }
                         }

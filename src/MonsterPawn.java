@@ -30,7 +30,7 @@ public class MonsterPawn extends NPCPawn
                 {
                     System.out.println("Monster is now Attacking...");
                     GetWeapon().get(0).ApplyDamage(P);
-                    GetCurrentLevel().GetReferee().Turn();
+                    GetCurrentLevel().GetReferee().Turn(P);
                 }
             }
         }

@@ -40,10 +40,9 @@ public class BattleReferee
     {
         Monster = MP;
         Player = PP;
-        Turn();
     }
 
-    public void Turn()
+    public void Turn(Pawn DeadPawn)
     {
         if(GetPlayer().GetHealth() > 0 || GetMonster().GetHealth() > 0)
         {
@@ -65,10 +64,15 @@ public class BattleReferee
         }
         else
         {
-            System.out.println("REFEREE LEFT");
-            GetPlayer().GetCurrentLevel().DestroyReferee();
-            Monster = null;
+            EndMatch();
         }
+    }
+
+    public void EndMatch()
+    {
+        System.out.println("REFEREE LEFT");
+        Monster = null;
+        GetPlayer().GetCurrentLevel().DestroyReferee();
     }
 
     /**
