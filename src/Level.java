@@ -177,20 +177,6 @@ public class Level
         }
     }
 
-    //TODO: Picking up armor results in;
-    /**
-     * Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
-     at Item.Pickup(Item.java:28)
-     at PlayerPawn.Interact(PlayerPawn.java:37)
-     at main.carryOn(main.java:219)
-     at main$ActionClass.actionPerformed(main.java:166)
-     at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
-     at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
-     at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
-     at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
-      */
-
-
     /**
      * GetMaxBoundaries
      * Method that returns the Vector2D value of MaxBoundaries

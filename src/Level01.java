@@ -1,5 +1,7 @@
 import com.sun.deploy.net.proxy.RemoveCommentReader;
 
+import java.util.Random;
+
 /**
  * Created by Chad Reddick on 11/19/15.
  */
@@ -100,18 +102,11 @@ public class Level01 extends Level
         GetLevel()[11][3] = new Door(true, this, "Key");
         GetLevel()[16][6] = new Door(true, this, "Key");
 
-        //TODO: Keys should have an Identifier to unlock doors in series.
-        /**
-            Key #1 = opens door 1
-            Key #2 = opens door 2 (which room will have boss key #3 )
-            Key #3 = open boss door 3.
-         */
         //Set keys into map (to open doors).
         //Template: GetLevel()[][] = new Key();
-        //TODO: Started addition of Key()
-        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "Key");
+        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "BossKey");
         GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "Key");
-        GetLevel()[17][17] = new Key(this, new Vector2D(17,17),"BossKey");
+        GetLevel()[17][17] = new Key(this, new Vector2D(17,17),"Key");
 
         //Set health into map.
         //TODO: Instance?
@@ -119,7 +114,6 @@ public class Level01 extends Level
 
         //Set armor into map.
         //Template: GetLevel()[][] = new Armor();
-        //TODO: Started addition of Armor()
         GetLevel()[1][2] = new Armor(this, new Vector2D(1,2));
         GetLevel()[18][4] = new Armor(this, new Vector2D(18,4));
         GetLevel()[17][12] = new Armor(this, new Vector2D(17,12));
@@ -129,7 +123,6 @@ public class Level01 extends Level
         SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(2,18),Rotator.NORTH, new Sword(), new Mace());
 
         //Spawn the Monster(s) into map. (horizontal , vertical)
-        //TODO: Rand for weapons.
         SpawnMonster(new MonsterPawn(),new Vector2D(11,2), new Sword());
         SpawnMonster(new MonsterPawn(),new Vector2D(15,4),new Mace());
         SpawnMonster(new MonsterPawn(),new Vector2D(9,5),new Sword());
