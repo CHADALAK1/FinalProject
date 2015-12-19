@@ -7,10 +7,18 @@
  */
 public class MeleeDamageType extends DamageType
 {
-    MeleeDamageType(int Damage, int MagicPen, int ArmorPen)
+    /**
+     * Constructor
+     * @param Damage How much damage the melee damage will be
+     * @param MagicPen How much magic penetration will be applied
+     * @param ArmorPen How much armor penetration will be applied
+     * @param RandomChance will there be a random chance variable
+     */
+    MeleeDamageType(int Damage, int MagicPen, int ArmorPen, boolean RandomChance)
     {
         SetDamageAmount(Damage);
         SetMagicPenetration(MagicPen);
         SetArmorPenetration(ArmorPen);
+        SetRandomChance(RandomChance);
     }
 }

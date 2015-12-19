@@ -38,6 +38,13 @@ public class DamageType
     private int MagicPenetration;
 
     /**
+     * <b>boolean bRandomChance</b>
+     * <p>private</p>
+     * boolean value to check if this damage type has random chances of hitting or not
+     */
+    private boolean bRandomChance;
+
+    /**
      * <b>int Range</b>
      * <p>private</p>
      * integer variable that holds the distance the damage can be fired
@@ -85,6 +92,16 @@ public class DamageType
     }
 
     /**
+     * <b>SetRandomChance</b>
+     * Method that sets whether this damage type has random chance or not
+     * @param Chance to turn on or off random chance
+     */
+    public void SetRandomChance(boolean Chance)
+    {
+        bRandomChance = Chance;
+    }
+
+    /**
      * <b>GetDamageAmount</b>
      * gets the DamageAmount value
      * @return DamageAmount
@@ -122,5 +139,15 @@ public class DamageType
     public int GetRange()
     {
         return Range;
+    }
+
+    /**
+     * <b>GetRandomChance</b>
+     * returns the boolean bRandomChance
+     * @return bRandomChance
+     */
+    public boolean GetRandomChance()
+    {
+        return bRandomChance;
     }
 }

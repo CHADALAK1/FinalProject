@@ -11,7 +11,7 @@ public class Sword extends Weapon
 {
     public Sword()
     {
-        SetMeleeDamage(10,0,5);
+        SetMeleeDamage(10,0,5,false);
         SetName("Sword");
     }
 }

@@ -11,11 +11,13 @@ public class Potion extends Item
     /**
      * Constructor
      * @param NewLevel Level this object is in
+     * @param Loc Where the Potions location is
      */
-    public Potion(Level NewLevel)
+    public Potion(Level NewLevel, Vector2D Loc)
     {
         SetCollision(true);
         SetCurrentLevel(NewLevel);
+        SetLocation(Loc.GetX(),Loc.GetY());
     }
 
     @Override

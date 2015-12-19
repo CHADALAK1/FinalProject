@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Chad Reddick on 11/19/15.
@@ -67,6 +68,14 @@ public class Level
      * initializes at <b>SetGridSize</b> Method
      */
     private Vector2D MaxBoundaries;
+
+    /**
+     * <b>StoryString</b>
+     * <p>private</p>
+     * String object that holds the current event in the story Scroll Window
+     * @see main
+     */
+    private String StoryString;
 
     /**
      * <b>GetGrid</b>
@@ -240,6 +249,16 @@ public class Level
     }
 
     /**
+     * <b>GetStoryString</b>
+     * returns the story string value
+     * @return StoryString
+     */
+    public String GetStoryString()
+    {
+        return StoryString;
+    }
+
+    /**
      * <b>SpawnPlayer</b>
      * Creates a player in the Level along with its location and rotation
      * @param NewPlayer when creating, use new PlayerPawn()
@@ -303,9 +322,8 @@ public class Level
      * Spawns Monster in the Level.
      * @param NewMonster Monster to spawn in the level
      * @param Loc Location of the monster in the level
-     * @param NewWeap New Weapon to spawn for the MonsterPawn Object
      */
-    public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc, Weapon NewWeap)
+    public void SpawnMonster(MonsterPawn NewMonster, Vector2D Loc)
     {
         //Initialize Controller AI for new spawned monster
         MonsterController TempController = new MonsterController();
@@ -321,8 +339,39 @@ public class Level
 
         NewMonster.SetCollision(true);
 
-        NewMonster.SetWeapon(NewWeap);
-        NewWeap.SetOwner(NewMonster);
+        /**Setup for random choice for monster Weapon**/
+
+        //Store temp Weapon object
+        Weapon TempWeap;
+        //Random class value
+        Random rand = new Random();
+        //Random range integer
+        int RandRange = rand.nextInt((3-1) + 1) + 1;
+
+        //switch statement to check for random weapon result
+        switch(RandRange)
+        {
+            //Dagger
+            case 1:
+                TempWeap = new Dagger();
+                NewMonster.SetWeapon(TempWeap);
+                TempWeap.SetOwner(NewMonster);
+                break;
+            //Sword
+            case 2:
+                TempWeap = new Sword();
+                NewMonster.SetWeapon(TempWeap);
+                TempWeap.SetOwner(NewMonster);
+                break;
+            //Mace
+            case 3:
+                TempWeap = new Mace();
+                NewMonster.SetWeapon(TempWeap);
+                TempWeap.SetOwner(NewMonster);
+                break;
+            default:
+                break;
+        }
 
         //Add to Monsters ArrayList
         Monsters.add(NewMonster);
@@ -374,6 +423,16 @@ public class Level
         Player.SetLocation(NewLocation.GetX(),NewLocation.GetY());
         GetLevel()[GetPlayer().GetLocation().GetX()][GetPlayer().GetLocation().GetY()] = Player;
         GetLevel()[PrevLoc.GetX()][PrevLoc.GetY()] = new Entity();
+    }
+
+    /**
+     * <b>SetStoryString</b>
+     * Sets the StoryString value in that particular time(Must clear on each new story output)
+     * @param NewStory New StoryString value
+     */
+    public void SetStoryString(String NewStory)
+    {
+        StoryString = NewStory;
     }
 
 }

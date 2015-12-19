@@ -92,9 +92,9 @@ public class Weapon extends Item
      * @param MagicPen Amount of MagicPenetration when used
      * @param ArmorPen Amount of ArmorPenetration when used
      */
-    public void SetMeleeDamage(int Damage, int MagicPen, int ArmorPen)
+    public void SetMeleeDamage(int Damage, int MagicPen, int ArmorPen, boolean Rand)
     {
-        MeleeDamage = new MeleeDamageType(Damage,MagicPen,ArmorPen);
+        MeleeDamage = new MeleeDamageType(Damage,MagicPen,ArmorPen,Rand);
     }
 
     /**
@@ -127,17 +127,47 @@ public class Weapon extends Item
      */
     public void ApplyDamage(Pawn DamagedPawn)
     {
-        //if this weapon has a crit chance
-        if(GetCanCriticalHit(1,10,7))
+        if(!MissChance(1,3,3))
         {
-            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount() * 2,GetOwner().GetController(),GetMeleeDamage());
-            System.out.println(GetOwner().toString() +  " HAS CRITTED");
+            //if this weapon has a crit chance
+            if (GetCanCriticalHit(1, 10, 7))
+            {
+                DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount() * 2, GetOwner().GetController(), GetMeleeDamage());
+                System.out.println(GetOwner().toString() + " HAS CRITTED");
+            }
+            //if no crit
+            else
+            {
+                DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(), GetOwner().GetController(), GetMeleeDamage());
+            }
         }
-        //if no crit
         else
         {
-            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
+            System.out.println(GetOwner().toString() + " MISSED...");
         }
+    }
+
+    public boolean MissChance(int min, int max, int miss)
+    {
+        boolean bHitChance;
+        Random rand = new Random();
+        int RandRange = rand.nextInt((max - min) + 1) + min;
+        if(GetMeleeDamage().GetRandomChance())
+        {
+            if (RandRange == miss)
+            {
+                bHitChance = true;
+            }
+            else
+            {
+                bHitChance = false;
+            }
+        }
+        else
+        {
+            bHitChance = false;
+        }
+        return bHitChance;
     }
 
 }

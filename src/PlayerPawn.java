@@ -99,8 +99,6 @@ public class PlayerPawn extends Pawn
                                 if(GetCurrentLevel().GetMonsters().get(i).GetHealth() > 0)
                                 {
                                     GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
-                                    System.out.println("Hit for " + GetWeapon().get(WeapSlot).GetMeleeDamage().GetDamageAmount() +
-                                            " with a " + GetWeapon().get(WeapSlot).GetName());
                                     //end player's turn
                                     GetCurrentLevel().GetReferee().Turn(GetCurrentLevel().GetMonsters().get(i));
                                 }

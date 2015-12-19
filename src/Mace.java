@@ -10,7 +10,7 @@ public class Mace extends Weapon
 {
     public Mace()
     {
-        SetMeleeDamage(15,0,5);
+        SetMeleeDamage(15,0,5,true);
         SetName("Mace");
     }
 }

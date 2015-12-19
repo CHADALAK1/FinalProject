@@ -104,13 +104,15 @@ public class Level01 extends Level
 
         //Set keys into map (to open doors).
         //Template: GetLevel()[][] = new Key();
-        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "BossKey");
-        GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "Key");
+        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "Key");
+        GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "BossKey");
         GetLevel()[17][17] = new Key(this, new Vector2D(17,17),"Key");
 
         //Set health into map.
-        //TODO: Instance?
-        //USE Potion Class to spawn Potions
+        GetLevel()[2][13] = new Potion(this, new Vector2D(2,13));
+        GetLevel()[18][5] = new Potion(this, new Vector2D(18,5));
+        GetLevel()[18][2] = new Potion(this, new Vector2D(18,2));
+        GetLevel()[1][1] = new Potion(this, new Vector2D(1,1));
 
         //Set armor into map.
         //Template: GetLevel()[][] = new Armor();
@@ -122,16 +124,17 @@ public class Level01 extends Level
         //Spawn the player (horizontal , vertical)
         SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(2,18),Rotator.NORTH, new Sword(), new Mace());
 
+
         //Spawn the Monster(s) into map. (horizontal , vertical)
-        SpawnMonster(new MonsterPawn(),new Vector2D(11,2), new Sword());
-        SpawnMonster(new MonsterPawn(),new Vector2D(15,4),new Mace());
-        SpawnMonster(new MonsterPawn(),new Vector2D(9,5),new Sword());
-        SpawnMonster(new MonsterPawn(),new Vector2D(3,8), new Mace());
-        SpawnMonster(new MonsterPawn(),new Vector2D(17,8),new Sword());
-        SpawnMonster(new MonsterPawn(),new Vector2D(6,10),new Mace());
-        SpawnMonster(new MonsterPawn(),new Vector2D(15,15), new Sword());
-        SpawnMonster(new MonsterPawn(),new Vector2D(15,17),new Mace());
-        SpawnMonster(new MonsterPawn(),new Vector2D(7,18),new Sword());
+        SpawnMonster(new MonsterPawn(),new Vector2D(11,2));
+        SpawnMonster(new MonsterPawn(),new Vector2D(15,4));
+        SpawnMonster(new MonsterPawn(),new Vector2D(9,5));
+        SpawnMonster(new MonsterPawn(),new Vector2D(3,8));
+        SpawnMonster(new MonsterPawn(),new Vector2D(17,8));
+        SpawnMonster(new MonsterPawn(),new Vector2D(6,10));
+        SpawnMonster(new MonsterPawn(),new Vector2D(15,15));
+        SpawnMonster(new MonsterPawn(),new Vector2D(15,17));
+        SpawnMonster(new MonsterPawn(),new Vector2D(7,18));
 
         //Spawn the Boss into map
         //TODO: Need boss. 2 down by 6 right
