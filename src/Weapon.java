@@ -39,15 +39,6 @@ public class Weapon extends Item
      */
     private int HitChance;
 
-
-    /**
-     * <b>bCanCriticalHit</b>
-     * <p>private</p>
-     * Boolean that decides whether this weapon can make a
-     * critical hit on Pawns
-     */
-    private boolean bCanCriticalHit;
-
     /**
      * virtual from Item to fire weapon
      * reason is so Pawn can hold Items in the
@@ -61,43 +52,27 @@ public class Weapon extends Item
     }
 
     /**
-     * <b>CriticalHitChance</b>
-     * Method that calculates the random chance of making a
-     * Critical hit on the Pawn
-     */
-
-    protected void CriticalHitChance()
-    {
-        if(GetCanCriticalHit())
-        {
-            //Create Random object, assign tempCrit between 1 and 20.
-            //Then give HitChange the value in INT form.
-            Random random = new Random();
-            int tempCrit = random.nextInt(20) + 1;
-
-            HitChance = tempCrit;
-        }
-    }
-
-    /**
-     * <b>CanCriticalHit</b>
-     * Method that sets if the weapon will have any
-     * chance to crit hit
-     * @param Crit true or false assignment of bCanCriticalHit
-     */
-    public void CanCriticalHit(boolean Crit)
-    {
-        bCanCriticalHit = Crit;
-    }
-
-    /**
      * <b>GetCanCriticalHit</b>
      * Method that gets the bCanCriticalHit boolean value
-     * @return bCanCriticalHit
+     * @param min minimum range for crit
+     * @param max maximum range for crit
+     * @param crit the number the crit will initialize when random lands on it
+     * @return bHasCrit
      */
-    public boolean GetCanCriticalHit()
+    public boolean GetCanCriticalHit(int min, int max, int crit)
     {
-        return bCanCriticalHit;
+        boolean bHasCrit;
+        Random rand = new Random();
+        int HitChance = rand.nextInt((max - min) + 1) + min;
+        if(HitChance == crit)
+        {
+            bHasCrit = true;
+        }
+        else
+        {
+            bHasCrit = false;
+        }
+        return bHasCrit;
     }
 
     /**
@@ -152,7 +127,17 @@ public class Weapon extends Item
      */
     public void ApplyDamage(Pawn DamagedPawn)
     {
-        DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
+        //if this weapon has a crit chance
+        if(GetCanCriticalHit(1,10,7))
+        {
+            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount() * 2,GetOwner().GetController(),GetMeleeDamage());
+            System.out.println(GetOwner().toString() +  " HAS CRITTED");
+        }
+        //if no crit
+        else
+        {
+            DamagedPawn.TakeDamage(GetMeleeDamage().GetDamageAmount(),GetOwner().GetController(),GetMeleeDamage());
+        }
     }
 
 }

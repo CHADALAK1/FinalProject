@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by Chad Reddick on 11/15/15.
  * <p>
@@ -29,21 +31,56 @@ public class MonsterPawn extends NPCPawn
     public void Attack()
     {
         //if the player is in the level
-        if(GetCurrentLevel().GetPlayer() != null)
+        if (GetCurrentLevel().GetPlayer() != null)
         {
+            //Store the player pawn in local variable(for easier typing
             PlayerPawn P = GetCurrentLevel().GetPlayer();
-            //if there is a BattleReferee on the scene
-            if(GetCurrentLevel().GetReferee() != null)
+            //if we hit the player(2/3 chance)
+            if (!MissChance(1,3))
             {
-                //if it's the monster's turn
-                if (GetCurrentLevel().GetReferee().GetIsMonsterTurn())
+                //if there is a BattleReferee on the scene
+                if (GetCurrentLevel().GetReferee() != null)
                 {
-                    System.out.println("Monster is now Attacking...");
-                    GetWeapon().get(0).ApplyDamage(P);
-                    GetCurrentLevel().GetReferee().Turn(P);
+                    //if it's the monster's turn
+                    if (GetCurrentLevel().GetReferee().GetIsMonsterTurn())
+                    {
+                        System.out.println("Monster is now Attacking...");
+                        GetWeapon().get(0).ApplyDamage(P);
+                        GetCurrentLevel().GetReferee().Turn(P);
+                    }
                 }
             }
+            else
+            {
+                System.out.println("MONSTER HAS MISSED....");
+                GetCurrentLevel().GetReferee().Turn(P);
+            }
         }
+    }
+
+    /**
+     * <b>MissChance</b>
+     * boolean return that tells the monster if we managed to hit the player
+     * @param min minimum range the monster will hit(RandRange)
+     * @param max maximum range the monster will hit(RandRange)
+     * @return bHasHit
+     */
+    private boolean MissChance(int min, int max)
+    {
+        Random rand = new Random();
+        boolean bHasHit;
+
+        int MissChance = rand.nextInt((max - min) + 1) + min;
+        if(MissChance == 3)
+        {
+            bHasHit = true;
+        }
+        else
+        {
+            bHasHit = false;
+        }
+
+        return bHasHit;
     }
 
     /**

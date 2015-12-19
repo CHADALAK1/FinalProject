@@ -22,7 +22,7 @@ public class Potion extends Item
     public void Use()
     {
         super.Use();
-        GetOwner().AddHealth(10);
+        GetOwner().AddHealth(50);
         for (int i = 0; i < GetOwner().GetInventory().size(); i++)
         {
             if (GetOwner().GetInventory().get(i) == this)
@@ -30,13 +30,14 @@ public class Potion extends Item
                 GetOwner().GetInventory().remove(i);
             }
         }
-        System.out.println("Added 10 Health");
+        System.out.println("Added 50 Health");
     }
 
     @Override
     public void Pickup()
     {
         super.Pickup();
+        Use();
         System.out.println("PICKED UP A HEALTH POTION");
     }
 }

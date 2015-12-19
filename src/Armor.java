@@ -20,7 +20,7 @@ public class Armor extends Item
     public void Use()
     {
         super.Use();
-        GetOwner().AddArmor(10);
+        GetOwner().AddArmor(25);
         for (int i = 0; i < GetOwner().GetInventory().size(); i++)
         {
             if (GetOwner().GetInventory().get(i) == this)
@@ -28,6 +28,13 @@ public class Armor extends Item
                 GetOwner().GetInventory().remove(i);
             }
         }
-        System.out.println("Added 10 Armor");
+        System.out.println("Added 25 Armor");
+    }
+
+    @Override
+    public void Pickup()
+    {
+        super.Pickup();
+        Use();
     }
 }
