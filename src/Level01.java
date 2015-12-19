@@ -1,3 +1,5 @@
+import com.sun.deploy.net.proxy.RemoveCommentReader;
+
 /**
  * Created by Chad Reddick on 11/19/15.
  */
@@ -5,6 +7,7 @@ public class Level01 extends Level
 {
     /**
      * <b>CONSTRUCTOR</b>
+     * Initialize level objects here
      */
     public Level01()
     {
@@ -92,13 +95,10 @@ public class Level01 extends Level
 
         //Set doors into map.
         //Template: GetLevel()[][] = new Door();
-        //TODO: Started addition of Door()
-        //TODO: Broken && boolean status?
-        /*
-        GetLevel()[2][3] = new Door(false);
-        GetLevel()[11][3] = new Door(true);
-        GetLevel()[16][6] = new Door(true);
-        */
+
+        GetLevel()[2][3] = new Door(true, this, "BossKey");
+        GetLevel()[11][3] = new Door(true, this, "Key");
+        GetLevel()[16][6] = new Door(true, this, "Key");
 
         //TODO: Keys should have an Identifier to unlock doors in series.
         /**
@@ -109,20 +109,21 @@ public class Level01 extends Level
         //Set keys into map (to open doors).
         //Template: GetLevel()[][] = new Key();
         //TODO: Started addition of Key()
-        GetLevel()[17][1] = new Key();
-        GetLevel()[3][10] = new Key();
-        GetLevel()[17][17] = new Key();
+        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "Key");
+        GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "Key");
+        GetLevel()[17][17] = new Key(this, new Vector2D(17,17),"BossKey");
 
         //Set health into map.
         //TODO: Instance?
+        //USE Potion Class to spawn Potions
 
         //Set armor into map.
         //Template: GetLevel()[][] = new Armor();
         //TODO: Started addition of Armor()
-        GetLevel()[1][2] = new Armor();
-        GetLevel()[18][4] = new Armor();
-        GetLevel()[17][12] = new Armor();
-        GetLevel()[17][18] = new Armor();
+        GetLevel()[1][2] = new Armor(this, new Vector2D(1,2));
+        GetLevel()[18][4] = new Armor(this, new Vector2D(18,4));
+        GetLevel()[17][12] = new Armor(this, new Vector2D(17,12));
+        GetLevel()[17][18] = new Armor(this, new Vector2D(17,18));
 
         //Spawn the player (horizontal , vertical)
         SpawnPlayer(new PlayerPawn(), new PlayerController(), new Vector2D(2,18),Rotator.NORTH, new Sword(), new Mace());

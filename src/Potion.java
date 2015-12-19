@@ -7,9 +7,15 @@
  */
 public class Potion extends Item
 {
-    public Potion()
+
+    /**
+     * Constructor
+     * @param NewLevel Level this object is in
+     */
+    public Potion(Level NewLevel)
     {
         SetCollision(true);
+        SetCurrentLevel(NewLevel);
     }
 
     @Override

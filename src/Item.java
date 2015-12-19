@@ -28,6 +28,7 @@ public class Item extends Entity
         SetOwner(GetCurrentLevel().GetPlayer());
         GetOwner().GetInventory().add(this);
         GetCurrentLevel().GetLevel()[GetLocation().GetX()][GetLocation().GetY()] = new Entity();
+        System.out.println("You Picked up a " + GetName());
     }
 
     /**

@@ -141,9 +141,9 @@ public class Level
         {
             for(int j = 0; j < Grid[i].length; j++)
             {
-                if(GetLevel()[i][j] instanceof Wall)
+                if(GetLevel()[i][j] instanceof Door)
                 {
-                    GetVisualGrid()[i][j] = "▓  ";
+                    GetVisualGrid()[i][j] = "D  ";
                 }
                 else if(GetLevel()[i][j] instanceof MonsterPawn)
                 {
@@ -153,25 +153,21 @@ public class Level
                 {
                     GetVisualGrid()[i][j] = "P  ";
                 }
-                //TODO: Added Health
-                /*else if (GetLevel() [i] [j] instanceof Health)
+                else if (GetLevel() [i] [j] instanceof Potion)
                 {
                     GetVisualGrid()[i][j] = "H  ";
-                }*/
-                //TODO: Added Armor
+                }
                 else if (GetLevel() [i] [j] instanceof Armor)
                 {
                     GetVisualGrid()[i][j] = "A  ";
                 }
-                //TODO: Added Keys
                 else if (GetLevel() [i] [j] instanceof Key)
                 {
                     GetVisualGrid() [i] [j] = "K  ";
                 }
-                //TODO: Added Doors.
-                else if (GetLevel() [i] [j] instanceof Door)
+                else if (GetLevel()[i][j] instanceof Wall)
                 {
-                    GetVisualGrid() [i] [j] = "D  ";
+                    GetVisualGrid()[i][j] = "▓  ";
                 }
                 else
                 {

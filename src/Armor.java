@@ -3,10 +3,18 @@
  */
 public class Armor extends Item
 {
-    /**public Armor()
+    /**
+     * Constructor
+     * @param NewLevel Level this objects in
+     * @param Loc Location the object is(reference when initialized in Level Object)
+     */
+    public Armor(Level NewLevel, Vector2D Loc)
     {
-        SetCollision(false);
-    }**/
+        SetCollision(true);
+        SetCurrentLevel(NewLevel);
+        SetLocation(Loc.GetX(),Loc.GetY());
+        SetName("Armor");
+    }
 
     @Override
     public void Use()
