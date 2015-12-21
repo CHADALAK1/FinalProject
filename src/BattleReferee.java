@@ -38,6 +38,13 @@ public class BattleReferee
     private boolean bIsMonsterTurn;
 
     /**
+     * <b>Announcement</b>
+     * <p>private</p>
+     * String value that holds the Story announcement for the battle held in BattleReferee
+     */
+    private String Announcement;
+
+    /**
      * <b>CONSTRUCTOR</b>
      * @param MP MonsterPawn object fighting
      * @param PP PlayerPawn object fighting
@@ -77,6 +84,31 @@ public class BattleReferee
         {
             EndMatch();
         }
+    }
+
+    public String Announcer(String Speech)
+    {
+        return Speech;
+    }
+
+    /**
+     * <b>GetAnnouncement</b>
+     * returns the Announcement String value
+     * @return Announcement
+     */
+    public String GetAnnouncement()
+    {
+        return Announcement;
+    }
+
+    /**
+     * <b>SetAnnouncement</b>
+     * Sets the Announcement String Value to a new String value
+     * @param NewAnnouncement the New String value for Announcement
+     */
+    public void SetAnnouncement(String NewAnnouncement)
+    {
+        Announcement = NewAnnouncement;
     }
 
     /**
