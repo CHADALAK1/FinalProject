@@ -137,7 +137,8 @@ public class Level01 extends Level
         SpawnMonster(new MonsterPawn(),new Vector2D(7,18));
 
         //Spawn the Boss into map
-        //TODO: Need boss. 2 down by 6 right
+        //2TODO: Need boss. 2 down by 6 right
+        SpawnBoss(new BossPawn(), new Vector2D(6,2));
 
         //Set the Current Level for the Player
         GetPlayer().SetCurrentLevel(this);

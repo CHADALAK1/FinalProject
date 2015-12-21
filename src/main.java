@@ -253,6 +253,15 @@ public class main
 
 
         //TODO: Add if b0ss is dead game win.
+        if(L01.boss == null)
+        {
+            StoryOutput.append("You win! \n");
+            StoryOutput.append("Congratulations!!!!!!!!!!!! \n");
+
+            endGame();
+        }
+
+
         //Int and (2) if will check how the game will end.
         //Either Win or Lose.
         int NPC_count = 0;
