@@ -47,6 +47,13 @@ public class Weapon extends Item
     private boolean bHasMisssed;
 
     /**
+     * <b>bHasCritted</b>
+     * <p>private</p>
+     * Checks to see if this weapon crit(FOR MAIN)
+     */
+    private boolean bHasCritted;
+
+    /**
      * virtual from Item to fire weapon
      * reason is so Pawn can hold Items in the
      * Inventory ArrayList and trigger Use
@@ -79,7 +86,28 @@ public class Weapon extends Item
         {
             bHasCrit = false;
         }
+        SetHasCritted(bHasCrit);
         return bHasCrit;
+    }
+
+    /**
+     * <b>GetHasCritted</b>
+     * returns the bHasCritted boolean
+     * @return bHasCritted
+     */
+    public boolean GetHasCritted()
+    {
+        return bHasCritted;
+    }
+
+    /**
+     * <b>SetHasCritted</b>
+     * Sets the boolean to tell if this weapon has critted(for MAIN)
+     * @param NewCrit Sets the boolean to true or false
+     */
+    public void SetHasCritted(boolean NewCrit)
+    {
+        bHasCritted = NewCrit;
     }
 
     /**
