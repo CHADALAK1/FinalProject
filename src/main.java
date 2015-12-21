@@ -18,6 +18,7 @@ public class main
     public JButton useSword, useMace,goNorth, goSouth, goEast, goWest;
     public JLabel Health, Armor;
     public int health, armor;
+    public boolean inbattle = true;
 
     //Start the game.
     Level01 L01 = new Level01();
@@ -223,13 +224,29 @@ public class main
         //BATTLE TO THE DEATH
         if(L01.GetReferee() != null)
         {
+
+            //Disable movement within battle.
             goNorth.setEnabled(false);
             goSouth.setEnabled(false);
             goEast.setEnabled(false);
             goWest.setEnabled(false);
+
+            //Stand your ground after discovering a monster.
+            if(inbattle)
+            {
+                StoryOutput.append("AHHH, A MONSTER!\n");
+                StoryOutput.append("I must fight to the death!\n");
+                inbattle = false;
+            }
+
+            //Referee Announcer
+            StoryOutput.append(L01.GetReferee().GetAnnouncement());
+
         }
         else
         {
+            //End battle settings.
+            inbattle = true;
             goNorth.setEnabled(true);
             goSouth.setEnabled(true);
             goEast.setEnabled(true);
@@ -292,7 +309,15 @@ public class main
             endGame();
         }
 
+        if(L01.GetReferee() != null)
+        {
+            L01.GetReferee().SetAnnouncement("");
+        }
+
+
+        //DERP
         return null;
+
     }
 
     public void endGame()
