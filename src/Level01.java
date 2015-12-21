@@ -104,8 +104,8 @@ public class Level01 extends Level
 
         //Set keys into map (to open doors).
         //Template: GetLevel()[][] = new Key();
-        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "Key");
-        GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "BossKey");
+        GetLevel()[17][1] = new Key(this, new Vector2D(17,1), "BossKey");
+        GetLevel()[3][10] = new Key(this, new Vector2D(3,10), "FixKey");
         GetLevel()[17][17] = new Key(this, new Vector2D(17,17),"Key");
 
         //Set health into map.
