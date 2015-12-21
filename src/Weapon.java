@@ -40,6 +40,13 @@ public class Weapon extends Item
     private int HitChance;
 
     /**
+     * <b>bHasMissed</b>
+     * <p>private</p>
+     * boolean to check to see if this weapon has missed the Pawn
+     */
+    private boolean bHasMisssed;
+
+    /**
      * virtual from Item to fire weapon
      * reason is so Pawn can hold Items in the
      * Inventory ArrayList and trigger Use
@@ -86,6 +93,16 @@ public class Weapon extends Item
     }
 
     /**
+     * <b>GetHasMissed</b>
+     * returns bHasMissed boolean for weapon miss check
+     * @return bHasMissed
+     */
+    public boolean GetHasMissed()
+    {
+        return bHasMisssed;
+    }
+
+    /**
      * SetMeleeDamage
      * Method that Sets the MeleeDamage object class variables
      * @param Damage Amount of Damage to be applied when used
@@ -107,6 +124,16 @@ public class Weapon extends Item
     public void SetRangeDamage(int Range,int Damage, int ArmorPen)
     {
         RangeDamage = new RangeDamageType(Range,Damage,ArmorPen);
+    }
+
+    /**
+     * <b>SetHasMissed</b>
+     * Sets the bHasMissed boolean to tell the weapon if it has missed
+     * @param Missed new boolean to set true or false if the weapon missed
+     */
+    public void SetHasMissed(boolean Missed)
+    {
+        bHasMisssed = Missed;
     }
 
     /**
@@ -167,6 +194,7 @@ public class Weapon extends Item
         {
             bHitChance = false;
         }
+        SetHasMissed(bHitChance);
         return bHitChance;
     }
 
