@@ -241,7 +241,7 @@ public class main
 
             if(L01.GetReferee().GetMonster().GetWeapon().get(0).GetHasMissed())
             {
-                StoryOutput.append("Monster has missed!");
+                StoryOutput.append("Monster has missed!\n");
             }
 
 
