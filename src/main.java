@@ -242,6 +242,12 @@ public class main
             //Referee Announcer
             StoryOutput.append(L01.GetReferee().GetAnnouncement());
 
+            if(L01.GetReferee().GetMonster().GetWeapon().get(0).GetHasMissed())
+            {
+                StoryOutput.append("Monster has missed!");
+            }
+
+
         }
         else
         {

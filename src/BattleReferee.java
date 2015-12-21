@@ -71,8 +71,8 @@ public class BattleReferee
                 SetIsMonsterTurn(true);
                 SetIsPlayerTurn(false);
                 GetMonster().PrepareAttack();
-                String MonstAnnounce = "Monster Has Attacked... \n Player Has Attacked... \n Monster's Health is at " +
-                        GetMonster().GetHealth() + "\n Monster's Armor is at " + GetMonster().GetArmor() + "\n";
+                String MonstAnnounce = "Monster Has Attacked... \nPlayer Has Attacked... \nMonster's Health is at " +
+                        GetMonster().GetHealth() + "\nMonster's Armor is at " + GetMonster().GetArmor() + "\n";
                 SetAnnouncement(Announcer(MonstAnnounce));
             }
             //if called when monster ends turn
