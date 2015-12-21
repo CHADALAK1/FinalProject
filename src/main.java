@@ -217,9 +217,6 @@ public class main
         //Interact will pickup any items (armor or health).
         PC.GetControlledPawn().Interact();
 
-        //Monster feedback.
-        //TODO: <Pawn> hit <pawn> with a <item> for ## damage.
-
         //If/When a battle is in place. User cannot move.
         //BATTLE TO THE DEATH
         if(L01.GetReferee() != null)
