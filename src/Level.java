@@ -54,6 +54,13 @@ public class Level
     private ArrayList<MonsterPawn> Monsters = new ArrayList<MonsterPawn>();
 
     /**
+     * <b>BossP</b>
+     * <p>private</p>
+     * Boss object that's in the level to defeat the game
+     */
+    private BossPawn BossP;
+
+    /**
      * <b>MonsterControllers</b>
      * <p>private</p>
      * MonsterController ArrayList that holds the Controllers for the Monsters.
@@ -259,6 +266,16 @@ public class Level
     }
 
     /**
+     * <b>GetBossP</b>
+     * returns the BossPawn object named BossP
+     * @return BossP
+     */
+    public BossPawn GetBossP()
+    {
+        return BossP;
+    }
+
+    /**
      * <b>SpawnPlayer</b>
      * Creates a player in the Level along with its location and rotation
      * @param NewPlayer when creating, use new PlayerPawn()
@@ -391,6 +408,8 @@ public class Level
         TempController.Possess(Boss);
 
         Boss.SetCollision(true);
+
+        BossP = Boss;
     }
 
     /**
