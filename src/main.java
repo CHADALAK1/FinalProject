@@ -244,6 +244,37 @@ public class main
                 StoryOutput.append("Monster has missed!\n");
             }
 
+            if(L01.GetReferee().GetMonster().GetWeapon().get(0).GetHasCritted())
+            {
+                StoryOutput.append("Monster has Critted you!\n");
+            }
+
+            if(action.equals("Sword"))
+            {
+                if (L01.GetReferee().GetPlayer().GetWeapon().get(0).GetHasMissed())
+                {
+                    StoryOutput.append("Player has missed!\n");
+                }
+
+                if(L01.GetReferee().GetPlayer().GetWeapon().get(0).GetHasCritted())
+                {
+                    StoryOutput.append("You SUPER hit the monster!\n");
+                }
+            }
+
+            if(action.equals("Mace"))
+            {
+                if (L01.GetReferee().GetPlayer().GetWeapon().get(1).GetHasMissed())
+                {
+                    StoryOutput.append("Player has missed!\n");
+                }
+
+                if(L01.GetReferee().GetPlayer().GetWeapon().get(1).GetHasCritted())
+                {
+                    StoryOutput.append("You SUPER hit the monster!\n");
+                }
+            }
+
 
         }
         else
