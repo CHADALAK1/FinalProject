@@ -252,8 +252,8 @@ public class main
 
 
 
-        //TODO: Add if b0ss is dead game win.
-        if(L01.boss == null)
+        //Winner if Player defeats boss.
+        if(L01.GetBossP() == null)
         {
             StoryOutput.append("You win! \n");
             StoryOutput.append("Congratulations!!!!!!!!!!!! \n");

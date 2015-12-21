@@ -161,6 +161,10 @@ public class Level
                 {
                     GetVisualGrid()[i][j] = "D  ";
                 }
+                else if (GetLevel() [i] [j] instanceof  BossPawn)
+                {
+                    GetVisualGrid()[i][j] = "B  ";
+                }
                 else if(GetLevel()[i][j] instanceof MonsterPawn)
                 {
                     GetVisualGrid()[i][j] = "M  ";
