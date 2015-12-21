@@ -380,6 +380,19 @@ public class Level
         MonsterControllers.add(TempController);
     }
 
+    public void SpawnBoss(BossPawn Boss, Vector2D Loc)
+    {
+        BossController TempController = new BossController();
+
+        Boss.SetLocation(Loc.GetX(), Loc.GetY());
+
+        GetLevel()[Boss.GetLocation().GetX()][Boss.GetLocation().GetY()] = Boss;
+
+        TempController.Possess(Boss);
+
+        Boss.SetCollision(true);
+    }
+
     /**
      * <b>SpawnReferee</b>
      * Spawn the BattleReferee object when a battle is happening in the level
