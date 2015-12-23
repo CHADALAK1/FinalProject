@@ -9,3 +9,4 @@ M = Monster
 P = Player
 B = Boss
 D = Door
+K = Key
