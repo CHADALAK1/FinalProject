@@ -417,6 +417,15 @@ public class Level
     }
 
     /**
+     * <b>KillBoss</b>
+     * Destroys the BossP instance
+     */
+    public void KillBoss()
+    {
+        BossP = null;
+    }
+
+    /**
      * <b>SpawnReferee</b>
      * Spawn the BattleReferee object when a battle is happening in the level
      * @param NewRef BattleReferee to spawn and reference with Referee object

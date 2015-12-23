@@ -69,34 +69,53 @@ public class PlayerPawn extends Pawn
                 }
             }
         }
+        //check if there's a monster in front of the player
+        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof BossPawn)
+        {
+            System.out.println("AH A MONSTER");
+            //if there's no BattleReferee in the level
+            if(GetCurrentLevel().GetReferee() == null)
+            {
+                System.out.println("Spawning Referee....");
+                //spawn the referee                                     Monster player's attacking      Player
+                GetCurrentLevel().SpawnReferee(new BattleReferee(GetCurrentLevel().GetBossP(), this));
+                //Set the player's turn
+                GetCurrentLevel().GetReferee().SetIsPlayerTurn(true);
+                //ensure it's not the monsters turn
+                GetCurrentLevel().GetReferee().SetIsMonsterTurn(false);
+                if(GetCurrentLevel().GetReferee() != null)
+                {
+                    System.out.println("REFEREEE IS IN PLACE");
+                }
+            }
+        }
     }
 
     @Override
-    public void InteractBattle(int WeapSlot)
-    {
+    public void InteractBattle(int WeapSlot) {
         super.InteractBattle(WeapSlot);
 
         //check if there's a monster in front of the player
-        if(GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
+        if (GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof MonsterPawn)
         {
             //find out which monster it is
-            for(int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
+            for (int i = 0; i < GetCurrentLevel().GetMonsters().size(); i++)
             {
                 //if the monster found in the ArrayList is the same one the player's ForwardVector is
                 if (GetForwardVector().GetX() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetX() &&
                         GetForwardVector().GetY() == GetCurrentLevel().GetMonsters().get(i).GetLocation().GetY())
                 {
                     //if the player has a weapon in hand
-                    if(GetWeapon() != null)
+                    if (GetWeapon() != null)
                     {
                         //if there's no BattleReferee in the level
-                        if(GetCurrentLevel().GetReferee() != null)
+                        if (GetCurrentLevel().GetReferee() != null)
                         {
                             //if it's the player's turn
-                            if(GetCurrentLevel().GetReferee().GetIsPlayerTurn())
+                            if (GetCurrentLevel().GetReferee().GetIsPlayerTurn())
                             {
                                 //if the monster's heal is still there
-                                if(GetCurrentLevel().GetMonsters().get(i).GetHealth() > 0)
+                                if (GetCurrentLevel().GetMonsters().get(i).GetHealth() > 0)
                                 {
                                     GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
                                     //end player's turn
@@ -121,6 +140,43 @@ public class PlayerPawn extends Pawn
                     }
                 }
             }
+        }
+        //check if there's a monster in front of the player
+        else if (GetCurrentLevel().GetLevel()[GetForwardVector().GetX()][GetForwardVector().GetY()] instanceof BossPawn)
+        {
+                    //if the player has a weapon in hand
+                    if (GetWeapon() != null)
+                    {
+                        //if there's no BattleReferee in the level
+                        if (GetCurrentLevel().GetReferee() != null)
+                        {
+                            //if it's the player's turn
+                            if (GetCurrentLevel().GetReferee().GetIsPlayerTurn())
+                            {
+                                //if the monster's heal is still there
+                                if (GetCurrentLevel().GetBossP().GetHealth() > 0)
+                                {
+                                    GetWeapon().get(WeapSlot).ApplyDamage(GetCurrentLevel().GetReferee().GetMonster());
+                                    //end player's turn
+                                    GetCurrentLevel().GetReferee().Turn(GetCurrentLevel().GetBossP());
+                                }
+                                else
+                                {
+                                    //store monster's Vector2D location temporarily
+                                    Vector2D Loc = GetCurrentLevel().GetBossP().GetLocation();
+                                    System.out.println("DEAD MONSTER");
+                                    //set monster's health to 0
+                                    GetCurrentLevel().GetReferee().GetMonster().SetHealth(0);
+                                    //End the match with the referee
+                                    GetCurrentLevel().GetReferee().EndMatch();
+                                    //remove the monster in the ArrayList
+                                    GetCurrentLevel().KillBoss();
+                                    //Make the space in the level an empty entity space where the monster used to be
+                                    GetCurrentLevel().GetLevel()[Loc.GetX()][Loc.GetY()] = new Entity();
+                                }
+                            }
+                        }
+                    }
         }
     }
 }
