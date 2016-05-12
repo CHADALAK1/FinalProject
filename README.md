@@ -1,5 +1,7 @@
 # FinalProject
 
+This is a 2D Text base dungeon crawler. The goal is to get the keys to destroy the final boss. Look at Instructions for legend and a 'How To' for controls.
+
 THIS PROJECT IS USING THE 'INTELLIJ IDEA' IDE.(currently using the Community version because its free)
 You must install IntelliJ IDEA to work with this project.
 
